@@ -1,0 +1,87 @@
+
+
+.footer_container {
+    height: 200px;
+    align-items: center;
+    background-color: #101928;
+}
+
+.footer_wrapper {
+    display: flex;
+    justify-content: space-between;;
+    width: 90%;
+    margin: 0 50px 0 70px;
+    border-top: 1px solid rgb(199, 193, 193);
+}
+
+.block_partners {
+    display: flex;
+    flex-wrap: wrap;
+    width: 250px;
+}
+
+.text_partners {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 100;
+    font-family: sans-serif;
+    color: #999;
+}
+
+.img_asus {
+    width: 90px;
+    margin-top: 8px;
+    margin-right: 60px;
+    margin-bottom: 10px;
+}
+
+.img_corsar {
+    width: 90px;
+     margin-right: 60px;
+     margin-bottom: 10px;
+     margin-top: 8px;
+}
+
+.img_msi {
+    width: 80px;
+}
+
+.img_nzxt {
+    width: 90px;
+    margin-top: 8px;
+    margin-right: 60px;
+}
+
+.img_nvidia {
+    margin-top: 8px;
+}
+
+.block_streat {
+
+    text-align: center;
+    width: 405px;
+    padding-top: 25px;
+    
+}
+
+.streat {
+    font-size: 19px;
+    color: #a7e200;
+    margin-bottom: 5px;
+    font-family: sans-serif;
+}
+
+.number {
+    margin-top: 8px;
+    margin-bottom: 5px;
+    font-size: 24px;
+    color: #a7e200;
+    font-family: sans-serif;
+}
+
+span {
+    margin-bottom: 5px;
+    color: rgb(109, 108, 108);
+    font-family: sans-serif;
+}
