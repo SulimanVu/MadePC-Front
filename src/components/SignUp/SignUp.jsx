@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { authThunk} from "../../features/applicationSlice";
 
 const SignIn = () => {
+  
   const [login,setLogin] = useState("")
   const [password,setPassword] = useState("")
   const dispatch = useDispatch()
