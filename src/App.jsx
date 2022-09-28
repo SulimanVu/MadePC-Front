@@ -1,8 +1,8 @@
 
 function App() {
   return (
-    <div className="App">
-      
+    <div className="App" style={{color:'red'}}>
+      irefjreoijfre
     </div>
   );
 }
