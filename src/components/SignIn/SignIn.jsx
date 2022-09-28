@@ -18,10 +18,11 @@ const SignIn = () => {
   return (
     <div>
       <div>
-        <div class="login">
+        <div className={styles.login}>
           <h1>Вход</h1>
           <form onSubmit={(e) => handleClick(e)}>
             <input
+             className={styles.input_login}
               value={login}
               onChange={(e) => setLogin(e.target.value)}
               type="text"
@@ -30,6 +31,7 @@ const SignIn = () => {
               required="required"
             />
             <input
+            className={styles.input_login}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               type="password"
@@ -37,7 +39,7 @@ const SignIn = () => {
               placeholder="Password"
               required="required"
             />
-            <button type="submit" class="btn btn-primary btn-block btn-large">
+            <button className={styles.btn} type="submit" class="btn btn-primary btn-block btn-large">
               Let me in.
             </button>
           </form>
