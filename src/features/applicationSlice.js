@@ -17,7 +17,7 @@ export const authThunk = createAsyncThunk(
         body: JSON.stringify({ login, password }),
       });
       const token = await res.json();
-      
+
       return token;
     } catch (e) {
       return thunkAPI.rejectWithValue(e);
@@ -36,11 +36,11 @@ export const loginThunk = createAsyncThunk(
         body: JSON.stringify({ login, password }),
       });
       const token = await res.json();
-      if(token.error){
-        return thunkAPI.rejectWithValue(token.error)
-    }
+      if (token.error) {
+        return thunkAPI.rejectWithValue(token.error);
+      }
       localStorage.setItem("token", token.token);
-      localStorage.setItem("id", token.id);
+      localStorage.setItem("id", token.login1);
 
       return token;
     } catch (e) {
@@ -64,15 +64,15 @@ const applicationSlice = createSlice({
         state.load = true;
       })
       .addCase(loginThunk.rejected, (state, action) => {
-        state.error = action.payload
-        state.load = false
+        state.error = action.payload;
+        state.load = false;
       })
-      
+
       .addCase(loginThunk.fulfilled, (state, action) => {
         state.load = false;
-        state.error = null
+        state.error = null;
         state.token = action.payload.token;
-        state.id = action.payload.id;
+        state.id = action.payload.login1;
       });
   },
 });
