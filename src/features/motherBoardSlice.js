@@ -1,3 +1,7 @@
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+
+
+
 const initialState = {
   board: [],
 };
@@ -6,8 +10,9 @@ export const fetchBoard = createAsyncThunk(
   "fetch/board",
   async (_, thunkAPI) => {
     try {
-      const data = await fetch("http://localhost:3010/math");
-      res.json(data);
+      const res = await fetch("http://localhost:3010/math");
+      const data = res.json()
+     return data
     } catch (error) {
       return thunkAPI.rejectWithValue(error);
     }
