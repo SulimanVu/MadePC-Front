@@ -2,7 +2,6 @@ import React from "react";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import SignIn from "./components/SignIn/SignIn";
-import SignUp from "./components/SignUp/SignUp";
 import MainPage from "./pages/MainPage/MainPage";
 import About from "./pages/AboutPage/AboutPage";
 
@@ -17,7 +16,7 @@ const App = () => {
           <Route path="/" element={<MainPage />} />
           <Route path="/about" element={<About />} />
           <Route path="/signin" element={<SignIn />} />
-          <Route path="signup" element={<SignUp />} />
+         
         </Routes>
       </div>
       <Footer />
