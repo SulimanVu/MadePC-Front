@@ -16,7 +16,7 @@ const Footer = () => {
                     <img src="https://edelws.ru/upload/uf/11f/11f3544d7e69edf0fb786d7802e1fa3c.svg" alt="corsra" className={styles.img_corsar} />
                 </div>
                 <div className={styles.block_streat}>
-                    <p className={styles.streat}>г. Грозный улица Трошева дом 7, 5 этаж, офис 8</p>
+                    <p className={styles.streat}>г. Грозный улица Трошева дом 7, 5 этаж, офис 8 кабинет</p>
                     <span>Обработка и прием заказов по телефону:</span>
                     <p className={styles.number}>8 (800) 234 99 19</p>
                     <span>Пн-Пт: 11:00 - 20:00</span>
