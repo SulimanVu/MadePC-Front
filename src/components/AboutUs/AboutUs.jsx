@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "../AboutUs/AboutUs.module.scss";
 
 const AboutUs = () => {
@@ -8,6 +9,27 @@ const AboutUs = () => {
           <h1>Философия гейминга от EDELWEISS</h1>
         </div>
       </div>
+      <div className={styles.Nave}>
+        <div className={styles.nav1}>
+          <Link to="/AboutUs" className={styles.link}>
+            <h1>О компании</h1>
+          </Link>
+        </div>
+        <div className={styles.nav1}>
+          <Link to="/AboutUs" className={styles.link}>
+            <h1>FAQ</h1>
+          </Link>
+        </div>
+        <div className={styles.nav1}>
+          <Link to="/AboutUs" className={styles.link}>
+            <h1>Отзывы</h1>
+          </Link>
+        </div>
+      </div>
+      <br />
+      <br />
+      <br />
+      <br />
       <div className={styles.Bodys}>
         <div className={styles.Text}>
           <p>

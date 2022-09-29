@@ -2,7 +2,9 @@
 
 .AboutUs {
   width: 100%;
-  height: 3000px;
+  height: 3400px;
+  position: relative;
+  background-color: #151a22;
 }
 ///////////// Хэдер /////////////
 .Header {
@@ -10,7 +12,7 @@
   height: 250px;
   display: flex;
   align-items: center;
-  background-color: silver;
+  background-image: url("https://edelws.ru/upload/uf/0c7/0c7b1d9c128122886140489168487a9d.png");
 }
 
 .Title {
@@ -24,6 +26,45 @@
   font-family: "PF-Din-Text-Cond-Pro";
 }
 
+////////// Навигэйт /////////////
+.Nave {
+  width: 75%;
+  height: 100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  left: 12%;
+  top: 7%;
+}
+
+.nav1 {
+  width: 33.25%;
+  height: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: flex-end;
+  background-color: #1c232e;
+  padding: 0 0 1% 2%;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.link h1 {
+  color: white;
+  &:hover {
+    color: #a7e200;
+  }
+}
+
+.nav1:hover {
+  color: #a7e200 !important;
+  border-top: 4px solid #a7e200;
+  background-color: transparent;
+}
+
 ////////// Боди /////////////
 .Bodys {
   width: 52%;
@@ -35,6 +76,10 @@
   font-family: "PF DinDisplay Pro";
   color: #8490a4;
   font-size: 17px;
+}
+
+.Text p {
+  font-size: 19px;
 }
 
 .Photo {
@@ -96,11 +141,11 @@
   align-items: center;
 }
 
-.blocks2 img{
-    width: 90%;
-    height: 90%;
-    z-index: 10;
-    position: absolute;
+.blocks2 img {
+  width: 90%;
+  height: 90%;
+  z-index: 10;
+  position: absolute;
 }
 
 .two {
