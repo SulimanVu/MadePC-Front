@@ -8,6 +8,7 @@ import About from "./pages/AboutPage/AboutPage";
 import { Route, Routes } from "react-router-dom";
 
 const App = () => {
+
   return (
     <>
       <Header />
@@ -16,13 +17,11 @@ const App = () => {
           <Route path="/" element={<MainPage />} />
           <Route path="/about" element={<About />} />
           <Route path="/signin" element={<SignIn />} />
-         
         </Routes>
       </div>
       <Footer />
     </>
   );
-
 };
 
 export default App;
