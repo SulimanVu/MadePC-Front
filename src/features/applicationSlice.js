@@ -7,14 +7,14 @@ const initialState = {
 };
 export const authThunk = createAsyncThunk(
   "fetch/auth",
-  async ({ login, password }, thunkAPI) => {
+  async ({ reglogin, regPassword }, thunkAPI) => {
     try {
       const res = await fetch("http://localhost:3010/user", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ login, password }),
+        body: JSON.stringify({ login:reglogin, password:regPassword }),
       });
       const token = await res.json();
 
