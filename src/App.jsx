@@ -6,6 +6,7 @@ import MainPage from "./pages/MainPage/MainPage";
 import About from "./pages/AboutPage/AboutPage";
 
 import { Route, Routes } from "react-router-dom";
+import LowPriceComps from "./pages/LowPrieceComps/LowPriceComps";
 
 const App = () => {
 
@@ -17,6 +18,7 @@ const App = () => {
           <Route path="/" element={<MainPage />} />
           <Route path="/about" element={<About />} />
           <Route path="/signin" element={<SignIn />} />
+          <Route path='/lowprice' element={<LowPriceComps />} />
         </Routes>
       </div>
       <Footer />
