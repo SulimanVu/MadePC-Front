@@ -1,0 +1,18 @@
+@import "../../index.scss";
+
+.slick-dots li.slick-active button::before {
+  color: #a7e200;
+  height: 50px;
+}
+.slick-dots li button::before {
+  color: #fff;
+}
+.slick-arrow {
+  width: 20px;
+  z-index: 2;
+}
+.slick-arrow::before,
+.slick-next::before {
+  color: #a7e200 !important;
+  width: 50px;
+}
