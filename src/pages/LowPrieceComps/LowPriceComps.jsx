@@ -2,8 +2,9 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import CardComp from '../../components/CardComp/CardComp';
 import { fetchComp } from '../../features/compSlice';
-import styles from '../LowPrieceComps/lowpricecomps.module.css';
+import styles from '../LowPrieceComps/lowpricecomps.module.scss';
 import star from './images/star.svg';
+import chair from './images/nedorpc.jpg';
 
 const LowPriceComps = () => {
     const comps = useSelector((state) => state.comp.comp);
@@ -60,6 +61,26 @@ const LowPriceComps = () => {
                         </div>
                     )
                 })}
+            </div>
+            <div className={styles.textImg}>
+                <div className={styles.textMain}>
+                    <h3 className={styles.titlePC}>ПК недорого - это реально и доступно</h3>
+                    <br />
+                    <p>Средняя стоимость хорошего домашнего ПК стартует от 70 000 ₽. Как быть в случае, если потратить такую сумму нет возможности, а пройти последние тайтлы хочется? Выход – купить недорогой компьютер по цене 30 000 рублей или чуть выше.</p>
+                    <br />
+                    <p>Мы предлагаем доступные системные блоки только из новых комплектующих. Это обеспечивает продолжительную стабильную работу компьютера. Каждая сборка сбалансирована. К процессору подобрана производительная видеокарта из бюджетного ценового сегмента.</p>
+                    <br />
+                    <p>Благодаря этому машина сможет запустить любую новую игру с настройками выше среднего, доставит радость своей практичностью и рациональным расходованием средств.</p>
+                    <br />
+                    <h3 className={styles.titlePC}>Продажа бюджетных компьютеров для дома и офиса</h3>
+                    <br />
+                    <p>В EDELWEISS можно купить приличную станцию по вполне доступной цене. Каждая сборка продумана специалистами и дает возможность глубоко погружаться в виртуальный мир. Даже самый бюджетный вариант EDELWEISS CYBORG обещает новичкам комфортное участие в Dota 2, Fortnite, League of Legends, CS:GO и других популярных проектах.</p>
+                    <br />
+                    <p>Исходя из этого, вы можете купить дёшево системный блок и полноценно работать за своим новым компьютером или сделать из него недорогое игровое решение с возможностью дальнейшей модернизации. Такая покупка обойдется совсем недорого и доставит радость своей универсальностью.</p>
+                </div>
+                <div className={styles.imageMain}>
+                    <img className={styles.imageUno} src={chair} />
+                </div>
             </div>
         </div>
     );

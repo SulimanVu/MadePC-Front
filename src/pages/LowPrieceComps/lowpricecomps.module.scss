@@ -1,3 +1,5 @@
+@import '../../index.scss';
+
 .mainCompMap {
     display: flex;
     justify-content: space-around;
@@ -6,7 +8,9 @@
     background-image: url('https://edelws.ru/local/templates/main/img/bg.png');
 }
 
-
+.mainOfMain {
+    width: 100%;
+}
 
 .mainImageCard {
     background-image: url('https://edelws.ru/upload/uf/ccb/ccb27cfac373aa3ae12678e395237603.png');
@@ -36,8 +40,9 @@
 .info {
     font-size: 20px;
     /* word-break: break-all; */
-    width: 80%;
-    margin-left: 8%;
+    max-width: 500px;
+    text-align: center;
+    margin-left: 11%;
     color: #8490A4;
 
 }
@@ -80,6 +85,35 @@
     position: absolute;
 }
 
-.size {
-   margin-right: 0px;
+.textImg {
+    display: flex;
+    padding: 15px;
+    background-image: url('https://edelws.ru/local/templates/main/img/bg.png');
+}
+
+.textMain {
+    /* background-image: url('https://edelws.ru/local/templates/main/img/bg.png'); */
+    width: 60%;
+    padding-left: 20px;
+    padding-right: 30px;
+    padding-top: 10px;
+}
+
+.imageUno {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.imageMain {
+    width: 40%;
+}
+
+.textMain p {
+    color: #8490A4;
+}
+
+.titlePC {
+    color: #FFFFFF;
+    font: 30px "PF DinDisplay Pro";
 }
