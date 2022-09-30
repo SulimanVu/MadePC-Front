@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import CardComp from '../../components/CardComp/CardComp';
 import { fetchComp } from '../../features/compSlice';
 import styles from '../LowPrieceComps/lowpricecomps.module.scss';
 import star from './images/star.svg';
 import chair from './images/nedorpc.jpg';
+import dom from './images/domic2.png'
 
 const LowPriceComps = () => {
     const comps = useSelector((state) => state.comp.comp);
@@ -16,6 +18,11 @@ const LowPriceComps = () => {
 
     return (
         <div className={styles.mainOfMain}>
+            <div className={styles.mainHeader}>
+                <Link to='/' className={styles.decor}><img className={styles.imageDom} src={dom} alt='img' /></Link>
+                <p><span>•</span> Компьютеры EDELWEISS <span>•</span></p>
+                <p id={styles.p}> Недорогие игровые компьютеры</p>
+            </div>
             <div className={styles.mainImageCard}>
                 <div className={styles.mainImageCard1}>
                     <h1 className={styles.title}>
@@ -36,19 +43,19 @@ const LowPriceComps = () => {
                     </div>
                     <div className={styles.cardMain}>
                         <div className={styles.CardMain1}>
-                            <img className={styles.star} src={star}></img>
+                            <img className={styles.star} src={star} alt='img'></img>
                             <p>Бюджетные системные блоки, низкая цена - разумный расход средств</p>
                         </div>
                         <div className={styles.CardMain1}>
-                            <img className={styles.star} src={star}></img>
+                            <img className={styles.star} src={star} alt='img'></img>
                             <p>Современный дизайн и качественная сборка, справедливая стоимость</p>
                         </div>
                         <div className={styles.CardMain1}>
-                            <img className={styles.star} src={star}></img>
+                            <img className={styles.star} src={star} alt='img'></img>
                             <p>Возможность купить дёшево компьютер - универсальное решение для дома и офиса</p>
                         </div>
                         <div className={styles.imageBattle}>
-                            <img className={styles.imageBattle1} src='https://edelws.ru/upload/uf/160/16089c7cc012093015c7d464c7e9a8a6.png' />
+                            <img alt='img' className={styles.imageBattle1} src='https://edelws.ru/upload/uf/160/16089c7cc012093015c7d464c7e9a8a6.png' />
                         </div>
                     </div>
                 </div>
@@ -79,7 +86,7 @@ const LowPriceComps = () => {
                     <p>Исходя из этого, вы можете купить дёшево системный блок и полноценно работать за своим новым компьютером или сделать из него недорогое игровое решение с возможностью дальнейшей модернизации. Такая покупка обойдется совсем недорого и доставит радость своей универсальностью.</p>
                 </div>
                 <div className={styles.imageMain}>
-                    <img className={styles.imageUno} src={chair} />
+                    <img className={styles.imageUno} src={chair} alt='img' />
                 </div>
             </div>
         </div>
