@@ -1,0 +1,29 @@
+.configurator_block{
+    display: flex;
+    gap: 10px;
+    
+}
+
+.configurator_components_left{
+    color: #8490a4;
+    font-size: 26px;
+    display: flex;
+    
+    gap: 10px;
+    border-bottom: 1px solid #8490a4;
+    padding: 10px;
+}
+
+.configurator_components_center{
+    color: #ffffff;
+    font-size: 26px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    border-bottom: 1px solid #8490a4;
+    padding: 10px;
+}
+
+.configurator_center{
+    padding: 10px;
+}

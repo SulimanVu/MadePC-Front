@@ -10,6 +10,7 @@ import LowPriceComps from "./pages/LowPrieceComps/LowPriceComps";
 import AboutUs from "./components/AboutUs/AboutUs";
 import Faq from "./components/Faq/Faq";
 import Comments from "./components/Comments/Comments";
+import ConfiguratorPage from "./pages/ConfiguratorPage/ConfiguratorPage";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
       <div className="main_route">
         <Routes>
           <Route path="/" element={<MainPage />} />
+          <Route path="/configurator" element={<ConfiguratorPage />} />
           <Route path="/about" element={<About />}>
             <Route path="company" element={<AboutUs />} />
             <Route path="faq" element={<Faq />} />

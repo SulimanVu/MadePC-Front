@@ -4,7 +4,7 @@ import st from "../../public/st.png";
 import cn from "classnames";
 
 const DropDown = ({ arr }) => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
   const [defaul, setDefault] = useState("Не выбрано");
 
   const handleOpen = (e) => {
