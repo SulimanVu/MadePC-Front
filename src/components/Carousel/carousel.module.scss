@@ -1,0 +1,9 @@
+.img{
+    width: fit-content;
+    margin: 20px auto;
+    cursor: pointer;
+    img{
+        object-fit: cover;
+        margin: auto;
+    }
+}
