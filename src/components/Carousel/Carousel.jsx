@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import styles from "./carousel.module.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import './carus.css'
 import cn from "classnames";
 
 const Carousel = () => {
@@ -12,7 +13,7 @@ const Carousel = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    initialSlide: 1,
+    initialSlide: 0,
     autoplay: true,
     autoplaySpeed: 2000,
     pauseOnHover: true,
