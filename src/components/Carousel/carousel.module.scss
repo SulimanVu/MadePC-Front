@@ -1,9 +1,62 @@
-.img{
-    width: fit-content;
-    margin: 20px auto;
+@import "../../index.scss";
+
+.main {
+  width: 90%;
+  margin: 20px auto;
+  font-family: "PT Sans";
+  .img {
     cursor: pointer;
-    img{
-        object-fit: cover;
-        margin: auto;
+    .block {
+      width: 40%;
+      padding-top: 100px;
+      height: fit-content;
+      h3 {
+        font-size: 20px;
+        font-weight: 300;
+        text-transform: uppercase;
+        color: $green;
+      }
+      h1 {
+        font-size: 30px;
+        font-weight: 500;
+        text-transform: capitalize;
+        color: #fff;
+      }
+      button {
+        width: 50%;
+        margin: 20px auto;
+        font-size: 16px;
+        font-weight: 700;
+        padding: 15px 40px;
+        background-color: $green;
+        border-radius: 5px;
+        text-transform: uppercase;
+        cursor: pointer;
+        &:hover {
+          background-color: #a7e200;
+        }
+      }
     }
+  }
+  .first {
+    padding: 5% 0 5% 5%;
+    height: 600px;
+    background-image: url(https://edelws.ru/upload/uf/ed2/ed2d1b069be44f360f73a8fc4c6cf019.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+  .second {
+    padding: 5% 0 5% 5%;
+    height: 600px;
+    background-image: url(https://edelws.ru/upload/uf/c14/c14de898aea83739167565f4d6fd3a7c.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+  .third {
+    padding: 5% 0 5% 5%;
+    height: 600px;
+    background-image: url(https://edelws.ru/upload/uf/402/4024ea498a2230141aa5d722f3da1c96.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
 }
