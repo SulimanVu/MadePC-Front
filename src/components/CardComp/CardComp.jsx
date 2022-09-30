@@ -1,19 +1,14 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { fetchComp } from '../../features/compSlice';
-import styles from '../CardComp/cardcomp.module.css';
+import styles from '../CardComp/cardcomp.module.scss';
 import rub from './images/rub.svg';
 import videocard from './images/videocard.svg';
-import speedometr from './images/speedometr.png'
 import ram from './images/ram.svg';
 import proc from './images/proc.svg';
 import ssd from './images/ssd.svg';
 import corpus from './images/corpus.svg';
-import speed from './images/speed.png';
 import fan from './images/fan.svg';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-import ProgressBar from 'react-customizable-progressbar'
 
 const CardComp = ({ computers }) => {
 

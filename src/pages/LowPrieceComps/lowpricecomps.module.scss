@@ -81,7 +81,7 @@
 
 .imageBattle1 {
     left: 1150px;
-    top: 500px;
+    top: 550px;
     position: absolute;
 }
 
@@ -116,4 +116,47 @@
 .titlePC {
     color: #FFFFFF;
     font: 30px "PF DinDisplay Pro";
+}
+
+.mainHeader {
+    height: 60px;
+    background-color: #0a0e15;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+}
+
+.imageDom {
+    width: 20px;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+.imageDom:hover {
+    filter: invert(100%);
+}
+
+.mainHeader p {
+    color: #FFFFFF;
+    margin-right: 5px;
+    font-size: 15px;
+    cursor: pointer;
+
+    &:hover {
+        color: #A7E200;
+        transition: 0.5s;
+    }
+}
+
+.mainHeader span {
+    color: #8490A4;
+}
+
+#p {
+    color: #8490A4;
+    font-size: 12px;
+}
+
+.decor {
+    text-decoration: none;
 }
