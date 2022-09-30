@@ -37,8 +37,8 @@
   left: 12%;
   top: 7%;
 }
-
-.nav1 {
+.link {
+  text-decoration: none;
   width: 33.25%;
   height: 100%;
   display: flex;
@@ -46,23 +46,31 @@
   align-items: flex-end;
   background-color: #1c232e;
   padding: 0 0 1% 2%;
-}
-
-.link {
-  text-decoration: none;
-}
-
-.link h1 {
-  color: white;
   &:hover {
-    color: #a7e200;
+    border-top: 4px solid #a7e200 !important;
+    div > h1 {
+      color: #a7e200 !important;
+    }
   }
 }
-
-.nav1:hover {
-  color: #a7e200 !important;
+.link h1 {
+  color: white;
+}
+.active {
+  text-decoration: none;
+  width: 33.25%;
+  height: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: flex-end;
+  background-color: #1c232e;
+  padding: 0 0 1% 2%;
   border-top: 4px solid #a7e200;
-  background-color: transparent;
+  .nav1 {
+    h1 {
+      color: #a7e200 !important;
+    }
+  }
 }
 
 ////////// Боди /////////////

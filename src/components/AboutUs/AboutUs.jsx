@@ -4,7 +4,7 @@ import styles from "../AboutUs/AboutUs.module.scss";
 const AboutUs = () => {
   return (
     <div className={styles.AboutUs}>
-      <div className={styles.Header}>
+      {/* <div className={styles.Header}>
         <div className={styles.Title}>
           <h1>Философия гейминга от EDELWEISS</h1>
         </div>
@@ -25,7 +25,7 @@ const AboutUs = () => {
             <h1>Отзывы</h1>
           </Link>
         </div>
-      </div>
+      </div> */}
       <br />
       <br />
       <br />
