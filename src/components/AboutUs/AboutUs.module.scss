@@ -2,75 +2,9 @@
 
 .AboutUs {
   width: 100%;
-  height: 3400px;
+  height: 3000px;
   position: relative;
   background-color: #151a22;
-}
-///////////// Хэдер /////////////
-.Header {
-  width: 100%;
-  height: 250px;
-  display: flex;
-  align-items: center;
-  background-image: url("https://edelws.ru/upload/uf/0c7/0c7b1d9c128122886140489168487a9d.png");
-}
-
-.Title {
-  width: 50%;
-  margin: auto;
-}
-
-.Title h1 {
-  font-size: 55px;
-  color: white;
-  font-family: "PF-Din-Text-Cond-Pro";
-}
-
-////////// Навигэйт /////////////
-.Nave {
-  width: 75%;
-  height: 100px;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  position: absolute;
-  left: 12%;
-  top: 7%;
-}
-.link {
-  text-decoration: none;
-  width: 33.25%;
-  height: 100%;
-  display: flex;
-  justify-content: start;
-  align-items: flex-end;
-  background-color: #1c232e;
-  padding: 0 0 1% 2%;
-  &:hover {
-    border-top: 4px solid #a7e200 !important;
-    div > h1 {
-      color: #a7e200 !important;
-    }
-  }
-}
-.link h1 {
-  color: white;
-}
-.active {
-  text-decoration: none;
-  width: 33.25%;
-  height: 100%;
-  display: flex;
-  justify-content: start;
-  align-items: flex-end;
-  background-color: #1c232e;
-  padding: 0 0 1% 2%;
-  border-top: 4px solid #a7e200;
-  .nav1 {
-    h1 {
-      color: #a7e200 !important;
-    }
-  }
 }
 
 ////////// Боди /////////////
@@ -126,6 +60,7 @@
   height: 420px;
   display: flex;
   position: relative;
+  bottom: 30%;
 }
 
 .blocks1 {

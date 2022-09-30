@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../../components/AboutUs/AboutUs.module.scss";
+import styles from "../AboutPage/AboutPage.module.scss";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import cn from "classnames";
 
