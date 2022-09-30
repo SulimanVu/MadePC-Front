@@ -3,4 +3,83 @@
     justify-content: space-around;
     align-items: center;
     flex-flow: row wrap;
+    background-image: url('https://edelws.ru/local/templates/main/img/bg.png');
+}
+
+
+
+.mainImageCard {
+    background-image: url('https://edelws.ru/upload/uf/ccb/ccb27cfac373aa3ae12678e395237603.png');
+    background-size: cover;
+    background-color: rgb(24, 23, 23);
+    height: 450px;
+    /* margin-bottom: 20px; */
+}
+
+.mainImageCard1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 700px;
+    margin: 0 auto;
+    height: 100%;
+    /* margin-bottom: 70px; */
+    /* margin-top: 40px; */
+}
+
+.title {
+    font-size: 40px;
+    word-break: break-all;
+    color: #FFFFFF;
+}
+
+.info {
+    font-size: 20px;
+    /* word-break: break-all; */
+    width: 80%;
+    margin-left: 8%;
+    color: #8490A4;
+
+}
+
+.CardMain1 {
+    width: 210px;
+    word-break: break-all;
+    color: #C3CEE1;
+    font-size: 20px;
+}
+
+.cardMain {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+
+.catalogName {
+    margin-left: 7%;
+    padding-top: 25px;
+    color: #FFFFFF;
+}
+
+.h {
+    font-size: 24px;
+}
+
+.star {
+    margin-bottom: 2%;
+}
+
+.catalogChild {
+    background-color: #1C232E;
+    height: 310px;
+}
+
+.imageBattle1 {
+    left: 1150px;
+    top: 500px;
+    position: absolute;
+}
+
+.size {
+   margin-right: 0px;
 }
