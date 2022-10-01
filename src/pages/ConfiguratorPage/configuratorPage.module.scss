@@ -4,6 +4,7 @@
     
 }
 
+
 .configurator_components_left{
     color: #8490a4;
     font-size: 26px;
@@ -14,16 +15,91 @@
     padding: 10px;
 }
 
+
 .configurator_components_center{
     color: #ffffff;
-    font-size: 26px;
+    font-size: 29px;
     display: flex;
     justify-content: space-between;
     gap: 10px;
-    border-bottom: 1px solid #8490a4;
-    padding: 10px;
+   
+    padding: 30px 0;
+}
+.configurator_components_item_title{
+   
+    width: 40%;
+}
+.configurator_components_item_list{
+   
+    width: 40%;
+}
+.configurator_components_item_icon{
+   
+    width: 20%;
 }
 
 .configurator_center{
+ 
     padding: 10px;
+    width: 44%;
+    overflow: hidden;
 }
+.configurator_left{
+    padding: 10px;
+    width: 28%;
+}
+.configurator_rigth{
+    padding: 10px;
+    width: 28%;
+    
+}
+
+.configurator_input{
+    input{
+        background: #151a22;
+    border: 1px solid #3f4c5f;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    width: 100%;
+    height: 2.5rem;
+    line-height: 2.375rem;
+    padding: 0 2rem 0 0.5rem;
+    font-weight: 500;
+    font-size: .875rem;
+    line-height: 1.14;
+    letter-spacing: .03em;
+    text-transform: uppercase;
+    color: #8490a4;
+    }
+}
+
+
+.configurator_comp{
+    background-color: #1c232e;
+    padding: 20px;
+    margin-top: 20px ;
+    width: 100%;
+   
+}
+.configurator_price{
+    display: flex;
+    gap: 10px;
+    border-bottom:1px solid #3f4c5f ;
+    padding-bottom: 17px;
+}
+
+
+.configurator_btn{
+    margin-top: 20px;
+   button{
+    border: none;
+    border-radius: 5px;
+    background-color: #a7e200;
+    color: black;
+    padding: 8px 36px;
+    font-size: 18px ;
+   }
+}
+
