@@ -5,9 +5,6 @@ const initialState = {
   load: false,
 };
 
-
-
-
 export const fetchvideoCards = createAsyncThunk(
   "fetch/videocards",
   async (_, thunkAPI) => {
@@ -28,7 +25,7 @@ const videoCardsSclice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchvideoCards.fulfilled, (state, action) => {
-        state.movies = action.payload;
+        state.videoCards = action.payload;
         state.load = false;
       })
       .addCase(fetchvideoCards.pending, (state, action) => {
@@ -36,10 +33,8 @@ const videoCardsSclice = createSlice({
       })
       .addCase(fetchvideoCards.rejected, (state, action) => {
         state.load = true;
-      })
-      
+      });
   },
 });
-
 
 export default videoCardsSclice.reducer;

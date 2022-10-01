@@ -5,15 +5,18 @@ const initialState = {
   loadCoolers: false,
 };
 
-const fetchCooler = createAsyncThunk("fetch/coolers", async (_, thunkAPI) => {
-  try {
-    const res = await fetch("http://localhost:3010/coolers");
-    const data = await res.json();
-    return data;
-  } catch (e) {
-    thunkAPI.rejectWithValue(e);
+export const fetchCooler = createAsyncThunk(
+  "fetch/coolers",
+  async (_, thunkAPI) => {
+    try {
+      const res = await fetch("http://localhost:3010/coolers");
+      const data = await res.json();
+      return data;
+    } catch (e) {
+      thunkAPI.rejectWithValue(e);
+    }
   }
-});
+);
 
 const coolerSlice = createSlice({
   name: "cooler",

@@ -11,6 +11,7 @@ import AboutUs from "./components/AboutUs/AboutUs";
 import Faq from "./components/Faq/Faq";
 import Comments from "./components/Comments/Comments";
 import ConfiguratorPage from "./pages/ConfiguratorPage/ConfiguratorPage";
+import ArrayDrop from "./components/ArrayDrop/ArrayDrop";
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
           <Route path="/signin" element={<SignIn />} />
           <Route path="/game" element={<PCForGame />} />
           <Route path="/lowprice" element={<LowPriceComps />} />
+          <Route path="/dr" element={<ArrayDrop/>} />
         </Routes>
       </div>
       <Footer />
