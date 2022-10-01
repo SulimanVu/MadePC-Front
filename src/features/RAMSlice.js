@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 const initialState = {
-  RAM: [],
+  ram: [],
   loading: false,
   error: null,
 };
@@ -29,7 +29,7 @@ const RAMSlice = createSlice({
         state.loading = true;
       })
       .addCase(fetchRAM.fulfilled, (state, action) => {
-        state.RAM = action.payload;
+        state.ram = action.payload;
         state.loading = false;
       })
       .addCase(fetchRAM.rejected, (state, action) => {

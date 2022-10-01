@@ -14,7 +14,7 @@ export const authThunk = createAsyncThunk(
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ login:reglogin, password:regPassword }),
+        body: JSON.stringify({ login: reglogin, password: regPassword }),
       });
       const token = await res.json();
 

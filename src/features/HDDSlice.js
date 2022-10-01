@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 const initialState = {
-  HDD: [],
+  hdd: [],
   loading: false,
   error: null,
 };
@@ -26,7 +26,7 @@ const HDDSlice = createSlice({
         state.loading = true;
       })
       .addCase(fetchHDD.fulfilled, (state, action) => {
-        state.HDD = action.payload;
+        state.hdd = action.payload;
         state.loading = false;
       })
       .addCase(fetchHDD.rejected, (state, action) => {

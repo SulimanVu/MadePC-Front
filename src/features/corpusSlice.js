@@ -21,7 +21,7 @@ const corpusSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(getCorpus.fulfilled, (state, action) => {
-      state.board = action.payload;
+      state.corpus = action.payload;
       state.loader = false;
     });
   },
