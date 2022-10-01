@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "../Faq/Faq.module.scss";
+import styles from "../Faq/faq.module.scss";
 
 const Faq = () => {
   const [secret, setSecret] = useState(false);
