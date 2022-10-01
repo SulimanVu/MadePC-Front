@@ -1,155 +1,162 @@
 .header_container {
-    height: 120px;
-    align-items: center;
-    background: #212936;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: space-between;
+  height: 120px;
+  align-items: center;
+  background: #212936;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
 }
 
 .nav_block {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 20vh;
-    padding-left: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20vh;
+  padding-left: 40px;
 }
 
 .img_location {
-    margin-left: 60px;
-    width: 22px;
-    height: 22px;
-    -webkit-filter: invert(100%);
-    cursor: pointer;
+  margin-left: 60px;
+  width: 22px;
+  height: 22px;
+  -webkit-filter: invert(100%);
+  cursor: pointer;
 }
 
 .phone_img {
-    margin-left: 70px;
-    cursor: pointer;
+  margin-left: 70px;
+  cursor: pointer;
 }
 
 .number {
-    text-transform: uppercase;
-    font-family:'PT Sans';
-    font-weight: 100;
-    margin-left: 10px;
-    font-size: 24px;
-    color: #a7e200;
-    font-family: sans-serif;
-    cursor: pointer;
+  text-transform: uppercase;
+  font-family: "PT Sans";
+  font-weight: 100;
+  margin-left: 10px;
+  font-size: 24px;
+  color: #a7e200;
+  font-family: sans-serif;
+  cursor: pointer;
 }
 
-.number:hover{
-    color:#fff;
+.number:hover {
+  color: #fff;
 }
 
 .placeMap {
-    text-transform: uppercase;
-    font-family:'PT Sans';
-    font-weight: 100;
-    margin-left: 10px;
-    font-size: 24px;
-    color: #a7e200;
-    cursor: pointer;
+  text-transform: uppercase;
+  font-family: "PT Sans";
+  font-weight: 100;
+  margin-left: 10px;
+  font-size: 24px;
+  color: #a7e200;
+  cursor: pointer;
 }
 
 .placeMap:hover {
-    color: #fff
+  color: #fff;
 }
 
 .list {
-    display: flex;
-    align-items: center;
-    list-style: none;
+  display: flex;
+  align-items: center;
+  list-style: none;
 }
 
 .item {
-    text-transform: uppercase;
-    font-family:'PT Sans';
-    font-size: 14px;
-    margin-right: 20px;
-    color: #fff;
-    cursor: pointer;
-    &:last-child{
-        margin-right: 70px;
-    }
-    &:hover{
-        color: #a7e200;
-    }
+  text-transform: uppercase;
+  font-family: "PT Sans";
+  font-size: 14px;
+  margin-right: 20px;
+  color: #fff;
+  cursor: pointer;
+  &:last-child {
+    margin-right: 70px;
+  }
+  &:hover {
+    color: #a7e200;
+  }
 }
 
 .nested_list {
-    position: absolute;
-    left: 79.7%;
-    top: 7%;
-   opacity: 0;
-    padding: 0;
+  position: absolute;
+  width: 40px;
+  left: 79.7%;
+  top: 7%;
+  opacity: 0;
+  padding: 0;
+  cursor: pointer;
+  .nested_item{
+    width: 150px;
+  }
 }
-
 
 .nested_list2 {
-    position: absolute;
-    left: 84.7%;
-    top: 7%;
-   opacity: 0;
-    padding: 0;
+  position: absolute;
+  width: 80px;
+  left: 84.7%;
+  top: 7%;
+  opacity: 0;
+  padding: 0;
+  cursor: pointer;
+  .nested_item2{
+    width: 150px;
+  }
 }
 
-
 .nested_list:hover {
-    opacity: 1;
-    width: 155px;
+  opacity: 1;
+  width: 155px;
 }
 
 .nested_list2:hover {
-    opacity: 1;
-    width: 175px;
+  opacity: 1;
+  width: 175px;
 }
 
-.nested_item{
-    padding-top: 10px;
-    background: #151a22;
+.nested_item {
+  padding-top: 10px;
+  background: #151a22;
 
-    &:first-child{
-
-    
+  &:first-child {
     margin-top: 25px;
     border-top: 2px solid #a7e200;
-    }
+  }
 }
-.nested_item2{
-    padding-top: 10px;
-    background: #151a22;
+.nested_item2 {
+  padding-top: 10px;
+  background: #151a22;
 
-    &:first-child{
-
-    
+  &:first-child {
     margin-top: 25px;
     border-top: 2px solid #a7e200;
-    }
+  }
 }
 
 .nested_link {
-    font-size: 14px;
-    text-transform: uppercase;
-    font-family:'PT Sans';
-    color: #fff;
-    &:hover{
-        color: #a7e200;
-    }
+  font-size: 14px;
+  text-transform: uppercase;
+  font-family: "PT Sans";
+  color: #fff;
+  &:hover {
+    color: #a7e200;
+  }
+}
+.active {
+  color: #a7e200 !important;
 }
 .nested_link2 {
-    font-size: 14px;
-    text-transform: uppercase;
-    font-family:'PT Sans';
-    color: #fff;
-    &:hover{
-        color: #a7e200;
-    }
+  font-size: 14px;
+  text-transform: uppercase;
+  font-family: "PT Sans";
+  color: #fff;
+  &:hover {
+    color: #a7e200;
+  }
 }
 
 .img {
-    padding-top: 10px;
+  padding-top: 10px;
   width: 20px;
   height: 20px;
   fill: #a7e200;

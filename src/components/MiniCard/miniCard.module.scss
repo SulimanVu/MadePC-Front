@@ -10,6 +10,7 @@
     width: 31%;
     height: 200px;
     background-color: #1c232e;
+    transition: .5s;
     &:hover {
       background-color: $green;
       cursor: pointer;
