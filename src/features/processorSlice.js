@@ -11,7 +11,7 @@ const fetchProcessors = createAsyncThunk(
     try {
       const res = await fetch("http://localhost:3010/processors");
       const data = await res.json();
-      
+
       return data;
     } catch (e) {
       thunkAPI.rejectWithValue(e);
