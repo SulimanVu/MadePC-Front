@@ -11,6 +11,7 @@ import questionSlice from "../features/questionSlice";
 import power from "../features/powerUnit";
 import video from "../features/videoCardSlice";
 import ssd from "../features/ssdSlice";
+import commentSlice from "../features/commentSlice";
 
 export const store = configureStore({
   reducer: {
@@ -26,5 +27,6 @@ export const store = configureStore({
     questionSlice,
     power,
     video,
+    commentSlice,
   },
 });
