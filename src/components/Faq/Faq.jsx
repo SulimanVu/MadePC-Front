@@ -1,8 +1,18 @@
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchQuestion } from "../../features/questionSlice";
 import { useState } from "react";
 import styles from "../Faq/faq.module.scss";
 
 const Faq = () => {
   const [secret, setSecret] = useState(false);
+
+  const question = useSelector((state) => state.questionSlice.question);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchQuestion());
+  }, [dispatch]);
 
   const handleClick = () => {
     setSecret(!secret);
@@ -15,23 +25,26 @@ const Faq = () => {
       <br />
       <br />
       <div className={styles.block}>
-        <h1 className={styles.Title}>Вопросы по доставке</h1>
-        <div className={styles.Text} onClick={handleClick}>
-          <p
-            className={styles.Numbers}
-            style={{ color: secret ? "#a7e200" : "#fff" }}
-          >
-            1. Сколько ждать доставку если я живу в другом городе?
-            <button>{secret ? "-" : "+"}</button>
-          </p>
-          <p
-            className={styles.Secret}
-            style={{ display: secret ? "block" : "none" }}
-          >
-            Зависит от расстояния и транспортной доступности. В среднем на
-            доставку по РФ уходит около 7 рабочих дней.
-          </p>
-        </div>
+        <h1 className={styles.Title}>Часто задаваемые вопросы</h1>
+        {question.map((item) => {
+          return (
+            <div className={styles.Text} onClick={handleClick}>
+              <div
+                className={styles.Numbers}
+                style={{ color: secret ? "#a7e200" : "#fff" }}
+              >
+                {item.nomer}. {item.vopros}
+                <button>{secret ? "-" : "+"}</button>
+              </div>
+              <div
+                className={styles.Secret}
+                style={{ display: secret ? "block" : "none" }}
+              >
+                {item.otvet}
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

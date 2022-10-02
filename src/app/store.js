@@ -7,6 +7,7 @@ import hdd from "../features/HDDSlice";
 import processor from "../features/processorSlice";
 import cooler from "../features/coolerSlice";
 import corpus from "../features/corpusSlice";
+import questionSlice from "../features/questionSlice";
 import power from "../features/powerUnit";
 import video from "../features/videoCardSlice";
 import ssd from "../features/ssdSlice";
@@ -22,6 +23,7 @@ export const store = configureStore({
     cooler,
     corpus,
     comp,
+    questionSlice,
     power,
     video,
   },
