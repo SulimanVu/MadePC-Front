@@ -12,11 +12,13 @@ import Faq from "./components/Faq/Faq";
 import Comments from "./components/Comments/Comments";
 import ConfiguratorPage from "./pages/ConfiguratorPage/ConfiguratorPage";
 import ArrayDrop from "./components/ArrayDrop/ArrayDrop";
+import Nav from "./components/Nav/Nav";
 
 const App = () => {
   return (
     <>
       <Header />
+      <Nav/>
       <div className="main_route">
         <Routes>
           <Route path="/" element={<MainPage />} />
