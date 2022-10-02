@@ -7,6 +7,7 @@ import HDD from "../features/HDDSlice";
 import processor from '../features/processorSlice';
 import cooler from '../features/coolerSlice'
 import corpus from "../features/corpusSlice";
+import game from '../features/gameSlice';
 
 export const store = configureStore({
   reducer: {
@@ -17,6 +18,7 @@ export const store = configureStore({
     processor,
     cooler,
     corpus,
-    comp
+    comp,
+    game
   }
 });
