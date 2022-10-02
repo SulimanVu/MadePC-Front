@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchQuestion } from "../../features/questionSlice";
+import { useState } from "react";
 import styles from "../Faq/faq.module.scss";
 
 const Faq = () => {

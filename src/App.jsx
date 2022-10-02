@@ -11,11 +11,14 @@ import AboutUs from "./components/AboutUs/AboutUs";
 import Faq from "./components/Faq/Faq";
 import Comments from "./components/Comments/Comments";
 import ConfiguratorPage from "./pages/ConfiguratorPage/ConfiguratorPage";
+import ArrayDrop from "./components/ArrayDrop/ArrayDrop";
+import Nav from "./components/Nav/Nav";
 
 const App = () => {
   return (
     <>
       <Header />
+      <Nav/>
       <div className="main_route">
         <Routes>
           <Route path="/" element={<MainPage />} />
@@ -28,6 +31,7 @@ const App = () => {
           <Route path="/signin" element={<SignIn />} />
           <Route path="/game" element={<PCForGame />} />
           <Route path="/lowprice" element={<LowPriceComps />} />
+          <Route path="/dr" element={<ArrayDrop/>} />
         </Routes>
       </div>
       <Footer />

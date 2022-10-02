@@ -8,8 +8,11 @@
     cursor: pointer;
     .block {
       width: 40%;
-      padding-top: 100px;
-      height: fit-content;
+      margin: 200px 0 0 50px;
+      display: flex;
+      flex-direction: column;
+      align-content: center !important;
+      text-align: center !important;
       h3 {
         font-size: 20px;
         font-weight: 300;
@@ -39,21 +42,18 @@
     }
   }
   .first {
-    padding: 5% 0 5% 5%;
     height: 600px;
     background-image: url(https://edelws.ru/upload/uf/ed2/ed2d1b069be44f360f73a8fc4c6cf019.jpg);
     background-repeat: no-repeat;
     background-size: 100%;
   }
   .second {
-    padding: 5% 0 5% 5%;
     height: 600px;
     background-image: url(https://edelws.ru/upload/uf/c14/c14de898aea83739167565f4d6fd3a7c.jpg);
     background-repeat: no-repeat;
     background-size: 100%;
   }
   .third {
-    padding: 5% 0 5% 5%;
     height: 600px;
     background-image: url(https://edelws.ru/upload/uf/402/4024ea498a2230141aa5d722f3da1c96.jpg);
     background-repeat: no-repeat;
