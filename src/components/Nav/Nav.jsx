@@ -23,10 +23,10 @@ const Nav = () => {
             <Link to="/configurator">Конфигуратор ПК</Link>
           </li>
           <li>
-            <Link to="/">Недорогие ПК</Link>
+            <Link to="/lowprice">Недорогие ПК</Link>
           </li>
           <li>
-            <Link to="/">Игровые ПК</Link>
+            <Link to="/lowprice">Игровые ПК</Link>
           </li>
           <li>
             <Link to="/">Мощнейшие ПК</Link>
@@ -40,7 +40,7 @@ const Nav = () => {
         <div>
           <IconButton aria-label="cart">
             <StyledBadge badgeContent={4} color="secondary">
-              <ShoppingCartIcon />
+              <Link className={styles.basket} to="/basket"><ShoppingCartIcon /></Link>
             </StyledBadge>
           </IconButton>
         </div>
