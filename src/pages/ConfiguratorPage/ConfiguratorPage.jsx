@@ -6,6 +6,7 @@ import ram from "./images/ram.svg";
 import rub from "./images/rub.svg";
 import mask from "./images/configurator-mask.svg";
 import DropDown from "../../components/DropDown/DropDown";
+import ArrayDrop from "../../components/ArrayDrop/ArrayDrop";
 const ConfiguratorPage = () => {
   const components = [
     {
@@ -50,22 +51,23 @@ const ConfiguratorPage = () => {
           })}
         </div>
         <div className={styles.configurator_center}>
-          {components.map((item) => {
+          {/* {components.map((item) => {
             return (
               <div className={styles.configurator_components_center}>
                 <div className={styles.configurator_components_item_title}>
                   {item.title}
                 </div>
                 <div className={styles.configurator_components_item_list}>
-                  <DropDown />
-                  {/* <DropDown arr={item} /> */}
-                </div>
+                  <DropDown /> */}
+          {/* <DropDown arr={item} /> */}
+          {/* </div>
                 <div className={styles.configurator_components_item_icon}>
                   <img src={item.image} alt="" />
                 </div>
               </div>
             );
-          })}
+          })} */}
+          <ArrayDrop />
         </div>
         <div className={styles.configurator_rigth}>
           <div className={styles.configurator_input}>
