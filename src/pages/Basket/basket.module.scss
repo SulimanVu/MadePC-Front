@@ -1,0 +1,39 @@
+.nav {
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.529);
+    width: 100%;
+    height: 70px;
+    padding-left: 40px;
+    position: absolute;
+
+    p {
+        color: #8490A4;
+        font-size: 15px;
+    }
+}
+
+.imageDom {
+    width: 20px;
+    margin-right: 5px;
+    margin-top: 5px;
+
+    &:hover {
+        filter: invert(100%);
+    }
+}
+
+.mainImg {
+    background-image: url('https://edelws.ru/upload/uf/bfc/bfc073b789ca7a1468b32add7c7dfa34.png');
+    background-size: cover;
+    background-color: rgb(12, 12, 12);
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h1 {
+        font-size: 4rem;
+        color: #FFFFFF;
+    }
+}

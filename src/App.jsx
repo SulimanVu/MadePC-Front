@@ -13,6 +13,7 @@ import Comments from "./components/Comments/Comments";
 import ConfiguratorPage from "./pages/ConfiguratorPage/ConfiguratorPage";
 import ArrayDrop from "./components/ArrayDrop/ArrayDrop";
 import Nav from "./components/Nav/Nav";
+import Basket from "./pages/Basket/Basket";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
       <Nav/>
       <div className="main_route">
         <Routes>
+          <Route path="/basket" element={<Basket/>} />
           <Route path="/" element={<MainPage />} />
           <Route path="/configurator" element={<ConfiguratorPage />} />
           <Route path="/about" element={<About />}>
