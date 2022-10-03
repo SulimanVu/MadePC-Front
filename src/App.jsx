@@ -5,7 +5,7 @@ import SignIn from "./components/SignIn/SignIn";
 import MainPage from "./pages/MainPage/MainPage";
 import About from "./pages/AboutPage/AboutPage";
 import { Navigate, Route, Routes } from "react-router-dom";
-import PCForGame from "./components/PCForGame/PCForGame";
+import PCForGame from "./pages/PCForGame/PCForGame";
 import LowPriceComps from "./pages/LowPrieceComps/LowPriceComps";
 import AboutUs from "./components/AboutUs/AboutUs";
 import Faq from "./components/Faq/Faq";
@@ -37,6 +37,7 @@ const App = () => {
         </Route>
         <Route path="/game" element={<PCForGame />} />
         <Route path="/lowprice" element={<LowPriceComps />} />
+      
         <Route path="/dr" element={<ArrayDrop/>} />
           </Route>
           <Route path = "/signin" element = {<Navigate to="/"/>}/>
