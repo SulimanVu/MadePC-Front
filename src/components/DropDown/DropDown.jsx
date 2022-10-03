@@ -39,62 +39,6 @@ const DropDown = ({ arr }) => {
             })
           : null}
       </div>
-
-      {/* <div className={styles.parent}>
-        {!open ? (
-          <>
-            <div
-              className={styles.child}
-              tabIndex={"0"}
-              onClick={(e) => handleSelect(e)}
-            >
-              qwerty
-            </div>
-            <div
-              className={styles.child}
-              tabIndex={"0"}
-              onClick={(e) => handleSelect(e)}
-            >
-              yuire
-            </div>
-            <div
-              className={styles.child}
-              tabIndex={"0"}
-              onClick={(e) => handleSelect(e)}
-            >
-              xcbvxc
-            </div>
-            <div
-              className={styles.child}
-              tabIndex={"0"}
-              onClick={(e) => handleSelect(e)}
-            >
-              hbhjbhj
-            </div>
-            <div
-              className={styles.child}
-              tabIndex={"0"}
-              onClick={(e) => handleSelect(e)}
-            >
-              hvhjv
-            </div>
-            <div
-              className={styles.child}
-              tabIndex={"0"}
-              onClick={(e) => handleSelect(e)}
-            >
-              ououhoh
-            </div>
-            <div
-              className={styles.child}
-              tabIndex={"0"}
-              onClick={(e) => handleSelect(e)}
-            >
-              yccufyug
-            </div>
-          </>
-        ) : null}
-      </div> */}
     </div>
   );
 };

@@ -51,22 +51,6 @@ const ConfiguratorPage = () => {
           })}
         </div>
         <div className={styles.configurator_center}>
-          {/* {components.map((item) => {
-            return (
-              <div className={styles.configurator_components_center}>
-                <div className={styles.configurator_components_item_title}>
-                  {item.title}
-                </div>
-                <div className={styles.configurator_components_item_list}>
-                  <DropDown /> */}
-          {/* <DropDown arr={item} /> */}
-          {/* </div>
-                <div className={styles.configurator_components_item_icon}>
-                  <img src={item.image} alt="" />
-                </div>
-              </div>
-            );
-          })} */}
           <ArrayDrop />
         </div>
         <div className={styles.configurator_rigth}>
