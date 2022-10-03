@@ -13,41 +13,40 @@ const AboutPage = () => {
         <div className={styles.Title}>
           <h1>Философия гейминга от EDELWEISS</h1>
         </div>
+        <div className={styles.Nave}>
+          <Link
+            to="company"
+            className={cn(
+              styles.link,
+              path === "/about/company" && styles.active
+            )}
+          >
+            <div className={styles.nav1}>
+              <h1>О компании</h1>
+            </div>
+          </Link>
+          <Link
+            to="faq"
+            className={cn(styles.link, path === "/about/faq" && styles.active)}
+          >
+            <div className={styles.nav1}>
+              <h1>FAQ</h1>
+            </div>
+          </Link>
+          <Link
+            to="comments"
+            className={cn(
+              styles.link,
+              path === "/about/comments" && styles.active
+            )}
+          >
+            <div className={styles.nav1}>
+              <h1>Отзывы</h1>
+            </div>
+          </Link>
+        </div>
       </div>
-      <div className={styles.Nave}>
-        <Link
-          to="company"
-          className={cn(
-            styles.link,
-            path === "/about/company" && styles.active
-          )}
-        >
-          <div className={styles.nav1}>
-            <h1>О компании</h1>
-          </div>
-        </Link>
-        <Link
-          to="faq"
-          className={cn(
-            styles.link,
-            path === "/about/faq" && styles.active)}
-        >
-          <div className={styles.nav1}>
-            <h1>FAQ</h1>
-          </div>
-        </Link>
-        <Link
-          to="comments"
-          className={cn(
-            styles.link,
-            path === "/about/comments" && styles.active
-          )}
-        >
-          <div className={styles.nav1}>
-            <h1>Отзывы</h1>
-          </div>
-        </Link>
-      </div>
+
       <Outlet />
     </div>
   );

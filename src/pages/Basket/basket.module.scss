@@ -45,4 +45,38 @@
 .wrapper {
     width: 60%;
     padding: 20px;
+    padding-left: 40px;
+
+    h2 {
+        font-size: 30px;
+        color: #fff;
+        margin-left: 12px;
+        margin-bottom: 15px;
+    }
+}
+
+.total {
+    width: 500px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    margin-left: 450px;
+    display: flex;
+    // border: 1px solid silver;
+    justify-content: flex-end;
+
+    p {
+        margin-left: 30px;
+        color: #A7E200;
+        margin-top: 0px;
+        font-size: 25px;
+    }
+}
+
+.total1 {
+    margin-left: 20px;
+}
+
+.imgRub {
+    margin-left: 5px;
+    width: 20px;
 }
