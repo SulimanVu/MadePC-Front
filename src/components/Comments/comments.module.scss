@@ -1,65 +1,79 @@
 @import "../../index.scss";
 
 .Block {
-    width: 55%;
-    margin: auto;
+  width: 55%;
+  margin: auto;
 }
 
 .Block2 {
-    width: 100%;
-    margin-top: 10%;
+  width: 100%;
+  margin-top: 10%;
 }
 
 .Inputs {
-    width: 60%;
-    height: 50px;
-    margin: auto;
-    display: flex;
+  width: 60%;
+  height: 50px;
+  margin: auto;
+  display: flex;
 }
 
-.Inputs input{
-    width: 80%;
-    height: 100%;
-    font-size: 15px;
-    padding: 5px 10px;
+.Inputs input {
+  width: 80%;
+  height: 100%;
+  font-size: 15px;
+  padding: 5px 10px;
 }
 
-.Inputs button{
-    width: 20%;
-    height: 100%;
-    font-size: 20px;
+.Inputs button {
+  width: 20%;
+  height: 100%;
+  font-size: 20px;
 }
 
 .BlockComment {
-    width: 100%;
-    height: 500px;
-    margin-top: 5%;
-    color: white;
+  width: 100%;
+  margin: 5% 0;
+  color: white;
 }
 
 /////
 .Comment {
-    width: 100%;
-    margin-top: 3%;
+  width: 100%;
+  margin-top: 5%;
 }
 
 .log {
-    width: 100%;
-    color: $green;
-    font-size: 20px;
+  width: 100%;
+  color: gray;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+}
+
+.pp {
+  font-size: 24px;
+  color: $gray;
+}
+
+.pp:first-letter {
+  color: $green;
+  font-size: 27px;
 }
 
 .text {
-    width: 100%;
+  width: 100%;
 }
 
-.text p{
-    width: 100%;
-    font-size: 17px;
+.sp {
+  width: 100%;
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 0;
 }
 
-.text span{
-    width: 100%;
-    color: white;
-    font-size: 15px;
+.text span {
+  width: 100%;
+  color: white;
+  font-size: 15px;
 }
