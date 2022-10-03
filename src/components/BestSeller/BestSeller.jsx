@@ -4,6 +4,7 @@ import { fetchComp } from "../../features/compSlice";
 import CardComp from "../CardComp/CardComp";
 import ModalBuy from "../ModalBuy/ModalBuy";
 import styles from "./bestseller.module.scss";
+import { Link } from "react-router-dom";
 
 const BestSeller = () => {
   const [modal, setModal] = useState(false);
@@ -20,8 +21,9 @@ const BestSeller = () => {
     <div>
       {modal ? <ModalBuy setModal={setModal} /> : null}
       <h2 className={styles.text}>
-        Хит продаж <button>смотреть все</button>
+        Хит продаж <Link to='/lowprice'><button>смотреть все</button></Link>
       </h2>
+      <br />
       <div className={styles.cards}>
         {cards.map((item) => {
           return <CardComp computers={item} setModal={setModal} />;
