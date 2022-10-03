@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
 
+.header_header_container__HZc56{
+  display: none !important;
+}
+.nav_nav__fkFxD{
+  display:  none !important;
+}
+
 body{
 	font-family: 'Poppins', sans-serif;
 	font-weight: 300;
@@ -30,7 +37,7 @@ body{
   color: #c4c3ca;
 }
 .link:hover {
-  color: #ffeba7;
+  color: #868582;
 }
 p {
   font-weight: 500;
@@ -75,7 +82,7 @@ h6 span{
   padding: 0;
   margin: 10px auto;
   cursor: pointer;
-  background-color: #ffeba7;
+  background-color: #5a5955;
 }
 .checkbox:checked + label:before,
 .checkbox:not(:checked) + label:before{
@@ -84,8 +91,8 @@ h6 span{
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  color: #ffeba7;
-  background-color: #102770;
+  color: #4d4b47;
+  background-color: #fa7b04;
   font-family: 'unicons';
   content: '\eb4f';
   z-index: 20;
@@ -125,7 +132,7 @@ h6 span{
 .card-front, .card-back {
   width: 100%;
   height: 100%;
-  background-color: #2a2b38;
+  background-color:#1c232e;
   background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg');
   background-position: bottom center;
   background-repeat: no-repeat;
@@ -162,7 +169,7 @@ h6 span{
 .form-group{ 
   position: relative;
   display: block;
-    margin: 0;
+    margin: 15px 0;
     padding: 0;
 }
 .form-style {
@@ -271,19 +278,19 @@ h6 span{
   -ms-flex-pack: center;
   text-align: center;
   border: none;
-  background-color: #ffeba7;
-  color: #102770;
+  background-color: #ff810a;
+  color: #fafafa;
   box-shadow: 0 8px 24px 0 rgba(255,235,167,.2);
 }
 .btn:active,
 .btn:focus{  
-  background-color: #102770;
-  color: #ffeba7;
+  background-color: #737479;
+  color: #6e6c66;
   box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
 }
 .btn:hover{  
-  background-color: #102770;
-  color: #ffeba7;
+  background-color:#ff9e0b;
+  color: #ffd2a7;
   box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
 }
 
