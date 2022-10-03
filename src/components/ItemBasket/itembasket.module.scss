@@ -1,0 +1,81 @@
+@import "../../index.scss";
+
+.itemMain {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 900px;
+    border-bottom: 1px solid #8490A4;
+    padding: 7px;
+    margin-left: 10px;
+}
+
+.Basket {
+    display: flex;
+    width: 250px;
+    justify-content: space-between;
+    align-items: center;
+
+    .imgBasket {
+        width: 90px;
+    }
+
+    p {
+        font-size: 15px;
+        color: #fff;
+    }
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+    align-items: center;
+
+    p {
+        font-size: 17px;
+        color: #A7E200;
+    }
+}
+
+.plusMinus {
+    display: flex;
+    width: 60px;
+    justify-content: space-between;
+    border: 1px solid #8490A4;
+    padding: 1px;
+
+    button {
+        border: none;
+        background-color: unset;
+        color: #A7E200;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    p {
+        color: #8490A4;
+        font-size: 13px;
+        margin-top: 3px;
+    }
+}
+
+.delete {
+    border: none;
+    background-color: unset;
+    color: #8490a4;
+    cursor: pointer;
+
+    &:hover {
+        color: #5a6473;
+    }
+}
+
+.imgPrice {
+    display: flex;
+    justify-content: space-between;
+
+    .imgRub {
+        margin-left: 5px;
+    }
+}
