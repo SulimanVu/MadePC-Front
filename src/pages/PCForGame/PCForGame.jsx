@@ -84,8 +84,8 @@ const game = useSelector(state => state.game.games )
                 <ul className={styles.game_list}>
                     {game.map((el,index) => {
                         return(
-                            <li className={styles.game_item}><Link to={`/game/${el._id}`} className={styles.link}><img src={el.image} alt="q" className={index === 0 || 1 ? styles.img_game: styles.img_logog}/>
-                            <p>{el.name}</p>
+                            <li className={styles.game_item}><Link to={`/game/${el._id}`} className={styles.link}><img src={el.image} alt="q" className={styles.img_game}/>
+                            <p className={styles.name_games}>{el.name}</p>
                             </Link></li>
                         )
                     })}
