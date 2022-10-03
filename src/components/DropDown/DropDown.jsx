@@ -12,6 +12,7 @@ const DropDown = ({ arr }) => {
   };
   const handleSelect = (e) => {
     setDefault(e.target.outerText);
+    setOpen(!open)
   };
 
   return (
