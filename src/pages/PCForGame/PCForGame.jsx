@@ -1,11 +1,14 @@
 
-import React  from 'react';
+import React, { useEffect }  from 'react';
 import styles from "./PCForGame.module.scss"
 import { Link } from 'react-router-dom';
 import Text from "./Text"
 import { useState } from 'react';
-
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchGames } from '../../features/gameSlice';
 const PCForGame = () => {
+
+const dispatch = useDispatch()
 
 const[button, setButton] = useState(false)
 
@@ -13,6 +16,12 @@ const handleClick = () => {
     setButton(!button)
 }
 
+useEffect(()=> {
+    dispatch(fetchGames())
+}, [dispatch])
+
+
+const game = useSelector(state => state.game.games )
 
     return (
 
@@ -66,6 +75,23 @@ const handleClick = () => {
                             <img src="https://edelws.ru/upload/uf/638/638758ed7980d5cbe7cce2ba1797403b.png" alt="" className={styles.features_img}/>
                       
                     </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className={styles.games}>
+                <div className={styles.games_inner}>
+                    <div className={styles.games_wrapper}>
+                        <ul className={styles.game_list}>
+                            {game.map(el => {
+                                return(
+                                    <li className={styles.game_item}> <Link to={`/game/${game._id}`}>
+                                        <img src={el.image} alt="" />
+                                        </Link>
+                                    </li>
+                                )
+                            })}
+                        </ul>
                     </div>
                 </div>
             </div>
