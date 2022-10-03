@@ -20,13 +20,13 @@ export const fetchComments = createAsyncThunk(
 
 export const addComments = createAsyncThunk(
   "comments/post",
-  async ({ input }, thunkAPI) => {
+  async ({ comm, id }, thunkAPI) => {
     const res = await fetch("http://localhost:3010/comment", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ text: input }),
+      body: JSON.stringify({ text: comm, user: id }),
     });
     return await res.json();
   }

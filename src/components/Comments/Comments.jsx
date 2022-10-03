@@ -5,6 +5,7 @@ import { fetchComments, addComments } from "../../features/commentSlice";
 
 const Comments = () => {
   const [comm, setComm] = useState("");
+  const id = useSelector((state) => state.application.id)
 
   const comment = useSelector((state) => state.commentSlice.comments);
   const dispatch = useDispatch();
@@ -18,7 +19,7 @@ const Comments = () => {
   };
 
   const handleAddComment = () => {
-    dispatch(addComments({ comm }));
+    dispatch(addComments({ comm, id }));
     setComm("");
   };
 
@@ -38,7 +39,12 @@ const Comments = () => {
         <div className={styles.BlockComment}>
           {comment
             .map((item) => {
-              return <div className={styles.Comment}>{item.text}</div>;
+              return (
+                <div className={styles.Comment}>
+                  {id.login}
+                  {item.text}
+                </div>
+              )
             })
             .reverse()}
         </div>
