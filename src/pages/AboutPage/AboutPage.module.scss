@@ -1,4 +1,5 @@
 .Header {
+  position: relative;
   width: 100%;
   height: 250px;
   display: flex;
@@ -20,14 +21,15 @@
 
 //////////////////////////
 .Nave {
+  position: absolute;
   width: 75%;
   height: 100px;
   margin: auto;
   display: flex;
   justify-content: space-between;
   position: absolute;
-  left: 12%;
-  top: 42%;
+  left: 12.5%;
+  bottom: -70px;
   z-index: 10;
 }
 .link {
