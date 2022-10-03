@@ -4,9 +4,23 @@
   margin: 0;
   box-sizing: border-box;
 }
+$black: #151a22;
+$green: #a7e200;
+$blue: #1c232e;
+$gray: #8490a4;
 body {
   background: url(https://edelws.ru/local/templates/main/img/bg.png) no-repeat;
   background-size: 100%;
+  &::-webkit-scrollbar {
+    width: 3.5px; /* ширина всей полосы прокрутки */
+  }
+  &::-webkit-scrollbar-track {
+    background: #101928; /* цвет зоны отслеживания */
+  }
+  &::-webkit-scrollbar-thumb {
+    border: 2.5px solid $green; /* отступ вокруг бегунка */
+    border-radius: 10px;
+  }
 }
 ul {
   list-style: none;
@@ -17,10 +31,3 @@ a {
 .main_route {
   min-height: 100vh;
 }
-
-
-
-$black: #151a22;
-$green: #a7e200;
-$blue: #1c232e;
-$gray: #8490a4;
