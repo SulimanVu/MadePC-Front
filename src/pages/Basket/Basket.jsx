@@ -3,6 +3,7 @@ import styles from '../Basket/basket.module.scss';
 import dom from '../LowPrieceComps/images/domic2.png';
 import { Link } from 'react-router-dom';
 import ItemBasket from '../../components/ItemBasket/ItemBasket';
+import rub from '../../components/CardComp/images/rub.svg';
 
 const Basket = () => {
     return (
@@ -15,7 +16,13 @@ const Basket = () => {
                 <h1>Корзина</h1>
             </div>
             <div className={styles.wrapper}>
-            <ItemBasket />
+                <h2>Корзина</h2>
+                <ItemBasket />
+            </div>
+            <div className={styles.total}>
+                <h2 className={styles.total1}>Общая стоимость</h2>
+                <p>57800</p>
+                <img className={styles.imgRub} src={rub} alt='img' />
             </div>
         </div>
     );
