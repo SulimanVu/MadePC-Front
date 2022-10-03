@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Progress from '../Progress/Progress'
 import styles from '../CardComp/cardcomp.module.scss';
 import rub from './images/rub.svg';
 import videocard from './images/videocard.svg';
@@ -28,7 +29,7 @@ const CardComp = ({ computers, setModal }) => {
                             <p className={styles.aboutName}>{computers.price} <img alt='#' className={styles.rub} src={rub} /></p>
                         </div>
                         <div className={styles.Circular}>
-                            <CircularProgressbar
+                            {/* <CircularProgressbar
                                 value={120}
                                 text={`${value}
                         FPS`}
@@ -44,7 +45,8 @@ const CardComp = ({ computers, setModal }) => {
                                     }
                                 }}
                                 strokeWidth={10}
-                            />
+                            /> */}
+                            <Progress value = {90} />
                         </div>
                     </div>
                     <div className={styles.buttons}>
