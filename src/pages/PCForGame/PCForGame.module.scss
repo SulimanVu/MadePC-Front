@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
 .title_page {
   position: relative;
   display: flex;
@@ -172,9 +178,9 @@
 }
 
 .features {
-  margin-bottom: 3rem;
-  box-sizing: border-box;
-  width: 95%;
+    margin-bottom: 9rem;
+    box-sizing: border-box;
+    width: 95%;
 }
 
 .features_inner {
@@ -239,32 +245,30 @@
   height: 300px;
 }
 
-.games {
-  margin: 0 0 4rem;
-}
-
-.games_inner {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 90.5rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
-
-.games_wrapper {
-  margin: 0;
-  padding: 0;
-  -webkit-tap-highlight-color: transparent;
-}
-
 .game_list {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  
 }
 
-.game_item {
-  border: 1px solid red;
-  //   margin-left: ;
+.game_item{
+   
+    &:first-child{
+        margin-right: 40px;
+    }
 }
+
+.link {
+    position: relative;
+}
+
+.img_game {
+  border-radius: 10px;
+
+}
+
+.img_logog {
+    height: 40%;
+}
+
