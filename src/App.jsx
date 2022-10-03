@@ -12,74 +12,61 @@ import Faq from "./components/Faq/Faq";
 import Comments from "./components/Comments/Comments";
 import ConfiguratorPage from "./pages/ConfiguratorPage/ConfiguratorPage";
 import ArrayDrop from "./components/ArrayDrop/ArrayDrop";
-import Nav from "./components/Nav/Nav";
 import Basket from "./pages/Basket/Basket";
 import { useSelector } from "react-redux";
 
 const App = () => {
-  const token = useSelector((state)=> state.application.token)
- if(token){
-  return (
-    
-    <>
+  const token = useSelector((state) => state.application.token);
+  if (token) {
+    return (
+      <>
+        <div className="main_route">
+          <Routes>
+            <Route path="/" element={<Header />}>
+              <Route path="/basket" element={<Basket />} />
+              <Route path="/" element={<MainPage />} />
+              <Route path="/configurator" element={<ConfiguratorPage />} />
+              <Route path="/about" element={<About />}>
+                <Route path="company" element={<AboutUs />} />
+                <Route path="faq" element={<Faq />} />
+                <Route path="comments" element={<Comments />} />
+              </Route>
+              <Route path="/game" element={<PCForGame />} />
+              <Route path="/lowprice" element={<LowPriceComps />} />
 
+              <Route path="/dr" element={<ArrayDrop />} />
+            </Route>
+            <Route path="/signin" element={<Navigate to="/" />} />
+          </Routes>
+        </div>
+        <Footer />
+      </>
+    );
+  }
+
+  return (
+    <>
       <div className="main_route">
         <Routes>
-          <Route path="/" element={<Header/>}>
-         
-        <Route path="/basket" element={<Basket/>} />
-        <Route path="/" element={<MainPage />} />
-        <Route path="/configurator" element={<ConfiguratorPage />} />
-        <Route path="/about" element={<About />}>
-          <Route path="company" element={<AboutUs />} />
-          <Route path="faq" element={<Faq />} />
-          <Route path="comments" element={<Comments />} />
-        </Route>
-        <Route path="/game" element={<PCForGame />} />
-        <Route path="/lowprice" element={<LowPriceComps />} />
-      
-        <Route path="/dr" element={<ArrayDrop/>} />
+          <Route path="/" element={<Header />}>
+            <Route path="/basket" element={<Basket />} />
+            <Route path="/" element={<MainPage />} />
+            <Route path="/configurator" element={<ConfiguratorPage />} />
+            <Route path="/about" element={<About />}>
+              <Route path="company" element={<AboutUs />} />
+              <Route path="faq" element={<Faq />} />
+              <Route path="comments" element={<Comments />} />
+            </Route>
+            <Route path="/game" element={<PCForGame />} />
+            <Route path="/lowprice" element={<LowPriceComps />} />
+            <Route path="/dr" element={<ArrayDrop />} />
           </Route>
-          <Route path = "/signin" element = {<Navigate to="/"/>}/>
+          <Route path="/signin" element={<SignIn />} />
         </Routes>
       </div>
       <Footer />
-      
-      
     </>
-    
   );
- }
-
- return (
-    
-  <>
-    <div className="main_route">
-        <Routes>
-          <Route path="/" element={<Header/>}>
-         
-        <Route path="/basket" element={<Basket/>} />
-        <Route path="/" element={<MainPage />} />
-        <Route path="/configurator" element={<ConfiguratorPage />} />
-        <Route path="/about" element={<About />}>
-          <Route path="company" element={<AboutUs />} />
-          <Route path="faq" element={<Faq />} />
-          <Route path="comments" element={<Comments />} />
-        </Route>
-        <Route path="/game" element={<PCForGame />} />
-        <Route path="/lowprice" element={<LowPriceComps />} />
-        <Route path="/dr" element={<ArrayDrop/>} />
-          </Route>
-          <Route path = "/signin" element = {<SignIn/>}/>
-        </Routes>
-      </div>
-      <Footer />
-      
-    
-    
-  </>
-  
-);
 };
 
 export default App;
