@@ -1,4 +1,3 @@
-
 import React, { useEffect }  from 'react';
 import styles from "./PCForGame.module.scss"
 import { Link } from 'react-router-dom';
