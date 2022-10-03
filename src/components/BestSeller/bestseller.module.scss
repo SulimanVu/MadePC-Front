@@ -1,0 +1,24 @@
+@import '../../index.scss';
+
+.cards{
+    display: flex;
+    margin: auto;
+    width: 90%;
+    justify-content: space-between;
+}
+.text{
+    margin-left: 80px;
+    font-size: 30px;
+    color: #fff;
+    font-weight: 200;
+    display: flex;
+    align-items: center;
+    button{
+        cursor: pointer;
+        border-radius: 5px;
+        margin-left: 30px;
+        padding: 8px 12px;
+        font-weight: 600;
+        background-color: $green;
+    }
+}

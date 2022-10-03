@@ -12,13 +12,13 @@ import Faq from "./components/Faq/Faq";
 import Comments from "./components/Comments/Comments";
 import ConfiguratorPage from "./pages/ConfiguratorPage/ConfiguratorPage";
 import ArrayDrop from "./components/ArrayDrop/ArrayDrop";
-import Nav from "./components/Nav/Nav";
 import Basket from "./pages/Basket/Basket";
 import { useSelector } from "react-redux";
 import CompPage from "./pages/CompPage/CompPage";
 import { useParams } from "react-router-dom";
 
 const App = () => {
+
   const {id}= useParams()
   console.log(id)
   const token = useSelector((state) => state.application.token);
@@ -39,6 +39,7 @@ const App = () => {
               <Route path="/game" element={<PCForGame />} />
               <Route path="/lowprice" element={<LowPriceComps />}/>
               <Route path ="lowprice/:id" element={<CompPage/>}/>
+
 
               <Route path="/dr" element={<ArrayDrop />} />
             </Route>

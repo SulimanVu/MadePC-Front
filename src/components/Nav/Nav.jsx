@@ -26,7 +26,7 @@ const Nav = () => {
             <Link to="/lowprice">Недорогие ПК</Link>
           </li>
           <li>
-            <Link to="/lowprice">Игровые ПК</Link>
+            <Link to="/game">Игровые ПК</Link>
           </li>
           <li>
             <Link to="/">Мощнейшие ПК</Link>

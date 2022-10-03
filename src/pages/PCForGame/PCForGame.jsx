@@ -81,20 +81,15 @@ const game = useSelector(state => state.game.games )
             </div>
 
             <div className={styles.games}>
-                <div className={styles.games_inner}>
-                    <div className={styles.games_wrapper}>
-                        <ul className={styles.game_list}>
-                            {game.map(el => {
-                                return(
-                                    <li className={styles.game_item}> <Link to={`/game/${game._id}`}>
-                                        <img src={el.image} alt="" />
-                                        </Link>
-                                    </li>
-                                )
-                            })}
-                        </ul>
-                    </div>
-                </div>
+                <ul className={styles.game_list}>
+                    {game.map((el,index) => {
+                        return(
+                            <li className={styles.game_item}><Link to={`/game/${el._id}`} className={styles.link}><img src={el.image} alt="q" className={styles.img_game}/>
+                            <p className={styles.name_games}>{el.name}</p>
+                            </Link></li>
+                        )
+                    })}
+                </ul>
             </div>
         </div>
     );
