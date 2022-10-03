@@ -1,3 +1,5 @@
+@import "../../index.scss";
+
 .Block {
     width: 55%;
     margin: auto;
@@ -13,7 +15,6 @@
     height: 50px;
     margin: auto;
     display: flex;
-    background-color: red; 
 }
 
 .Inputs input{
@@ -34,12 +35,31 @@
     height: 500px;
     margin-top: 5%;
     color: white;
-    background-color: silver;
 }
 
+/////
 .Comment {
     width: 100%;
-    height: 20px;
+    margin-top: 3%;
+}
+
+.log {
+    width: 100%;
+    color: $green;
+    font-size: 20px;
+}
+
+.text {
+    width: 100%;
+}
+
+.text p{
+    width: 100%;
+    font-size: 17px;
+}
+
+.text span{
+    width: 100%;
     color: white;
-    background-color: red;
+    font-size: 15px;
 }
