@@ -28,7 +28,7 @@ export const addComments = createAsyncThunk(
       },
       body: JSON.stringify({ text: comm, user: id }),
     });
-    return await res.json();
+    return res.json();
   }
 );
 
