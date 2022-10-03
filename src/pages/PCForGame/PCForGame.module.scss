@@ -248,27 +248,50 @@
 .game_list {
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
-  
+    justify-content: space-between;
+    width: 91.7%;
+    margin: auto;
+   
 }
 
 .game_item{
-   
+    position: relative;
+   overflow: hidden;
+   border-radius: 10px;
+   margin-bottom: 40px;
     &:first-child{
         margin-right: 40px;
     }
 }
 
-.link {
-    position: relative;
+.link  img:nth-child(1), .link  img:nth-child(2) {
+    
+    width: 100%;
 }
 
+.link img:nth-child(3), .link img:nth-child(4), .link img:nth-child(5), .link img:nth-child(6) {
+    width: 35%;
+}
 .img_game {
   border-radius: 10px;
-
+  
+  transition: all .7s;
+    &:hover {
+        transform: scale(1.05);
+        
+    }
 }
 
 .img_logog {
     height: 40%;
 }
 
+.name_games {
+    position: absolute;
+    top: 80%;
+    left: 15%;
+    font-size: 1.5rem;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: #fff;
+}  
