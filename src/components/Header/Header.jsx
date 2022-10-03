@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./header.module.scss";
-import { Link, useLocation } from "react-router-dom";
+import { Link, Outlet, useLocation } from "react-router-dom";
+import Nav from "../Nav/Nav";
 import cn from "classnames";
 
 const Header = () => {
@@ -8,7 +9,8 @@ const Header = () => {
   const path = pathName.pathname;
 
   return (
-    <div className={styles.header_container}>
+    <div>
+      <div className={styles.header_container}>
       <div className={styles.nav_block}>
         <Link to="/">
           <img
@@ -101,7 +103,14 @@ const Header = () => {
           <li className={styles.item}>Контакты</li>
         </ul>
       </div>
+      
     </div>
+    <div>
+        <Nav/>
+      </div>
+      <Outlet/>
+    </div>
+    
   );
 };
 
