@@ -41,11 +41,13 @@ const Comments = () => {
             .map((item) => {
               return (
                 <div className={styles.Comment}>
-                  <div className={styles.log}>{item.user.login}</div>
+                  <div className={styles.log}>
+                    <span className={styles.pp}>{item.user.login}</span>
+                  </div>
                   <div className={styles.text}>
-                    <p>Комментарий</p>
+                    <p className={styles.sp}>Комментарий</p>
                     <span>{item.text}</span>
-                    </div>
+                  </div>
                 </div>
               );
             })
