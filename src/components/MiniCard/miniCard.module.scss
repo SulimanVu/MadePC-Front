@@ -1,0 +1,41 @@
+@import "../../index.scss";
+
+.main {
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  margin: 60px auto;
+  .card {
+    display: flex;
+    width: 31%;
+    height: 200px;
+    background-color: #1c232e;
+    transition: .5s;
+    &:hover {
+      background-color: $green;
+      cursor: pointer;
+      .text {
+        h4 {
+          color: #fff !important;
+        }
+        p {
+          color: #000;
+        }
+      }
+    }
+    .img {
+      margin-top: -30px;
+      margin-left: 5px;
+      width: 40%;
+      padding: 10px;
+    }
+    .text {
+      padding: 10px;
+      h4 {
+        font-size: 22px;
+        font-weight: 500;
+        color: $green;
+      }
+    }
+  }
+}

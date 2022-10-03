@@ -4,18 +4,16 @@
   margin: 0;
   box-sizing: border-box;
 }
-
-
+body {
+  background: url(https://edelws.ru/local/templates/main/img/bg.png) no-repeat;
+  background-size: 100%;
+}
 ul {
   list-style: none;
 }
-
-a{
+a {
   text-decoration: none;
 }
-
-
-
 
 .main_route {
   min-height: 100vh;
@@ -25,4 +23,3 @@ $black: #151a22;
 $green: #a7e200;
 $blue: #1c232e;
 $gray: #8490a4;
-

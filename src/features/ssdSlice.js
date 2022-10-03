@@ -21,7 +21,7 @@ const ssdSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(getSSD.fulfilled, (state, action) => {
-      state.board = action.payload;
+      state.ssd = action.payload;
       state.loader = false;
     });
   },

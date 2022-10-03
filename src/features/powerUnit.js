@@ -1,12 +1,9 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 const initialState = {
-powerUnits: [],
+  powerUnits: [],
   load: false,
 };
-
-
-
 
 export const fetchpowerUnits = createAsyncThunk(
   "fetch/powerUnits",
@@ -36,10 +33,8 @@ const powerUnitsSclice = createSlice({
       })
       .addCase(fetchpowerUnits.rejected, (state, action) => {
         state.load = true;
-      })
-      
+      });
   },
 });
-
 
 export default powerUnitsSclice.reducer;

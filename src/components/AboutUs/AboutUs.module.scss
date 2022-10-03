@@ -3,25 +3,8 @@
 .AboutUs {
   width: 100%;
   height: 3000px;
-}
-///////////// Хэдер /////////////
-.Header {
-  width: 100%;
-  height: 250px;
-  display: flex;
-  align-items: center;
-  background-color: silver;
-}
-
-.Title {
-  width: 50%;
-  margin: auto;
-}
-
-.Title h1 {
-  font-size: 55px;
-  color: white;
-  font-family: "PF-Din-Text-Cond-Pro";
+  position: relative;
+  background-color: #151a22;
 }
 
 ////////// Боди /////////////
@@ -35,6 +18,10 @@
   font-family: "PF DinDisplay Pro";
   color: #8490a4;
   font-size: 17px;
+}
+
+.Text p {
+  font-size: 19px;
 }
 
 .Photo {
@@ -73,6 +60,7 @@
   height: 420px;
   display: flex;
   position: relative;
+  bottom: 30%;
 }
 
 .blocks1 {
@@ -96,11 +84,11 @@
   align-items: center;
 }
 
-.blocks2 img{
-    width: 90%;
-    height: 90%;
-    z-index: 10;
-    position: absolute;
+.blocks2 img {
+  width: 90%;
+  height: 90%;
+  z-index: 10;
+  position: absolute;
 }
 
 .two {

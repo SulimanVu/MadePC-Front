@@ -3,11 +3,10 @@ import styles from "../AboutUs/AboutUs.module.scss";
 const AboutUs = () => {
   return (
     <div className={styles.AboutUs}>
-      <div className={styles.Header}>
-        <div className={styles.Title}>
-          <h1>Философия гейминга от EDELWEISS</h1>
-        </div>
-      </div>
+      <br />
+      <br />
+      <br />
+      <br />
       <div className={styles.Bodys}>
         <div className={styles.Text}>
           <p>

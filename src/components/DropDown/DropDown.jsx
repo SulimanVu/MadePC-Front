@@ -5,10 +5,9 @@ import cn from "classnames";
 
 const DropDown = ({ arr }) => {
   const [open, setOpen] = useState(false);
-  const [defaul, setDefault] = useState("Не выбрано");
+  const [def, setDefault] = useState("Не выбрано");
 
   const handleOpen = (e) => {
-    console.log(e.target.outerText);
     setOpen(!open);
   };
   const handleSelect = (e) => {
@@ -21,25 +20,27 @@ const DropDown = ({ arr }) => {
         className={open ? styles.drop : cn(styles.drop, styles.drop_active)}
         onClick={(e) => handleOpen(e)}
       >
-        {defaul}
+        {def}
         <img src={st} alt="#" />
       </div>
-      {/* <div className={styles.parent}>
+      <div className={styles.parent}>
         {open
           ? arr.map((item, index) => {
-              <div
-                key={index}
-                className={styles.child}
-                tabIndex={"0"}
-                onClick={(e) => handleSelect(e)}
-              >
-                {item.name}
-              </div>;
+              return (
+                <div
+                  key={index}
+                  className={styles.child}
+                  tabIndex={"0"}
+                  onClick={(e) => handleSelect(e)}
+                >
+                  {item.name}
+                </div>
+              );
             })
           : null}
-      </div> */}
+      </div>
 
-      <div className={styles.parent}>
+      {/* <div className={styles.parent}>
         {!open ? (
           <>
             <div
@@ -93,7 +94,7 @@ const DropDown = ({ arr }) => {
             </div>
           </>
         ) : null}
-      </div>
+      </div> */}
     </div>
   );
 };
