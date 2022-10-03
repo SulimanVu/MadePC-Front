@@ -1,3 +1,8 @@
+.mainOfMain {
+    display: flex;
+    justify-content: space-around;
+}
+
 .nav {
     display: flex;
     align-items: center;
@@ -79,4 +84,14 @@
 .imgRub {
     margin-left: 5px;
     width: 20px;
+}
+
+.divasik {
+    width: 60%;
+}
+
+.bring {
+    width: 40%;
+    margin-left: 50px;
+    padding-left: 40px;
 }
