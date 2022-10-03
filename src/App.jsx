@@ -22,22 +22,24 @@ const App = () => {
   return (
     
     <>
-      <Header />
-      <Nav/>
+
       <div className="main_route">
         <Routes>
-          <Route path = "/signin" element = {<Navigate to="/"/>}/>
-          <Route path="/basket" element={<Basket/>} />
-          <Route path="/" element={<MainPage />} />
-          <Route path="/configurator" element={<ConfiguratorPage />} />
-          <Route path="/about" element={<About />}>
-            <Route path="company" element={<AboutUs />} />
-            <Route path="faq" element={<Faq />} />
-            <Route path="comments" element={<Comments />} />
+          <Route path="/" element={<Header/>}>
+         
+        <Route path="/basket" element={<Basket/>} />
+        <Route path="/" element={<MainPage />} />
+        <Route path="/configurator" element={<ConfiguratorPage />} />
+        <Route path="/about" element={<About />}>
+          <Route path="company" element={<AboutUs />} />
+          <Route path="faq" element={<Faq />} />
+          <Route path="comments" element={<Comments />} />
+        </Route>
+        <Route path="/game" element={<PCForGame />} />
+        <Route path="/lowprice" element={<LowPriceComps />} />
+        <Route path="/dr" element={<ArrayDrop/>} />
           </Route>
-          <Route path="/game" element={<PCForGame />} />
-          <Route path="/lowprice" element={<LowPriceComps />} />
-          <Route path="/dr" element={<ArrayDrop/>} />
+          <Route path = "/signin" element = {<Navigate to="/"/>}/>
         </Routes>
       </div>
       <Footer />
@@ -51,11 +53,10 @@ const App = () => {
  return (
     
   <>
-    <Header />
-    <Nav/>
     <div className="main_route">
-      <Routes>
-      <Route path = "/signin" element = {<SignIn/>}/>
+        <Routes>
+          <Route path="/" element={<Header/>}>
+         
         <Route path="/basket" element={<Basket/>} />
         <Route path="/" element={<MainPage />} />
         <Route path="/configurator" element={<ConfiguratorPage />} />
@@ -67,9 +68,12 @@ const App = () => {
         <Route path="/game" element={<PCForGame />} />
         <Route path="/lowprice" element={<LowPriceComps />} />
         <Route path="/dr" element={<ArrayDrop/>} />
-      </Routes>
-    </div>
-    <Footer />
+          </Route>
+          <Route path = "/signin" element = {<SignIn/>}/>
+        </Routes>
+      </div>
+      <Footer />
+      
     
     
   </>
