@@ -7,7 +7,6 @@ const Comments = () => {
   const [comm, setComm] = useState("");
   const id = useSelector((state) => state.application.id);
 
-
   const comment = useSelector((state) => state.commentSlice.comments);
   const dispatch = useDispatch();
 
@@ -42,9 +41,11 @@ const Comments = () => {
             .map((item) => {
               return (
                 <div className={styles.Comment}>
-
-                  <div>{item.user.login}</div>
-                  <div>{item.text}</div>
+                  <div className={styles.log}>{item.user.login}</div>
+                  <div className={styles.text}>
+                    <p>Комментарий</p>
+                    <span>{item.text}</span>
+                    </div>
                 </div>
               );
             })
