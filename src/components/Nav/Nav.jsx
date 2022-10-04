@@ -16,7 +16,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 
 const Nav = () => {
   return (
-    <div className="container">
+    
       <div className={styles.nav}>
         <ul className={styles.nav_list}>
           <li>
@@ -47,7 +47,7 @@ const Nav = () => {
       </div>
       </div>
      
-    </div>
+    
   );
 };
 
