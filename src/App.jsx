@@ -8,12 +8,13 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import PCForGame from "./pages/PCForGame/PCForGame";
 import LowPriceComps from "./pages/LowPrieceComps/LowPriceComps";
 import AboutUs from "./components/AboutUs/AboutUs";
-import Faq from "./components/Faq/Faq";
+import Faq from "./components/Faq2/Faq2";
 import Comments from "./components/Comments/Comments";
 import ConfiguratorPage from "./pages/ConfiguratorPage/ConfiguratorPage";
 import ArrayDrop from "./components/ArrayDrop/ArrayDrop";
 import Basket from "./pages/Basket/Basket";
 import { useSelector } from "react-redux";
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const App = () => {
   const token = useSelector((state) => state.application.token);
@@ -33,7 +34,6 @@ const App = () => {
               </Route>
               <Route path="/game" element={<PCForGame />} />
               <Route path="/lowprice" element={<LowPriceComps />} />
-
               <Route path="/dr" element={<ArrayDrop />} />
             </Route>
             <Route path="/signin" element={<Navigate to="/" />} />
