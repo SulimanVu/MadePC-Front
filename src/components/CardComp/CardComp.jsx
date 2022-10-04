@@ -104,8 +104,9 @@ const CardComp = ({ computers, setModal }) => {
                         </div>
                     </div>
                 </div>
-    </>
-  );
+            </div>
+        </>
+    );
 };
 
 export default CardComp;
