@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from 'react';
-import Progress from '../Progress/Progress'
-import { Link } from 'react-router-dom';
-import styles from '../CardComp/cardcomp.module.scss';
-import rub from './images/rub.svg';
-import videocard from './images/videocard.svg';
-import ram from './images/ram.svg';
-import proc from './images/proc.svg';
-import ssd from './images/ssd.svg';
-import corpus from './images/corpus.svg';
-import fan from './images/fan.svg';
-import { CircularProgressbar } from 'react-circular-progressbar';
-import 'react-circular-progressbar/dist/styles.css';
-import ModalBuy from '../ModalBuy/ModalBuy';
+import React, { useEffect, useState } from "react";
+import Progress from "../Progress/Progress";
+import { Link } from "react-router-dom";
+import styles from "../CardComp/cardcomp.module.scss";
+import rub from "./images/rub.svg";
+import videocard from "./images/videocard.svg";
+import ram from "./images/ram.svg";
+import proc from "./images/proc.svg";
+import ssd from "./images/ssd.svg";
+import corpus from "./images/corpus.svg";
+import fan from "./images/fan.svg";
+import { CircularProgressbar } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
+import ModalBuy from "../ModalBuy/ModalBuy";
 
 const CardComp = ({ computers, setModal }) => {
 
@@ -104,9 +104,8 @@ const CardComp = ({ computers, setModal }) => {
                         </div>
                     </div>
                 </div>
-            </div>
-        </>
-    );
+    </>
+  );
 };
 
 export default CardComp;
