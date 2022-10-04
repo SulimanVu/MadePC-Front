@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Progress from '../Progress/Progress'
+import { Link } from 'react-router-dom';
 import styles from '../CardComp/cardcomp.module.scss';
 import rub from './images/rub.svg';
 import videocard from './images/videocard.svg';
@@ -51,7 +52,7 @@ const CardComp = ({ computers, setModal }) => {
                     </div>
                     <div className={styles.buttons}>
                         <button className={styles.buy} onClick={() => setModal(true)}>Купить</button>
-                        <button className={styles.about}>Подробнее</button>
+                        <Link to={`${computers._id}`}><button className={styles.about}>Подробнее</button></Link>
                     </div>
                     <div className={styles.desc}>
                         <p> EDELWEISS CYBORG - бюджетный компьютер для игр. На нем с легкостью и достаточно высоким показателем FPS можно запускать такие игры как: CS:GO, Dota 2, Fortnite, League of Legends и д.р. Прекрасный вариант для начинающих геймеров.</p>

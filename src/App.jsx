@@ -14,8 +14,13 @@ import ConfiguratorPage from "./pages/ConfiguratorPage/ConfiguratorPage";
 import ArrayDrop from "./components/ArrayDrop/ArrayDrop";
 import Basket from "./pages/Basket/Basket";
 import { useSelector } from "react-redux";
+import CompPage from "./pages/CompPage/CompPage";
+import { useParams } from "react-router-dom";
 
 const App = () => {
+
+  const {id}= useParams()
+  console.log(id)
   const token = useSelector((state) => state.application.token);
   if (token) {
     return (
@@ -32,7 +37,11 @@ const App = () => {
                 <Route path="comments" element={<Comments />} />
               </Route>
               <Route path="/game" element={<PCForGame />} />
-              <Route path="/lowprice" element={<LowPriceComps />} />
+              <Route path="/lowprice" element={<LowPriceComps />}/>
+              <Route path ="lowprice/:id" element={<CompPage/>}/>
+              <Route path ="/:id" element={<CompPage/>}/>
+
+
 
               <Route path="/dr" element={<ArrayDrop />} />
             </Route>
