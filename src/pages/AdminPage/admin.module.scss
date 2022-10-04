@@ -6,11 +6,20 @@
   margin: auto;
   display: flex;
   justify-content: space-between;
-  border: 2px solid red;
+  border: 2px solid $gray;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
   .user_info {
     width: 50%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    color: $gray;
+    font-size: 18px;
+    li{
+      align-items: center;
+      margin-top: 10px;
+    }
   }
   .spred {
     position: relative;
@@ -20,6 +29,8 @@
     justify-content: space-between;
     width: 100px;
     color: $green;
+    margin-right: 20px;
+    cursor: pointer;
     img{
         position: absolute;
         top: 0;
@@ -30,15 +41,18 @@
     }
     span{
         position: absolute;
-        top: -2px;
+        top: -4px;
         right: 25px;
+        color: #fff;
     }
   }
   .spred_active{
     img{
         transform: rotate(270deg);
     }
-    
+    span{
+      color: $green;
+    }
   }
   .price {
     display: flex;
@@ -51,4 +65,32 @@
       margin-left: 5px;
     }
   }
+  button{
+    height: 50%;
+    margin: auto 0;
+    padding: 5px 15px;
+    border-radius: 5px;
+    background-color: $green;
+    border: none;
+    transition: .3s;
+    &:hover{
+      background-color: rgb(26, 220, 97);
+      color: #fff;
+      box-shadow: 0px 0px 20px green;
+    }
+  }
+}
+
+.comp{
+  width: 90%;
+  padding: 10px 0;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid green;
+  color: #fff;
+  border: 2px solid $gray;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-top: none;
 }

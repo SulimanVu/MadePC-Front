@@ -6,6 +6,7 @@ import styles from "./admin.module.scss";
 import st from "../../public/st.png";
 import rub from "../../components/CardComp/images/rub.svg";
 import cn from "classnames";
+import { motion } from "framer-motion";
 
 const Admin = () => {
   const dispatch = useDispatch();
@@ -27,28 +28,42 @@ const Admin = () => {
         return (
           <div>
             <div className={styles.main} onClick={handleOpen}>
-              <div className={styles.user_info}>
-                <div>ФИО пользователя: &nbsp;&nbsp;{item.name}</div>
-                <div>Номер для связи: &nbsp;&nbsp;{item.number}</div>
-                <div>E-mail: &nbsp;&nbsp;{item.email}</div>
-              </div>
+              <ul className={styles.user_info}>
+                <li>ФИО пользователя: &nbsp;&nbsp;{item.name}</li>
+                <li>Номер для связи: &nbsp;&nbsp;{item.number}</li>
+                <li>E-mail: &nbsp;&nbsp;{item.email}</li>
+              </ul>
               <div className={styles.price}>
                 {item.comp.price} <img src={rub} alt="" />
               </div>
-                  <button> Принять заказ</button>
+              <button>Принять заказ</button>
               <div
                 className={
-                  open ? styles.spred : cn(styles.spred, styles.spred_active)
+                  !open ? styles.spred : cn(styles.spred, styles.spred_active)
                 }
                 onClick={(e) => handleOpen(e)}
               >
-                <span>Расскрыть</span>
+                <span>{open ? "Закрыть" : "Расскрыть"}</span>
                 <img src={st} alt="#" />
               </div>
             </div>
-            <div className={styles.title}>
-              {open ? <div>{item.comp.ram}</div> : null}
-            </div>
+            {open ? (
+              <motion.div
+                transition={{ duration: 0.3 }}
+                initial={{ opacity: 0, y: -30 }}
+                animate={{ opacity: 1, y: 0 }}
+                className={styles.comp}
+              >
+                <ul className={styles.components}>
+                  <li>ОЗУ: &nbsp;</li>
+                  <li>Видеокарта: &nbsp;</li>
+                  <li>SSD: &nbsp;</li>
+                  <li>Процессор: &nbsp;</li>
+                  <li>Корпус: &nbsp;</li>
+                  <li>Куллер: &nbsp;</li>
+                </ul>
+              </motion.div>
+            ) : null}
           </div>
         );
       })}
