@@ -1,10 +1,26 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 const initialState = {
+  users: [],
   error: null,
   load: false,
   token: localStorage.getItem("token"),
   id: localStorage.getItem("id"),
 };
+
+export const fetchUsers = createAsyncThunk(
+  'fetch/users',
+  async (_, thunkAPI) => {
+    try {
+      const res = await fetch('http://localhost:3010/users');
+      const data = await res.json();
+
+      return data;
+    } catch (e) {
+      thunkAPI.rejectWithValue(e)
+    }
+  }
+)
+
 export const authThunk = createAsyncThunk(
   "fetch/auth",
   async ({ reglogin, regPassword }, thunkAPI) => {
@@ -73,7 +89,11 @@ const applicationSlice = createSlice({
         state.error = null;
         state.token = action.payload.token;
         state.id = action.payload.login1;
-      });
+      })
+      .addCase(fetchUsers.fulfilled, (state, action) => {
+        state.users = action.payload
+        state.load = false
+      })
   },
 });
 
