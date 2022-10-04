@@ -12,16 +12,23 @@ import fan from "./images/fan.svg";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import ModalBuy from "../ModalBuy/ModalBuy";
+import { useDispatch, useSelector } from "react-redux";
+import { addToBasket } from "../../features/applicationSlice";
 
 const CardComp = ({ computers, setModal }) => {
-
+    const dispatch = useDispatch();
+    const id = useSelector((state) => state.application.id)
+    console.log(computers._id)
     const value = 120;
 
-    const handleAdd = () => {
+    // const comp = computers;
+   
+    const handleAdd = (computersId) => {
+        dispatch(addToBasket({ computersId, id }))
         setModal(true)
     }
 
-    
+
     return (
         <>
             <div className={styles.mainOfMain}>
@@ -56,7 +63,7 @@ const CardComp = ({ computers, setModal }) => {
                         </div>
                     </div>
                     <div className={styles.buttons}>
-                        <button className={styles.buy} onClick={handleAdd}>Купить</button>
+                        <button className={styles.buy} onClick={() => handleAdd(computers._id)}>Купить</button>
                         <Link to={`${computers._id}`}><button className={styles.about}>Подробнее</button></Link>
                     </div>
                     <div className={styles.desc}>

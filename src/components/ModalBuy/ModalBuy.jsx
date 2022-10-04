@@ -1,5 +1,6 @@
 import React from 'react';
-import styles from '../ModalBuy/modalbuy.module.scss'
+import styles from '../ModalBuy/modalbuy.module.scss';
+import { Link } from 'react-router-dom';
 
 const ModalBuy = ({ setModal }) => {
     return (
@@ -13,7 +14,7 @@ const ModalBuy = ({ setModal }) => {
                     <h4 className={styles.h4}>Товар успешно добавлен в корзину</h4>
                 </div>
                 <div className={styles.buttons}>
-                    <button className={styles.basket}>В КОРЗИНУ</button>
+                    <Link to='/basket' className={styles.decor}><button className={styles.basket}>В КОРЗИНУ</button></Link>
                     <button className={styles.close} onClick={() => setModal(false)}>ЗАКРЫТЬ ОКНО</button>
                 </div>
             </div>
