@@ -21,6 +21,7 @@ const CardComp = ({ computers, setModal }) => {
         setModal(true)
     }
 
+    
     return (
         <>
             <div className={styles.mainOfMain}>
@@ -104,8 +105,9 @@ const CardComp = ({ computers, setModal }) => {
                         </div>
                     </div>
                 </div>
-    </>
-  );
+            </div>
+        </>
+    );
 };
 
 export default CardComp;
