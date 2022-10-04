@@ -13,6 +13,7 @@ import video from "../features/videoCardSlice";
 import ssd from "../features/ssdSlice";
 import commentSlice from "../features/commentSlice";
 import game from "../features/gameSlice";
+import request from '../features/requestSlice';
 
 export const store = configureStore({
   reducer: {
@@ -29,6 +30,7 @@ export const store = configureStore({
     power,
     video,
     commentSlice,
-    game
+    game,
+    request
   },
 });

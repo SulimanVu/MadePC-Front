@@ -1,12 +1,22 @@
 import React, { useState } from 'react';
 import styles from '../Order/order.module.scss';
 import req from '../Order/images/req.svg';
+import { useDispatch } from 'react-redux';
+import { addRequest } from '../../features/requestSlice';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Order = () => {
     const [name, setName] = useState('');
     const [number, setNumber] = useState('');
     const [email, setEmail] = useState('');
     const [comment, setComment] = useState('');
+
+    const dispatch = useDispatch();
+
+    const notify = () => toast("Заказ офрмлен!", {
+        type: 'success'
+    });
 
     const handleName = (e) => {
         setName(e.target.value)
@@ -22,6 +32,15 @@ const Order = () => {
 
     const handleComment = (e) => {
         setComment(e.target.value)
+    }
+
+    const handleAdd = () => {
+        dispatch(addRequest({ name, number, email, comment }))
+        setName('')
+        setNumber('')
+        setEmail('')
+        setComment('')
+        notify()
     }
 
     return (
@@ -41,7 +60,7 @@ const Order = () => {
             </div>
             <div className={styles.input1}>
                 <span>E-mail</span>
-                <input value={email} onChange={handleEmail} />
+                <input value={email} onChange={handleEmail} type="email" />
             </div>
             <div className={styles.error}>
                 <img src={req} alt='img' />
@@ -51,10 +70,11 @@ const Order = () => {
                 <h2>Комментарий к заказу</h2>
                 <input value={comment} onChange={handleComment} />
                 <div className={styles.buttons}>
-                    <button>Оформить заказ</button>
+                    <button onClick={handleAdd} disabled={!name || !number || !email || !comment}>Оформить заказ</button>
                     <div className={styles.wrap}><p>После оформления с вами свяжется оператор для уточнения деталей</p></div>
                 </div>
             </div>
+            <ToastContainer />
         </div>
     );
 };
