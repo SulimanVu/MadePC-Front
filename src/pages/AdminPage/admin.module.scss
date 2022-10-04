@@ -1,1 +1,54 @@
-@import '../../index.scss';
+@import "../../index.scss";
+
+.main {
+  width: 90%;
+  padding: 10px 0;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid red;
+  .user_info {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+  }
+  .spred {
+    position: relative;
+    align-items: center;
+    word-wrap: break-word;
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+    color: $green;
+    img{
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 20px;
+        transform: rotate(90deg);
+        transition: .5s;
+    }
+    span{
+        position: absolute;
+        top: -2px;
+        right: 25px;
+    }
+  }
+  .spred_active{
+    img{
+        transform: rotate(270deg);
+    }
+    
+  }
+  .price {
+    display: flex;
+    align-items: center;
+    align-self: center;
+    color: $green;
+    font-size: 20px;
+    img {
+      width: 20%;
+      margin-left: 5px;
+    }
+  }
+}
