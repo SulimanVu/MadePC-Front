@@ -39,6 +39,8 @@ const App = () => {
               <Route path="/game" element={<PCForGame />} />
               <Route path="/lowprice" element={<LowPriceComps />}/>
               <Route path ="lowprice/:id" element={<CompPage/>}/>
+              <Route path ="/:id" element={<CompPage/>}/>
+
 
 
               <Route path="/dr" element={<ArrayDrop />} />

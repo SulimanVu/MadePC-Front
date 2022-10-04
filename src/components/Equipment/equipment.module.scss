@@ -1,0 +1,46 @@
+@import "../../index.scss";
+
+.equipment_block{
+    
+    width: 1300px;
+    margin: auto;
+}
+
+.title{
+    h2{
+        font-size: 36px;
+        font-weight: 800;
+    }
+}
+
+.content_item{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px dashed $gray ;
+    font-size: 1.55rem;
+   width: 60%;
+   
+    div{
+        
+        margin: 10px;
+    }
+}
+
+.content_item_title{
+    width: 40%;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.content_item_inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+
+}
+
+.content{
+    margin-bottom: 50px;
+}
