@@ -17,6 +17,10 @@ const CardComp = ({ computers, setModal }) => {
 
     const value = 120;
 
+    const handleAdd = () => {
+        setModal(true)
+    }
+
     return (
         <>
             <div className={styles.mainOfMain}>
@@ -47,11 +51,11 @@ const CardComp = ({ computers, setModal }) => {
                                 }}
                                 strokeWidth={10}
                             /> */}
-                            <Progress value = {90} />
+                            <Progress value={90} />
                         </div>
                     </div>
                     <div className={styles.buttons}>
-                        <button className={styles.buy} onClick={() => setModal(true)}>Купить</button>
+                        <button className={styles.buy} onClick={handleAdd}>Купить</button>
                         <Link to={`${computers._id}`}><button className={styles.about}>Подробнее</button></Link>
                     </div>
                     <div className={styles.desc}>
