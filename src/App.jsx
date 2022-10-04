@@ -8,13 +8,14 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import PCForGame from "./pages/PCForGame/PCForGame";
 import LowPriceComps from "./pages/LowPrieceComps/LowPriceComps";
 import AboutUs from "./components/AboutUs/AboutUs";
-import Faq from "./components/Faq/Faq";
+import Faq from "./components/Faq2/Faq2";
 import Comments from "./components/Comments/Comments";
 import ConfiguratorPage from "./pages/ConfiguratorPage/ConfiguratorPage";
 import ArrayDrop from "./components/ArrayDrop/ArrayDrop";
 import Basket from "./pages/Basket/Basket";
 import Admin from "./pages/AdminPage/Admin";
 import { useSelector } from "react-redux";
+import 'bootstrap/dist/css/bootstrap.min.css'
 import CompPage from "./pages/CompPage/CompPage";
 import { useParams } from "react-router-dom";
 
