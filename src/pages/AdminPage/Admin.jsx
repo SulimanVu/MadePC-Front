@@ -1,31 +1,54 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import CardComp from "../../components/CardComp/CardComp";
-import { fetchmadePC } from "../../features/madePCSlice";
-import Progress from "../../components/Progress/Progress";
+import { fetchComp } from "../../features/compSlice";
+import { fetchRequests } from "../../features/requestSlice";
 import styles from "./admin.module.scss";
+import st from "../../public/st.png";
 import rub from "../../components/CardComp/images/rub.svg";
-import videocard from "../../components/CardComp/images/videocard.svg";
-import ram from "../../components/CardComp/images/ram.svg";
-import proc from "../../components/CardComp/images/proc.svg";
-import ssd from "../../components/CardComp/images/ssd.svg";
-import corpus from "../../components/CardComp/images/corpus.svg";
-import fan from "../../components/CardComp/images/fan.svg";
+import cn from "classnames";
 
 const Admin = () => {
   const dispatch = useDispatch();
-  const comp = useSelector((state) => state.madePC.madePC);
+  const [open, setOpen] = useState(false);
+  const requests = useSelector((state) => state.request.request);
+
+  const handleOpen = () => {
+    setOpen(!open);
+  };
+
   useEffect(() => {
-    dispatch(fetchmadePC());
+    dispatch(fetchRequests());
   }, [dispatch]);
 
   return (
     <div>
       <h1>Заявки на выполнение</h1>
-      {comp.map((item, index) => {
+      {requests.map((item, index) => {
         return (
           <div>
-            {item.name}
+            <div className={styles.main} onClick={handleOpen}>
+              <div className={styles.user_info}>
+                <div>ФИО пользователя: &nbsp;&nbsp;{item.name}</div>
+                <div>Номер для связи: &nbsp;&nbsp;{item.number}</div>
+                <div>E-mail: &nbsp;&nbsp;{item.email}</div>
+              </div>
+              <div className={styles.price}>
+                {item.comp.price} <img src={rub} alt="" />
+              </div>
+                  <button> Принять заказ</button>
+              <div
+                className={
+                  open ? styles.spred : cn(styles.spred, styles.spred_active)
+                }
+                onClick={(e) => handleOpen(e)}
+              >
+                <span>Расскрыть</span>
+                <img src={st} alt="#" />
+              </div>
+            </div>
+            <div className={styles.title}>
+              {open ? <div>{item.comp.ram}</div> : null}
+            </div>
           </div>
         );
       })}
