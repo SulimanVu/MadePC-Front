@@ -36,7 +36,7 @@ const App = () => {
               </Route>
               <Route path="/game" element={<PCForGame />} />
               <Route path="/lowprice" element={<LowPriceComps />} />
-              <Route path="lowprice/:id" element={<CompPage />} />
+              <Route path="/lowprice/:id" element={<CompPage />} />
               <Route path="/:id" element={<CompPage />} />
               <Route path="/dr" element={<ArrayDrop />} />
               <Route path="/admin" element={<Admin />} />
@@ -56,6 +56,7 @@ const App = () => {
           <Route path="/" element={<Header />}>
             <Route path="/basket" element={<Basket />} />
             <Route path="/" element={<MainPage />} />
+            <Route path="/:id" element={<CompPage />} />
             <Route path="/configurator" element={<ConfiguratorPage />} />
             <Route path="/about" element={<About />}>
               <Route path="company" element={<AboutUs />} />
@@ -64,6 +65,7 @@ const App = () => {
             </Route>
             <Route path="/game" element={<PCForGame />} />
             <Route path="/lowprice" element={<LowPriceComps />} />
+            <Route path="/lowprice/:id" element={<CompPage />} />
             <Route path="/dr" element={<ArrayDrop />} />
             <Route path="/admin" element={<Admin />} />
           </Route>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from "./configuratorPage.module.scss";
 import proc from "./images/proc.svg";
 import fan from "./images/fan.svg";
@@ -6,7 +6,7 @@ import ram from "./images/ram.svg";
 import rub from "./images/rub.svg";
 import mask from "./images/configurator-mask.svg";
 import ArrayDrop from "../../components/ArrayDrop/ArrayDrop";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 const ConfiguratorPage = () => {
   const components = [
@@ -36,17 +36,6 @@ const ConfiguratorPage = () => {
     },
   ];
   const summa = useSelector((state) => state.madePC.savePrice);
-  const price = useSelector((state) => state.madePC.price);
-  // const sum =
-  //   price.board +
-  //   price.processor +
-  //   price.cooler +
-  //   price.corpus +
-  //   price.hdd +
-  //   price.power +
-  //   price.ram +
-  //   price.ssd +
-  //   price.videocard;
 
   return (
     <div>
