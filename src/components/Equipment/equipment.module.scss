@@ -1,13 +1,18 @@
 @import "../../index.scss";
 
+
+body{
+    font-family: "PF DinDisplay Pro";
+}
 .equipment_block{
     
-    width: 1300px;
+    width: 97%;
     margin: auto;
 }
 
 .title{
     h2{
+        font-family: "PF DinDisplay Pro";
         font-size: 36px;
         font-weight: 800;
     }
@@ -17,8 +22,8 @@
     display: flex;
     align-items: center;
     border-bottom: 1px dashed $gray ;
-    font-size: 1.55rem;
-   width: 60%;
+    font-size: 1.25rem;
+   
    
     div{
         
@@ -27,6 +32,7 @@
 }
 
 .content_item_title{
+    
     width: 40%;
     align-items: center;
     display: flex;
@@ -34,6 +40,7 @@
     align-items: center;
 }
 .content_item_inner{
+    cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -41,6 +48,21 @@
 
 }
 
+.content_item_inner:hover{
+    color: $green;
+}
+
 .content{
+    width: 55%;
     margin-bottom: 50px;
+}
+
+.content_body{
+    display: flex;
+    justify-content: space-between;
+}
+
+.content_info{
+    width: 35%;
+    background-color: #1c232e;
 }

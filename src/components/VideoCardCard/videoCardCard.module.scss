@@ -1,0 +1,21 @@
+.videoCardCard{
+    padding: 10px 50px;
+}
+
+.image{
+    width: 75%;
+    display: flex;
+    margin: auto;
+    
+    img{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.content_item{
+    font-size: 17px;
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
