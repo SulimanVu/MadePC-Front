@@ -58,106 +58,74 @@
 }
 
 .list {
+  position: relative;
   display: flex;
   align-items: center;
-  list-style: none;
+  margin-right: 80px;
 }
 
 .item {
-  text-transform: uppercase;
   font-family: "PT Sans";
-  font-size: 14px;
-  margin-right: 20px;
   color: #fff;
+  font-weight: 100;
+  font-size: 13.5px;
+  text-transform: uppercase;
   cursor: pointer;
-  &:last-child {
-    margin-right: 70px;
+  &:hover {
+    color: #a7e200;
   }
+}
+
+.item:not(:last-child) {
+    margin-right: 20px;
+}
+
+.item:hover .nested_list {
+  position: absolute;
+  top: 100%;
+  background-color: #1e2530;
+  border-top: 2px solid #a7e200;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+}
+
+.item:hover .nested_list2 {
+  position: absolute;
+  top: 100%;
+  background-color: #1e2530;
+  border-top: 2px solid #a7e200;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+}
+
+.img {
+  width: 9px;
+  height: 9px;
+}
+
+.nested_item {
+  padding-top: 3px;
+}
+
+.nested_item2 {
+  padding-top: 3px;
+}
+
+.nested_link {
+  margin-left: 5px;
+  color: #fff;
+  font-family: "PT Sans";
   &:hover {
     color: #a7e200;
   }
 }
 
 .nested_list {
-  position: absolute;
-  width: 40px;
-  left: 79.7%;
-  top: 7%;
-  opacity: 0;
-  padding: 0;
-  cursor: pointer;
-  .nested_item{
-    width: 150px;
-  }
+  display: none;
 }
 
 .nested_list2 {
-  position: absolute;
-  width: 80px;
-  left: 84.7%;
-  top: 7%;
-  opacity: 0;
-  padding: 0;
-  cursor: pointer;
-  .nested_item2{
-    width: 150px;
-  }
-}
-
-.nested_list:hover {
-  opacity: 1;
-  width: 155px;
-}
-
-.nested_list2:hover {
-  opacity: 1;
-  width: 175px;
-}
-
-.nested_item {
-  padding-top: 10px;
-  background: #151a22;
-
-  &:first-child {
-    margin-top: 25px;
-    border-top: 2px solid #a7e200;
-  }
-}
-.nested_item2 {
-  padding-top: 10px;
-  background: #151a22;
-
-  &:first-child {
-    margin-top: 25px;
-    border-top: 2px solid #a7e200;
-  }
-}
-
-.nested_link {
-  font-size: 14px;
-  text-transform: uppercase;
-  font-family: "PT Sans";
-  color: #fff;
-  &:hover {
-    color: #a7e200;
-  }
-}
-.active {
-  color: #a7e200 !important;
-}
-.nested_link2 {
-  font-size: 14px;
-  text-transform: uppercase;
-  font-family: "PT Sans";
-  color: #fff;
-  &:hover {
-    color: #a7e200;
-  }
-}
-
-.img {
-  padding-top: 10px;
-  width: 20px;
-  height: 20px;
-  fill: #a7e200;
+  display: none;
 }
