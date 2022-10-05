@@ -9,20 +9,14 @@ import proc from "./images/proc.svg";
 import ssd from "./images/ssd.svg";
 import corpus from "./images/corpus.svg";
 import fan from "./images/fan.svg";
-import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import ModalBuy from "../ModalBuy/ModalBuy";
 import { useDispatch, useSelector } from "react-redux";
 import { addToBasket } from "../../features/applicationSlice";
 
 const CardComp = ({ computers, setModal }) => {
     const dispatch = useDispatch();
     const id = useSelector((state) => state.application.id)
-    console.log(computers._id)
-    const value = 120;
 
-    // const comp = computers;
-   
     const handleAdd = (computersId) => {
         dispatch(addToBasket({ computersId, id }))
         setModal(true)
@@ -42,23 +36,6 @@ const CardComp = ({ computers, setModal }) => {
                             <p className={styles.aboutName}>{computers.price} <img alt='#' className={styles.rub} src={rub} /></p>
                         </div>
                         <div className={styles.Circular}>
-                            {/* <CircularProgressbar
-                                value={120}
-                                text={`${value}
-                        FPS`}
-                                circleRatio={0.8}
-                                styles={{
-                                    trail: {
-                                        strokeLinecap: 'butt',
-                                        transform: 'rotate(-125deg)',
-                                        transformOrigin: "center-center"
-                                    },
-                                    text: {
-                                        fill: '#ddd'
-                                    }
-                                }}
-                                strokeWidth={10}
-                            /> */}
                             <Progress value={90} />
                         </div>
                     </div>

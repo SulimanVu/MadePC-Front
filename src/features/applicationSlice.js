@@ -99,7 +99,7 @@ export const deleteFromBasket = createAsyncThunk(
       })
 
       const data = await res.json();
-      return result1;
+      return { id, result1 };
     } catch (e) {
       thunkAPI.rejectWithValue(e)
     }
@@ -141,8 +141,16 @@ const applicationSlice = createSlice({
         state.load = false
       })
       .addCase(deleteFromBasket.fulfilled, (state, action) => {
-        state.users.basket = state.users.basket.filter((item) => {
-          return item._id === action.payload
+        state.users = state.users.map((item) => {
+          if (item._id === action.payload.id) {
+            return {
+              ...item,
+              basket: item.basket.filter((item) => {
+                return item._id !== action.payload.result1
+              })
+            }
+          }
+          return item
         })
       })
   },
