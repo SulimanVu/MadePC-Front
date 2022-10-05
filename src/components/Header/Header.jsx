@@ -105,7 +105,11 @@ const Header = () => {
           </li>
           
           <li className={styles.item}>Контакты</li>
+          <li className={styles.item}><Link to="/signin" className={styles.signIn}>Регистрация/Авторизация</Link></li>
+          <li className={styles.item}><Link to="/signin" className={styles.signIn}>Админ</Link></li>
         </ul>
+
+        
       </div>
       
     </div>

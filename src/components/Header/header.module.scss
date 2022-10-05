@@ -129,3 +129,11 @@
 .nested_list2 {
   display: none;
 }
+
+.signIn {
+  text-transform: uppercase;
+  color: #fff;
+  &:hover {
+    color: #a7e200;
+  }
+}
