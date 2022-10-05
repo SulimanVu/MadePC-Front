@@ -2,7 +2,19 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   madePC: [],
-  // board: '',
+  // price: {
+  //   board: 0,
+  //   processor: 0,
+  //   cooler: 0,
+  //   corpus: 0,
+  //   hdd: 0,
+  //   power: 0,
+  //   ram: 0,
+  //   ssd: 0,
+  //   videocard: 0,
+  // },
+  savePrice: 0,
+  pc: [],
   loader: false,
 };
 
@@ -23,10 +35,6 @@ export const updatemadePC = createAsyncThunk(
   "update/madePC",
   async (
     {
-      id,
-      name,
-      price,
-      image,
       ram,
       videocard,
       hardcard,
@@ -35,29 +43,32 @@ export const updatemadePC = createAsyncThunk(
       corpus,
       cooler,
       math,
+      powerunits,
     },
     thunkAPI
   ) => {
     try {
-      const res = await fetch(`http://localhost:3010/madeComp/${id}`, {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name,
-          price,
-          image,
-          ram,
-          videocard,
-          hardcard,
-          ssd,
-          processor,
-          corpus,
-          cooler,
-          math,
-        }),
-      });
+      const res = await fetch(
+        "http://localhost:3010/madeComp/633de646853325c96fef6a71",
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            price:0,
+            ram,
+            videocard,
+            hardcard,
+            ssd,
+            processor,
+            corpus,
+            cooler,
+            math,
+            powerunits,
+          }),
+        }
+      );
       const data = await res.json();
       return data;
     } catch (error) {
@@ -70,9 +81,7 @@ export const addmadePC = createAsyncThunk(
   "add/madePC",
   async (
     {
-      name,
       price,
-      image,
       ram,
       videocard,
       hardcard,
@@ -85,15 +94,13 @@ export const addmadePC = createAsyncThunk(
     thunkAPI
   ) => {
     try {
-      const res = await fetch("http://localhost:3010//madeComp", {
+      const res = await fetch("http://localhost:3010/madeComp", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          name,
           price,
-          image,
           ram,
           videocard,
           hardcard,
@@ -116,10 +123,18 @@ const madePC = createSlice({
   name: "madePC",
   initialState,
   reducers: {
-    // saveBoard: (state, action) => {
-    //   state.board = action.payload;
-    //   console.log(action.payload);
-    // },
+    price: (state, action) => {
+      state.price = action.payload;
+    },
+    savePrice: (state, action) => {
+      state.savePrice += action.payload;
+    },
+    savePC: (state, action) => {
+      state.pc.filter((item) => {
+        if (item.comp !== action.payload.comp) {
+        }
+      });
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -161,4 +176,6 @@ const madePC = createSlice({
 
 export default madePC.reducer;
 
-export const { saveBoard } = madePC.actions;
+export const { price } = madePC.actions;
+export const { savePrice } = madePC.actions;
+export const { savePC } = madePC.actions;

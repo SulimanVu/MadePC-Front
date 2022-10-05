@@ -41,47 +41,47 @@ const ArrayDrop = () => {
     <div className={styles.main}>
       <div>
         <h1>Материнская плата</h1>
-        <DropDown arr={board} />
+        <DropDown arr={board} index={0} />
       </div>
       <br />
       <div>
         <h1>Кулер</h1>
-        <DropDown arr={cooler} />
+        <DropDown arr={cooler} index={1} />
       </div>
       <br />
       <div>
         <h1>Корпус</h1>
-        <DropDown arr={corpus} />
+        <DropDown arr={corpus} index={2} />
       </div>
       <br />
       <div>
         <h1>Жесткий диск</h1>
-        <DropDown arr={hdd} />
+        <DropDown arr={hdd} index={3} />
       </div>
       <br />
       <div>
         <h1>Блок питания</h1>
-        <DropDown arr={power} />
+        <DropDown arr={power} index={4} />
       </div>
       <br />
       <div>
         <h1>Процессор</h1>
-        <DropDown arr={processor} />
+        <DropDown arr={processor} index={5} />
       </div>
       <br />
       <div>
         <h1>Оперативная память</h1>
-        <DropDown arr={ram} />
+        <DropDown arr={ram} index={6} />
       </div>
       <br />
       <div>
         <h1>SSD</h1>
-        <DropDown arr={ssd} />
+        <DropDown arr={ssd} index={7} />
       </div>
       <br />
       <div>
         <h1>Видеокарта</h1>
-        <DropDown arr={video} />
+        <DropDown arr={video} index={8} />
       </div>
       <br />
     </div>
