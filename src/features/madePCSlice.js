@@ -2,17 +2,6 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   madePC: [],
-  // price: {
-  //   board: 0,
-  //   processor: 0,
-  //   cooler: 0,
-  //   corpus: 0,
-  //   hdd: 0,
-  //   power: 0,
-  //   ram: 0,
-  //   ssd: 0,
-  //   videocard: 0,
-  // },
   savePrice: 0,
   pc: [],
   loader: false,
@@ -129,12 +118,13 @@ const madePC = createSlice({
     savePrice: (state, action) => {
       state.savePrice += action.payload;
     },
-    savePC: (state, action) => {
-      state.pc.filter((item) => {
-        if (item.comp !== action.payload.comp) {
-        }
-      });
-    },
+    // savePC: (state, action) => {
+    //   state.pc.filter((item) => {
+    //     if (item.comp !== action.payload.comp) {
+    //      return action.payload
+    //     }
+    //   });
+    // },
   },
   extraReducers: (builder) => {
     builder

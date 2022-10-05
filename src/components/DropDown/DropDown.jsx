@@ -1,11 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styles from "./dropDown.module.scss";
 import st from "../../public/st.png";
 import cn from "classnames";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import {
-  addmadePC,
-  saveImage,
   updatemadePC,
   savePrice,
 } from "../../features/madePCSlice";
