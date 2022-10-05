@@ -40,6 +40,7 @@ export const authThunk = createAsyncThunk(
     }
   }
 );
+
 export const loginThunk = createAsyncThunk(
   "fetch/login",
   async ({ login, password }, thunkAPI) => {
@@ -106,6 +107,46 @@ export const deleteFromBasket = createAsyncThunk(
   }
 )
 
+export const countPlus = createAsyncThunk(
+  'count/plus',
+  async ({ itemId, id }, thunkAPI) => {
+    try {
+      const res = await fetch(`http://localhost:3010/countPlus/${itemId}`, {
+        method: "PATCH",
+        headers: {
+          'Content-Type': "application/json"
+        },
+        body: JSON.stringify({})
+      })
+
+      const data = await res.json()
+      return { itemId, id };
+    } catch (e) {
+      thunkAPI.rejectWithValue(e)
+    }
+  }
+)
+
+export const countMinus = createAsyncThunk(
+  'count/minus',
+  async ({ itemId, id }, thunkAPI) => {
+    try {
+      const res = await fetch(`http://localhost:3010/countMinus/${itemId}`, {
+        method: "PATCH",
+        headers: {
+          'Content-Type': "application/json"
+        },
+        body: JSON.stringify({})
+      })
+
+      const data = await res.json()
+      return { itemId, id };
+    } catch (e) {
+      thunkAPI.rejectWithValue(e)
+    }
+  }
+)
+
 const applicationSlice = createSlice({
   name: "application",
   initialState,
@@ -125,7 +166,6 @@ const applicationSlice = createSlice({
         state.error = action.payload;
         state.load = false;
       })
-
       .addCase(loginThunk.fulfilled, (state, action) => {
         state.load = false;
         state.error = null;
@@ -151,6 +191,32 @@ const applicationSlice = createSlice({
             }
           }
           return item
+        })
+      })
+      .addCase(countPlus.fulfilled, (state, action) => {
+        state.users.map((item) => {
+          if (item._id === action.payload.id) {
+            return item.basket.map((i) => {
+              if (i._id === action.payload.itemId) {
+                i.count += 1
+              }
+              return i
+            })
+          }
+          return item;
+        })
+      })
+      .addCase(countMinus.fulfilled, (state, action) => {
+        state.users.map((item) => {
+          if (item._id === action.payload.id) {
+            return item.basket.map((i) => {
+              if (i._id === action.payload.itemId) {
+                i.count -= 1
+              }
+              return i
+            })
+          }
+          return item;
         })
       })
   },
