@@ -2,17 +2,21 @@ import React, { useState } from "react";
 import styles from "./dropDown.module.scss";
 import st from "../../public/st.png";
 import cn from "classnames";
+import { useDispatch } from "react-redux";
+import { saveBoard } from "../../features/madePCSlice";
 
 const DropDown = ({ arr }) => {
+  // const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
   const [def, setDefault] = useState("Не выбрано");
 
   const handleOpen = (e) => {
     setOpen(!open);
   };
-  const handleSelect = (e) => {
+  const handleSelect = (e, comp) => {
     setDefault(e.target.outerText);
-    setOpen(!open)
+    // dispatch(saveBoard(comp));
+    setOpen(!open);
   };
 
   return (
@@ -32,7 +36,7 @@ const DropDown = ({ arr }) => {
                   key={index}
                   className={styles.child}
                   tabIndex={"0"}
-                  onClick={(e) => handleSelect(e)}
+                  onClick={(e) => handleSelect(e, item)}
                 >
                   {item.name}
                 </div>
