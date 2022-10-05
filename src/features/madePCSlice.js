@@ -2,7 +2,18 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   madePC: [],
-  // board: '',
+  // price: {
+  //   board: 0,
+  //   processor: 0,
+  //   cooler: 0,
+  //   corpus: 0,
+  //   hdd: 0,
+  //   power: 0,
+  //   ram: 0,
+  //   ssd: 0,
+  //   videocard: 0,
+  // },
+  savePrice: 0,
   loader: false,
 };
 
@@ -21,41 +32,15 @@ export const fetchmadePC = createAsyncThunk(
 
 export const updatemadePC = createAsyncThunk(
   "update/madePC",
-  async (
-    {
-      id,
-      name,
-      price,
-      image,
-      ram,
-      videocard,
-      hardcard,
-      ssd,
-      processor,
-      corpus,
-      cooler,
-      math,
-    },
-    thunkAPI
-  ) => {
+  async ({comp}, thunkAPI) => {
     try {
-      const res = await fetch(`http://localhost:3010/madeComp/${id}`, {
+      const res = await fetch(`http://localhost:3010/madeComp/633d1a07f178f47f21274783`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          name,
-          price,
-          image,
-          ram,
-          videocard,
-          hardcard,
-          ssd,
-          processor,
-          corpus,
-          cooler,
-          math,
+          ram: comp._id
         }),
       });
       const data = await res.json();
@@ -85,7 +70,7 @@ export const addmadePC = createAsyncThunk(
     thunkAPI
   ) => {
     try {
-      const res = await fetch("http://localhost:3010//madeComp", {
+      const res = await fetch("http://localhost:3010/madeComp", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -116,10 +101,12 @@ const madePC = createSlice({
   name: "madePC",
   initialState,
   reducers: {
-    // saveBoard: (state, action) => {
-    //   state.board = action.payload;
-    //   console.log(action.payload);
-    // },
+    price: (state, action)=>{
+      state.price = action.payload
+    },
+    savePrice: (state, action) => {
+      state.savePrice += action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -161,4 +148,5 @@ const madePC = createSlice({
 
 export default madePC.reducer;
 
-export const { saveBoard } = madePC.actions;
+export const { price } = madePC.actions;
+export const { savePrice } = madePC.actions;

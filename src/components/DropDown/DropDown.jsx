@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./dropDown.module.scss";
 import st from "../../public/st.png";
 import cn from "classnames";
-import { useDispatch } from "react-redux";
-import { saveBoard } from "../../features/madePCSlice";
+import { useDispatch, useSelector } from "react-redux";
+import {  savePrice, updatemadePC } from "../../features/madePCSlice";
 
 const DropDown = ({ arr }) => {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
   const [def, setDefault] = useState("Не выбрано");
 
@@ -14,10 +14,12 @@ const DropDown = ({ arr }) => {
     setOpen(!open);
   };
   const handleSelect = (e, comp) => {
+    dispatch(updatemadePC(comp));
     setDefault(e.target.outerText);
-    // dispatch(saveBoard(comp));
     setOpen(!open);
+    dispatch(savePrice(comp.price))
   };
+
 
   return (
     <div className={styles.drop_down}>
