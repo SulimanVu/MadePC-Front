@@ -108,6 +108,26 @@ export const addComp = createAsyncThunk(
   }
 );
 
+// export const countPlus = createAsyncThunk(
+//   'count/plus',
+//   async ({ itemId, count }, thunkAPI) => {
+//     try {
+//       const res = await fetch(`http://localhost:3010/countPlus/${itemId}`, {
+//         method: "PATCH",
+//         headers: {
+//           'Content-Type': "application/json"
+//         },
+//         body: JSON.stringify({ count: count + 1 })
+//       })
+
+//       const data = await res.json()
+//       return data;
+//     } catch (e) {
+//       thunkAPI.rejectWithValue(e)
+//     }
+//   }
+// )
+
 const comp = createSlice({
   name: "comp",
   initialState,
@@ -146,7 +166,15 @@ const comp = createSlice({
       })
       .addCase(addComp.rejected, (state, action) => {
         state.loader = false;
-      });
+      })
+      // .addCase(countPlus.fulfilled, (state, action) => {
+      //   state.comp = state.comp.map((item) => {
+      //     if (item._id === action.payload._id) {
+      //      return item.count += 1
+      //     }
+      //     return item;
+      //   })
+      // })
   },
 });
 

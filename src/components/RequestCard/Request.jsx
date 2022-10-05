@@ -16,7 +16,7 @@ const Request = ({ item, index }) => {
   return (
     <div>
       <div key={index}>
-        <div className={styles.main} onClick={handleOpen}>
+        <div className={styles.main}>
           <ul className={styles.user_info}>
             <li>
               ФИО пользователя: &nbsp;&nbsp;

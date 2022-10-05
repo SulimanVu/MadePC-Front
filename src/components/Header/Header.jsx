@@ -34,7 +34,7 @@ const Header = () => {
       <div className={styles.information_block}>
         <ul className={styles.list}>
           <li className={styles.item}>Статьи</li>
-          <li className={styles.item}>О нас ⁞</li>
+          <li className={styles.item}>О нас ⁞
           <ul className={styles.nested_list}>
             <li className={styles.nested_item}>
               <img
@@ -42,7 +42,7 @@ const Header = () => {
                 alt="img"
                 className={styles.img}
               />
-              <Link to="/about/faq" className={path ==="/about/faq" ? cn(styles.nested_link, styles.active): styles.nested_link}>
+              <Link to="/about/faq" className={styles.nested_link}>
                 FAQ
               </Link>
             </li>
@@ -52,7 +52,7 @@ const Header = () => {
                 alt="img"
                 className={styles.img}
               />
-              <Link to="/about/company" className={path ==="/about/company" ? cn(styles.nested_link, styles.active): styles.nested_link}>
+              <Link to="/about/company" className={styles.nested_link}>
                 О Компании
               </Link>
             </li>
@@ -62,12 +62,14 @@ const Header = () => {
                 alt="img"
                 className={styles.img}
               />
-              <Link to="/about/comments" className={path ==="/about/comments" ? cn(styles.nested_link, styles.active): styles.nested_link}>
+              <Link to="/about/comments" className={styles.nested_link}>
                 Отзывы
               </Link>
             </li>
           </ul>
-          <li className={styles.item}>Клиентам ⁞</li>
+          </li>
+          
+          <li className={styles.item}>Клиентам ⁞
           <ul className={styles.nested_list2}>
             <li className={styles.nested_item2}>
               <img
@@ -75,7 +77,7 @@ const Header = () => {
                 alt="img"
                 className={styles.img}
               />
-              <Link to="in.com" className={styles.nested_link2}>
+              <Link to="in.com" className={styles.nested_link}>
                 тех. поддержка
               </Link>
             </li>
@@ -85,7 +87,7 @@ const Header = () => {
                 alt="img"
                 className={styles.img}
               />
-              <Link to="in.com" className={styles.nested_link2}>
+              <Link to="in.com" className={styles.nested_link}>
                 доставка и оплата
               </Link>
             </li>
@@ -95,13 +97,19 @@ const Header = () => {
                 alt="img"
                 className={styles.img}
               />
-              <Link to="in.com" className={styles.nested_link2}>
+              <Link to="in.com" className={styles.nested_link}>
                 гарантия
               </Link>
             </li>
           </ul>
+          </li>
+          
           <li className={styles.item}>Контакты</li>
+          <li className={styles.item}><Link to="/signin" className={styles.signIn}>Регистрация/Авторизация</Link></li>
+          <li className={styles.item}><Link to="/admin" className={styles.signIn}>Админ</Link></li>
         </ul>
+
+        
       </div>
       
     </div>

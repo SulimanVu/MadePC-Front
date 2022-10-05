@@ -3,7 +3,7 @@ import styles from '../ItemBasket/itembasket.module.scss';
 import proc from './images/proc2.png';
 import rub from '../CardComp/images/rub.svg';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteFromBasket, fetchUsers } from '../../features/applicationSlice';
+import { deleteFromBasket, fetchUsers, countPlus, countMinus } from '../../features/applicationSlice';
 import { fetchComp } from '../../features/compSlice';
 
 const ItemBasket = () => {
@@ -33,12 +33,13 @@ const ItemBasket = () => {
         dispatch(deleteFromBasket({ result1, id }))
     }
 
-    const handlePlus = (itemId, count) => {
-
+    const handlePlus = (count, itemId) => {
+        dispatch(countPlus({ itemId, id }))
     }
 
-    const handleMinus = () => {
-
+    const handleMinus = (count, itemId) => {
+        if (count > 1)
+            dispatch(countMinus({ itemId, id }))
     }
 
     return (
