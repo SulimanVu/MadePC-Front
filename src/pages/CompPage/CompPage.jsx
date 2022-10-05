@@ -11,6 +11,7 @@ import rub from "./images/rub.svg"
 import Equipment from "../../components/Equipment/Equipment";
 
 const CompPage = () => {
+ 
   const { id } = useParams();
   const dispatch = useDispatch();
   useEffect(() => {
