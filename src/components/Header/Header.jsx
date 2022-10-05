@@ -106,7 +106,7 @@ const Header = () => {
           
           <li className={styles.item}>Контакты</li>
           <li className={styles.item}><Link to="/signin" className={styles.signIn}>Регистрация/Авторизация</Link></li>
-          <li className={styles.item}><Link to="/signin" className={styles.signIn}>Админ</Link></li>
+          <li className={styles.item}><Link to="/admin" className={styles.signIn}>Админ</Link></li>
         </ul>
 
         
