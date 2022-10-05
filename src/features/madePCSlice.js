@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   madePC: [],
+  board: '',
   loader: false,
 };
 
@@ -114,7 +115,12 @@ export const addmadePC = createAsyncThunk(
 const madePC = createSlice({
   name: "madePC",
   initialState,
-  reducers: {},
+  reducers: {
+    saveBoard: (state, action) => {
+      state.board = action.payload;
+      console.log(action.payload);
+    },
+  },
   extraReducers: (builder) => {
     builder
       ////////////////FETCH-madePC///////////////
@@ -154,3 +160,5 @@ const madePC = createSlice({
 });
 
 export default madePC.reducer;
+
+export const { saveBoard } = madePC.actions;

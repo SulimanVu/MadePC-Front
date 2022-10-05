@@ -5,8 +5,9 @@ import fan from "./images/fan.svg";
 import ram from "./images/ram.svg";
 import rub from "./images/rub.svg";
 import mask from "./images/configurator-mask.svg";
-import DropDown from "../../components/DropDown/DropDown";
 import ArrayDrop from "../../components/ArrayDrop/ArrayDrop";
+import { useSelector } from "react-redux";
+
 const ConfiguratorPage = () => {
   const components = [
     {
@@ -35,13 +36,15 @@ const ConfiguratorPage = () => {
     },
   ];
 
+  const compPrice = useSelector(state => state.madePC.board)
+  
   return (
     <div>
       <div className={styles.configurator_block}>
         <div className={styles.configurator_left}>
-          {components.map((item) => {
+          {components.map((item, index) => {
             return (
-              <div className={styles.configurator_components_left}>
+              <div key={index} className={styles.configurator_components_left}>
                 <div>
                   <img src={item.image} alt="" />
                 </div>
