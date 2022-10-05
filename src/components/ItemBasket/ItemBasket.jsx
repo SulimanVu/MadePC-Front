@@ -21,7 +21,7 @@ const ItemBasket = () => {
             return element
         }
     })
-    
+
     const res = data?.basket
 
     useEffect(() => {
@@ -31,6 +31,14 @@ const ItemBasket = () => {
 
     const handleDelete = (result1) => {
         dispatch(deleteFromBasket({ result1, id }))
+    }
+
+    const handlePlus = (itemId, count) => {
+
+    }
+
+    const handleMinus = () => {
+
     }
 
     return (
@@ -48,9 +56,9 @@ const ItemBasket = () => {
                                 <img className={styles.imgRub} src={rub} alt='img' />
                             </div>
                             <div className={styles.plusMinus}>
-                                <button>-</button>
-                                <p>0</p>
-                                <button>+</button>
+                                <button onClick={() => handleMinus(item.count, item._id)}>-</button>
+                                <p>{item.count}</p>
+                                <button onClick={() => handlePlus(item.count, item._id)}>+</button>
                             </div>
                             <button className={styles.delete} onClick={() => handleDelete(item._id)}>
                                 ╳
