@@ -11,19 +11,17 @@ const ItemBasket = () => {
     const user = useSelector((state) => state.application.users)
     const comps = useSelector((state) => state.comp.comp)
     const id = useSelector((state) => state.application.id)
-    console.log(comps);
 
     const result = comps.map((element) => {
         return element._id
     })
-
-    console.log(result);
 
     const data = user.find((element) => {
         if (element._id === id) {
             return element
         }
     })
+    
     const res = data?.basket
 
     useEffect(() => {
@@ -32,7 +30,6 @@ const ItemBasket = () => {
     }, [dispatch])
 
     const handleDelete = (result1) => {
-
         dispatch(deleteFromBasket({ result1, id }))
     }
 
@@ -55,7 +52,7 @@ const ItemBasket = () => {
                                 <p>0</p>
                                 <button>+</button>
                             </div>
-                            <button className={styles.delete} onClick={() => handleDelete(result)}>
+                            <button className={styles.delete} onClick={() => handleDelete(item._id)}>
                                 ╳
                             </button>
                         </div>
