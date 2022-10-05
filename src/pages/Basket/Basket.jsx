@@ -1,12 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from '../Basket/basket.module.scss';
 import dom from '../LowPrieceComps/images/domic2.png';
 import { Link } from 'react-router-dom';
 import ItemBasket from '../../components/ItemBasket/ItemBasket';
 import rub from '../../components/CardComp/images/rub.svg';
 import Order from '../../components/Order/Order';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchUsers } from '../../features/applicationSlice';
+import { fetchComp } from '../../features/compSlice';
 
 const Basket = () => {
+    const dispatch = useDispatch();
+    const id = useSelector((state) => state.application.id)
+    const user = useSelector((state) => state.application.users.find((item) => item._id === id))
+
+    const result = user?.basket.reduce((a, b) => a += b.price, 0)
+
     return (
         <div className={styles.mainBasket}>
             <div className={styles.nav}>
@@ -24,7 +33,7 @@ const Basket = () => {
                     </div>
                     <div className={styles.total}>
                         <h2 className={styles.total1}>Общая стоимость</h2>
-                        <p>57800</p>
+                        <p>{result}</p>
                         <img className={styles.imgRub} src={rub} alt='img' />
                     </div>
                 </div>
