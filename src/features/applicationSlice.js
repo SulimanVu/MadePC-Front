@@ -1,10 +1,26 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 const initialState = {
+  users: [],
   error: null,
   load: false,
   token: localStorage.getItem("token"),
   id: localStorage.getItem("id"),
 };
+
+export const fetchUsers = createAsyncThunk(
+  'fetch/users',
+  async (_, thunkAPI) => {
+    try {
+      const res = await fetch('http://localhost:3010/users');
+      const data = await res.json();
+
+      return data;
+    } catch (e) {
+      thunkAPI.rejectWithValue(e)
+    }
+  }
+)
+
 export const authThunk = createAsyncThunk(
   "fetch/auth",
   async ({ reglogin, regPassword }, thunkAPI) => {
@@ -48,6 +64,48 @@ export const loginThunk = createAsyncThunk(
     }
   }
 );
+
+export const addToBasket = createAsyncThunk(
+  'add/basket',
+  async ({ id, computersId }, thunkAPI) => {
+    try {
+      const res = await fetch(`http://localhost:3010/addToBasket/${id}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': "application/json"
+        },
+        body: JSON.stringify({ basket: computersId })
+      })
+
+      const data = await res.json();
+      return computersId;
+    } catch (e) {
+      thunkAPI.rejectWithValue(e)
+    }
+  }
+)
+
+export const deleteFromBasket = createAsyncThunk(
+  'delete/basket',
+  async ({ id, result1 }, thunkAPI) => {
+    console.log(result1);
+    try {
+      const res = await fetch(`http://localhost:3010/deleteFromBasket/${id}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': "application/json"
+        },
+        body: JSON.stringify({ basket: result1 })
+      })
+
+      const data = await res.json();
+      return result1;
+    } catch (e) {
+      thunkAPI.rejectWithValue(e)
+    }
+  }
+)
+
 const applicationSlice = createSlice({
   name: "application",
   initialState,
@@ -73,7 +131,20 @@ const applicationSlice = createSlice({
         state.error = null;
         state.token = action.payload.token;
         state.id = action.payload.login1;
-      });
+      })
+      .addCase(fetchUsers.fulfilled, (state, action) => {
+        state.users = action.payload
+        state.load = false
+      })
+      .addCase(addToBasket.fulfilled, (state, action) => {
+        state.users.basket.push(action.payload)
+        state.load = false
+      })
+      .addCase(deleteFromBasket.fulfilled, (state, action) => {
+        state.users.basket = state.users.basket.filter((item) => {
+          return item._id === action.payload
+        })
+      })
   },
 });
 

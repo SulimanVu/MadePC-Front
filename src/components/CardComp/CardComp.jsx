@@ -1,21 +1,33 @@
-import React, { useEffect, useState } from 'react';
-import Progress from '../Progress/Progress'
-import { Link } from 'react-router-dom';
-import styles from '../CardComp/cardcomp.module.scss';
-import rub from './images/rub.svg';
-import videocard from './images/videocard.svg';
-import ram from './images/ram.svg';
-import proc from './images/proc.svg';
-import ssd from './images/ssd.svg';
-import corpus from './images/corpus.svg';
-import fan from './images/fan.svg';
-import { CircularProgressbar } from 'react-circular-progressbar';
-import 'react-circular-progressbar/dist/styles.css';
-import ModalBuy from '../ModalBuy/ModalBuy';
+import React, { useEffect, useState } from "react";
+import Progress from "../Progress/Progress";
+import { Link } from "react-router-dom";
+import styles from "../CardComp/cardcomp.module.scss";
+import rub from "./images/rub.svg";
+import videocard from "./images/videocard.svg";
+import ram from "./images/ram.svg";
+import proc from "./images/proc.svg";
+import ssd from "./images/ssd.svg";
+import corpus from "./images/corpus.svg";
+import fan from "./images/fan.svg";
+import { CircularProgressbar } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
+import ModalBuy from "../ModalBuy/ModalBuy";
+import { useDispatch, useSelector } from "react-redux";
+import { addToBasket } from "../../features/applicationSlice";
 
 const CardComp = ({ computers, setModal }) => {
-
+    const dispatch = useDispatch();
+    const id = useSelector((state) => state.application.id)
+    console.log(computers._id)
     const value = 120;
+
+    // const comp = computers;
+   
+    const handleAdd = (computersId) => {
+        dispatch(addToBasket({ computersId, id }))
+        setModal(true)
+    }
+
 
     return (
         <>
@@ -47,11 +59,11 @@ const CardComp = ({ computers, setModal }) => {
                                 }}
                                 strokeWidth={10}
                             /> */}
-                            <Progress value = {90} />
+                            <Progress value={90} />
                         </div>
                     </div>
                     <div className={styles.buttons}>
-                        <button className={styles.buy} onClick={() => setModal(true)}>Купить</button>
+                        <button className={styles.buy} onClick={() => handleAdd(computers._id)}>Купить</button>
                         <Link to={`${computers._id}`}><button className={styles.about}>Подробнее</button></Link>
                     </div>
                     <div className={styles.desc}>

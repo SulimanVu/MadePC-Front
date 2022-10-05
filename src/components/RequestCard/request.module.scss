@@ -1,0 +1,115 @@
+@import "../../index.scss";
+
+.main {
+  width: 90%;
+  padding: 10px 0;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid $gray;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  .user_info {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 18px;
+    margin-left: 20px;
+    li {
+      align-items: center;
+      margin-top: 10px;
+      color: $gray;
+      span {
+        color: #fff;
+      }
+    }
+  }
+  .spred {
+    position: relative;
+    align-items: center;
+    word-wrap: break-word;
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+    color: $green;
+    margin-right: 20px;
+    cursor: pointer;
+    img {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 20px;
+      transform: rotate(90deg);
+      transition: 0.5s;
+    }
+    span {
+      position: absolute;
+      top: -4px;
+      right: 25px;
+      color: #fff;
+    }
+  }
+  .spred_active {
+    img {
+      transform: rotate(270deg);
+    }
+    span {
+      color: $green;
+    }
+  }
+  .price {
+    display: flex;
+    align-items: center;
+    align-self: center;
+    color: $green;
+    font-size: 20px;
+    img {
+      width: 20%;
+      margin-left: 5px;
+    }
+  }
+  button {
+    height: 50%;
+    margin: auto 0;
+    padding: 5px 15px;
+    border-radius: 5px;
+    background-color: $green;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover {
+      background-color: rgb(26, 220, 97);
+      color: #fff;
+      box-shadow: 0px 0px 20px green;
+    }
+  }
+}
+
+.comp {
+  width: 90%;
+  padding: 10px 0;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid green;
+  color: #fff;
+  border: 2px solid $gray;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-top: none;
+  ul {
+    li {
+      margin: 10px 20px;
+      span {
+        color: $gray;
+        .comp_price {
+          color: #fff;
+        }
+        sub {
+          color: $green;
+        }
+      }
+    }
+  }
+}
