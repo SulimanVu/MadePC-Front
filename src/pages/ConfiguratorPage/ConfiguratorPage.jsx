@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./configuratorPage.module.scss";
 import proc from "./images/proc.svg";
 import fan from "./images/fan.svg";
@@ -35,7 +35,7 @@ const ConfiguratorPage = () => {
       image: proc,
     },
   ];
-  const summa = useSelector(state=> state.madePC.savePrice)
+  const summa = useSelector((state) => state.madePC.savePrice);
   const price = useSelector((state) => state.madePC.price);
   // const sum =
   //   price.board +
@@ -56,7 +56,7 @@ const ConfiguratorPage = () => {
             return (
               <div key={index} className={styles.configurator_components_left}>
                 <div>
-                  <img src={item.image} alt="" />
+                  <img src={item.image} alt="#" />
                 </div>
                 <div>{item.title}</div>
               </div>
@@ -71,14 +71,14 @@ const ConfiguratorPage = () => {
             <input type="text" placeholder="Поиск конфигурации по номеру" />
           </div>
           <div className={styles.configurator_comp}>
-            <img src={mask} alt="" />
+            <img src={mask} alt="#" />
 
             <div className={styles.configurator_price}>
               <div>
                 <span>{summa}</span>
               </div>
               <div>
-                <img src={rub} alt="" />
+                <img src={rub} alt="#" />
               </div>
             </div>
             <div className={styles.configurator_btn}>

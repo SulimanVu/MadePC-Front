@@ -14,6 +14,7 @@ const initialState = {
   //   videocard: 0,
   // },
   savePrice: 0,
+  pc: [],
   loader: false,
 };
 
@@ -32,17 +33,42 @@ export const fetchmadePC = createAsyncThunk(
 
 export const updatemadePC = createAsyncThunk(
   "update/madePC",
-  async ({comp}, thunkAPI) => {
+  async (
+    {
+      ram,
+      videocard,
+      hardcard,
+      ssd,
+      processor,
+      corpus,
+      cooler,
+      math,
+      powerunits,
+    },
+    thunkAPI
+  ) => {
     try {
-      const res = await fetch(`http://localhost:3010/madeComp/633d1a07f178f47f21274783`, {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          ram: comp._id
-        }),
-      });
+      const res = await fetch(
+        "http://localhost:3010/madeComp/633de646853325c96fef6a71",
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            price:0,
+            ram,
+            videocard,
+            hardcard,
+            ssd,
+            processor,
+            corpus,
+            cooler,
+            math,
+            powerunits,
+          }),
+        }
+      );
       const data = await res.json();
       return data;
     } catch (error) {
@@ -55,9 +81,7 @@ export const addmadePC = createAsyncThunk(
   "add/madePC",
   async (
     {
-      name,
       price,
-      image,
       ram,
       videocard,
       hardcard,
@@ -73,12 +97,10 @@ export const addmadePC = createAsyncThunk(
       const res = await fetch("http://localhost:3010/madeComp", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          name,
           price,
-          image,
           ram,
           videocard,
           hardcard,
@@ -101,11 +123,17 @@ const madePC = createSlice({
   name: "madePC",
   initialState,
   reducers: {
-    price: (state, action)=>{
-      state.price = action.payload
+    price: (state, action) => {
+      state.price = action.payload;
     },
     savePrice: (state, action) => {
       state.savePrice += action.payload;
+    },
+    savePC: (state, action) => {
+      state.pc.filter((item) => {
+        if (item.comp !== action.payload.comp) {
+        }
+      });
     },
   },
   extraReducers: (builder) => {
@@ -150,3 +178,4 @@ export default madePC.reducer;
 
 export const { price } = madePC.actions;
 export const { savePrice } = madePC.actions;
+export const { savePC } = madePC.actions;
