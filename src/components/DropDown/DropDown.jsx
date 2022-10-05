@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { saveBoard } from "../../features/madePCSlice";
 
 const DropDown = ({ arr }) => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
   const [def, setDefault] = useState("Не выбрано");
 
@@ -15,7 +15,7 @@ const DropDown = ({ arr }) => {
   };
   const handleSelect = (e, comp) => {
     setDefault(e.target.outerText);
-    dispatch(saveBoard(comp));
+    // dispatch(saveBoard(comp));
     setOpen(!open);
   };
 
