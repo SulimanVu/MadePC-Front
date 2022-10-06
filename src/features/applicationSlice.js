@@ -68,9 +68,9 @@ export const loginThunk = createAsyncThunk(
 
 export const addToBasket = createAsyncThunk(
   'add/basket',
-  async ({ id, computersId }, thunkAPI) => {
+  async ({ id1, computersId }, thunkAPI) => {
     try {
-      const res = await fetch(`http://localhost:3010/addToBasket/${id}`, {
+      const res = await fetch(`http://localhost:3010/addToBasket/${id1}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': "application/json"
