@@ -6,7 +6,7 @@ import ram from "./images/ram.svg";
 import rub from "./images/rub.svg";
 import mask from "./images/configurator-mask.svg";
 import ArrayDrop from "../../components/ArrayDrop/ArrayDrop";
-import { useSelector } from "react-redux";
+import {  useSelector } from "react-redux";
 
 const ConfiguratorPage = () => {
   const components = [
