@@ -87,6 +87,10 @@
         border-radius: 5px;
         text-transform: uppercase;
         cursor: pointer;
+
+        &:hover {
+            background-color: #6a8b0f;
+        }
     }
 }
 
