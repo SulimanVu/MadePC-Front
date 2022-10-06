@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import styles from "./request.module.scss";
+import styles from "../RequestCard/request.module.scss";
 import st from "../../public/st.png";
 import rub from "../CardComp/images/rub.svg";
 import cn from "classnames";
@@ -8,8 +8,8 @@ import { motion } from "framer-motion";
 
 const Request = ({ item, index }) => {
   const [open, setOpen] = useState(false);
-  const ArrComp = useSelector((state) => state.comp.comp);
-
+  const madePC = useSelector((state) => state.madePC.madePC);
+  
   const handleOpen = () => {
     setOpen(!open);
   };
@@ -49,7 +49,8 @@ const Request = ({ item, index }) => {
           animate={{ opacity: 1, y: 0 }}
           className={styles.comp}
         >
-          {ArrComp.map((comp, index) => {
+          {madePC.map((comp, index) => {
+            console.log(item, comp);
             if (comp._id === item.comp[0]._id) {
               return (
                 <ul className={styles.components} key={index}>
