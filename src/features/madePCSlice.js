@@ -24,6 +24,7 @@ export const updatemadePC = createAsyncThunk(
   "update/madePC",
   async (
     {
+      user,
       ram,
       videocard,
       hardcard,
@@ -38,14 +39,15 @@ export const updatemadePC = createAsyncThunk(
   ) => {
     try {
       const res = await fetch(
-        "http://localhost:3010/madeComp/633de646853325c96fef6a71",
+        "http://localhost:3010/madeComp/633ec68e3d172f61cdc5441e",
         {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            price:0,
+            user: user._id,
+            price: 0,
             ram,
             videocard,
             hardcard,
@@ -69,24 +71,14 @@ export const updatemadePC = createAsyncThunk(
 export const addmadePC = createAsyncThunk(
   "add/madePC",
   async (
-    {
-      price,
-      ram,
-      videocard,
-      hardcard,
-      ssd,
-      processor,
-      corpus,
-      cooler,
-      math,
-    },
+    { price, ram, videocard, hardcard, ssd, processor, corpus, cooler, math },
     thunkAPI
   ) => {
     try {
       const res = await fetch("http://localhost:3010/madeComp", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           price,
