@@ -29,7 +29,7 @@ export const updatemadePC = createAsyncThunk(
       videocard,
       hardcard,
       ssd,
-      processor,
+      processor,  
       corpus,
       cooler,
       math,

@@ -14,6 +14,7 @@ import ssd from "../features/ssdSlice";
 import commentSlice from "../features/commentSlice";
 import game from "../features/gameSlice";
 import request from "../features/requestSlice";
+import requestMade from "../features/requestMadeSlice";
 import madePC from "../features/madePCSlice";
 
 export const store = configureStore({
@@ -33,6 +34,7 @@ export const store = configureStore({
     commentSlice,
     game,
     request,
+    requestMade,
     madePC,
   },
 });

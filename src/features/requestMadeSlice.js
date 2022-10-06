@@ -1,15 +1,15 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  request: [],
+  madeRequest: [],
   loading: false,
 };
 
-export const fetchRequests = createAsyncThunk(
-  "fetch/request",
+export const fetchMadeRequests = createAsyncThunk(
+  "fetch/Maderequest",
   async (_, thunkAPI) => {
     try {
-      const res = await fetch("http://localhost:3010/requests");
+      const res = await fetch("http://localhost:3010/requestsMade");
       const data = res.json();
 
       return data;
@@ -19,12 +19,11 @@ export const fetchRequests = createAsyncThunk(
   }
 );
 
-export const addRequest = createAsyncThunk(
-  "add/request",
+export const addMadeRequest = createAsyncThunk(
+  "add/Maderequest",
   async ({ name, number, email, comment, basket }, thunkAPI) => {
-    console.log(basket);
     try {
-      const res = await fetch("http://localhost:3010/request", {
+      const res = await fetch("http://localhost:3010/requestMade", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -46,27 +45,27 @@ export const addRequest = createAsyncThunk(
   }
 );
 
-const requestSlice = createSlice({
-  name: "request",
+const requestMadeSlice = createSlice({
+  name: "requestMade",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(fetchRequests.fulfilled, (state, action) => {
-        state.request = action.payload;
+      .addCase(fetchMadeRequests.fulfilled, (state, action) => {
+        state.madeRequest = action.payload;
         state.loading = false;
       })
-      .addCase(fetchRequests.pending, (state, action) => {
+      .addCase(fetchMadeRequests.pending, (state, action) => {
         state.loading = true;
       })
-      .addCase(addRequest.fulfilled, (state, action) => {
-        state.request.push(action.payload);
+      .addCase(addMadeRequest.fulfilled, (state, action) => {
+        state.madeRequest.push(action.payload);
         state.loading = false;
       })
-      .addCase(addRequest.pending, (state, action) => {
+      .addCase(addMadeRequest.pending, (state, action) => {
         state.loading = true;
       });
   },
 });
 
-export default requestSlice.reducer;
+export default requestMadeSlice.reducer;
