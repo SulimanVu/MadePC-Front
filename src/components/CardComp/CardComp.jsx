@@ -15,13 +15,12 @@ import { addToBasket } from "../../features/applicationSlice";
 
 const CardComp = ({ computers, setModal }) => {
     const dispatch = useDispatch();
-    const id = useSelector((state) => state.application.id)
+    const id1 = useSelector((state) => state.application.id)
 
     const handleAdd = (computersId) => {
-        dispatch(addToBasket({ computersId, id }))
+        dispatch(addToBasket({ computersId, id1 }))
         setModal(true)
     }
-
 
     return (
         <>

@@ -9,15 +9,22 @@ import { fetchComp } from "../../features/compSlice";
 import { useParams } from "react-router-dom";
 import rub from "./images/rub.svg";
 import Equipment from "../../components/Equipment/Equipment";
+import { addToBasket } from "../../features/applicationSlice";
 
 const CompPage = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
+  const id1 = useSelector((state) => state.application.id)
   useEffect(() => {
     dispatch(fetchComp());
   }, [dispatch]);
 
+  const handleAdd = (computersId) => {
+    dispatch(addToBasket({ computersId, id1 }))
+  }
+
   const comp = useSelector((state) => state.comp.comp);
+
   return (
     <div className={styles.main}>
       <div className={styles.comppage_header}>
@@ -51,7 +58,7 @@ const CompPage = () => {
                     </div>
                     <div className={styles.btn}>
                       <div>
-                        <button>Купить</button>
+                        <button onClick={() => handleAdd(item._id)}>Купить</button>
                       </div>
                       <div>
                         {" "}
