@@ -29,7 +29,7 @@ const Nav = () => {
             <Link to="/game">Игровые ПК</Link>
           </li>
           <li>
-            <Link to="/">Мощнейшие ПК</Link>
+            <Link to="/powerfull">Мощнейшие ПК</Link>
           </li>
           <li>
             <Link to="/">ПК на базе AMD</Link>

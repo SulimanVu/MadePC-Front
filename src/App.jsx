@@ -13,6 +13,7 @@ import Comments from "./components/Comments/Comments";
 import ConfiguratorPage from "./pages/ConfiguratorPage/ConfiguratorPage";
 import ArrayDrop from "./components/ArrayDrop/ArrayDrop";
 import Basket from "./pages/Basket/Basket";
+import Powerfull from "./components/Powerfull/Powerfull"
 import Admin from "./pages/AdminPage/Admin";
 import { useSelector } from "react-redux";
 import CompPage from "./pages/CompPage/CompPage";
@@ -28,6 +29,7 @@ const App = () => {
             <Route path="/" element={<Header />}>
               <Route path="/basket" element={<Basket />} />
               <Route path="/" element={<MainPage />} />
+              <Route path="/powerfull" element={<Powerfull />} />
               <Route path="/configurator" element={<ConfiguratorPage />} />
               <Route path="/about" element={<About />}>
                 <Route path="company" element={<AboutUs />} />
@@ -56,6 +58,7 @@ const App = () => {
           <Route path="/" element={<Header />}>
             <Route path="/basket" element={<Basket />} />
             <Route path="/" element={<MainPage />} />
+            <Route path="/powerfull" element={<Powerfull />} />
             <Route path="/:id" element={<CompPage />} />
             <Route path="/configurator" element={<ConfiguratorPage />} />
             <Route path="/about" element={<About />}>
