@@ -109,18 +109,18 @@ export const deleteFromBasket = createAsyncThunk(
 
 export const countPlus = createAsyncThunk(
   'count/plus',
-  async ({ itemId, id }, thunkAPI) => {
+  async ({ itemId, id, price }, thunkAPI) => {
     try {
       const res = await fetch(`http://localhost:3010/countPlus/${itemId}`, {
         method: "PATCH",
         headers: {
           'Content-Type': "application/json"
         },
-        body: JSON.stringify({})
+        body: JSON.stringify({ price })
       })
 
       const data = await res.json()
-      return { itemId, id };
+      return { itemId, id, price };
     } catch (e) {
       thunkAPI.rejectWithValue(e)
     }
@@ -199,6 +199,7 @@ const applicationSlice = createSlice({
             return item.basket.map((i) => {
               if (i._id === action.payload.itemId) {
                 i.count += 1
+                i.price = i.price + i.total
               }
               return i
             })
@@ -212,6 +213,7 @@ const applicationSlice = createSlice({
             return item.basket.map((i) => {
               if (i._id === action.payload.itemId) {
                 i.count -= 1
+                i.price = i.price - i.total
               }
               return i
             })
