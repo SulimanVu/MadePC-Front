@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from '../Order/order.module.scss';
 import req from '../Order/images/req.svg';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addRequest } from '../../features/requestSlice';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -11,6 +11,16 @@ const Order = () => {
     const [number, setNumber] = useState('');
     const [email, setEmail] = useState('');
     const [comment, setComment] = useState('');
+    const id = useSelector((state) => state.application.id)
+    const users = useSelector((state) => state.application.users)
+
+    const currentUser = users?.find((item) => item._id === id)
+
+    const basket = currentUser?.basket.map((elem) => {
+        return elem._id
+    })
+
+    // console.log(basket);
 
     const dispatch = useDispatch();
 
@@ -35,7 +45,7 @@ const Order = () => {
     }
 
     const handleAdd = () => {
-        dispatch(addRequest({ name, number, email, comment }))
+        dispatch(addRequest({ name, number, email, comment, basket }))
         setName('')
         setNumber('')
         setEmail('')
