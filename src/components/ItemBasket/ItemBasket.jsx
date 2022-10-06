@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from '../ItemBasket/itembasket.module.scss';
 import proc from './images/proc2.png';
 import rub from '../CardComp/images/rub.svg';
@@ -11,6 +11,7 @@ const ItemBasket = () => {
     const user = useSelector((state) => state.application.users)
     const comps = useSelector((state) => state.comp.comp)
     const id = useSelector((state) => state.application.id)
+    const [disabled, setDisabled] = useState(false)
 
     const result = comps.map((element) => {
         return element._id
@@ -33,13 +34,17 @@ const ItemBasket = () => {
         dispatch(deleteFromBasket({ result1, id }))
     }
 
-    const handlePlus = (count, itemId) => {
-        dispatch(countPlus({ itemId, id }))
+    const handlePlus = (count, itemId, price) => {
+        dispatch(countPlus({ itemId, id, price }))
     }
 
     const handleMinus = (count, itemId) => {
-        if (count > 1)
+        if (count > 1) {
             dispatch(countMinus({ itemId, id }))
+        }
+        else if (count === 1) {
+            setDisabled(true)
+        }
     }
 
     return (
@@ -57,9 +62,9 @@ const ItemBasket = () => {
                                 <img className={styles.imgRub} src={rub} alt='img' />
                             </div>
                             <div className={styles.plusMinus}>
-                                <button onClick={() => handleMinus(item.count, item._id)}>-</button>
+                                <button onClick={() => handleMinus(item.count, item._id)} disabled={disabled}>-</button>
                                 <p>{item.count}</p>
-                                <button onClick={() => handlePlus(item.count, item._id)}>+</button>
+                                <button onClick={() => handlePlus(item.count, item._id, item.price)}>+</button>
                             </div>
                             <button className={styles.delete} onClick={() => handleDelete(item._id)}>
                                 ╳
