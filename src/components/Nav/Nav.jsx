@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./nav.module.scss";
 import { Link } from "react-router-dom";
 import Badge from "@mui/material/Badge";
 import { styled } from "@mui/material/styles";
 import IconButton from "@mui/material/IconButton";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchUsers } from "../../features/applicationSlice";
+
 const StyledBadge = styled(Badge)(({ theme }) => ({
   "& .MuiBadge-badge": {
     right: -3,
@@ -15,6 +18,17 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 }));
 
 const Nav = () => {
+  const dispatch = useDispatch()
+  useEffect(()=>{
+    dispatch(fetchUsers())
+  },[dispatch])
+  const id = useSelector((state)=> state.application.id)
+
+  const user = useSelector((state) => state.application.users.find((item) => item._id === id))
+  
+  console.log(user)
+
+
   return (
     
       <div className={styles.nav}>
@@ -39,7 +53,7 @@ const Nav = () => {
         <div><box-icon name='search' color = "#a7e200"></box-icon></div>
         <div>
           <IconButton aria-label="cart">
-            <StyledBadge badgeContent={4} color="secondary">
+            <StyledBadge badgeContent={user?.basket.length} color="secondary">
               <Link className={styles.basket} to="/basket"><ShoppingCartIcon /></Link>
             </StyledBadge>
           </IconButton>
