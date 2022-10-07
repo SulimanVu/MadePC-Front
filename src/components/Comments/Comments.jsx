@@ -6,7 +6,7 @@ import { fetchComments, addComments } from "../../features/commentSlice";
 const Comments = () => {
   const [comm, setComm] = useState("");
   const id = useSelector((state) => state.application.id);
-
+  const token = useSelector((state) => state.application.token);
   const comment = useSelector((state) => state.commentSlice.comments);
   const dispatch = useDispatch();
 
@@ -32,7 +32,7 @@ const Comments = () => {
             placeholder="Написать комментарий..."
             onChange={handleChange}
           />
-          <button onClick={handleAddComment} disabled={!comm}>
+          <button onClick={handleAddComment} disabled={!comm || !token}>
             Добавить
           </button>
         </div>
