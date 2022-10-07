@@ -43,7 +43,7 @@ const App = () => {
               <Route path="/dr" element={<ArrayDrop />} />
               <Route path="/admin" element={<Admin />} />
             </Route>
-            <Route path="/signin" element={<Navigate to="/" />} />
+            <Route path="/signin" element={<SignIn/>} />
           </Routes>
         </div>
         <Footer />

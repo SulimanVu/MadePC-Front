@@ -7,15 +7,18 @@ import { useDispatch } from "react-redux";
 import "./Sign.scss";
 
 import { loginThunk } from "../../features/applicationSlice";
+import { addmadePC } from "../../features/madePCSlice";
 
 const SignIn = () => {
   const [reglogin, setRegLogin] = useState("");
   const [regPassword, setRegPassword] = useState("");
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
+
   const dispatch = useDispatch();
   const handleClickRegistr = () => {
     dispatch(authThunk({ reglogin, regPassword }));
+    dispatch(addmadePC({name: reglogin}))
   };
 
   const handleClick = (e) => {
@@ -31,10 +34,10 @@ const SignIn = () => {
           <div class="row full-height justify-content-center">
             <div class="col-12 text-center align-self-center py-5">
               <div class="section pb-5 pt-5 pt-sm-2 text-center">
-                <h6 class="mb-0 pb-3">
-                  <span>Log In </span>
-                  <span>Sign Up</span>
-                </h6>
+                <br />
+                <br />
+                <br />
+                <br />
                 <input
                   class="checkbox"
                   type="checkbox"
