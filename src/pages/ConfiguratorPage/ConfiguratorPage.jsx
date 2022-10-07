@@ -47,6 +47,7 @@ const ConfiguratorPage = () => {
     dispatch(addToBasket({ computersId, id1 }))
     // dispatch(addMadeRequest({basket: pc[0]._id}));
   };
+  
 
   return (
     <div>
