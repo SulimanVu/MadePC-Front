@@ -79,7 +79,7 @@ export const addToBasket = createAsyncThunk(
       })
 
       const data = await res.json();
-      return {id,computersId};
+      return { id1, computersId };
     } catch (e) {
       thunkAPI.rejectWithValue(e)
     }
@@ -177,11 +177,12 @@ const applicationSlice = createSlice({
         state.load = false
       })
       .addCase(addToBasket.fulfilled, (state, action) => {
-       state.users.map((item)=>{
-        if(item._id === action.payload.id){
-          item.basket.push(action.payload.computersId)
-        }
-       })
+        state.users = state.users.map((item) => {
+          if (item._id === action.payload.id1) {
+            item.basket.push(action.payload.computersId)
+          }
+          return item
+        })
         state.load = false
       })
       .addCase(deleteFromBasket.fulfilled, (state, action) => {
