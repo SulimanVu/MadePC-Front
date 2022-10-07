@@ -8,6 +8,7 @@ import mask from "./images/configurator-mask.svg";
 import ArrayDrop from "../../components/ArrayDrop/ArrayDrop";
 import { useDispatch, useSelector } from "react-redux";
 import { addMadeRequest } from "../../features/requestMadeSlice";
+import { addToBasket } from "../../features/applicationSlice";
 
 const ConfiguratorPage = () => {
   const components = [
@@ -38,9 +39,12 @@ const ConfiguratorPage = () => {
   ];
   const dispatch = useDispatch();
   const summa = useSelector((state) => state.madePC.savePrice);
+  const id1 = useSelector((state) => state.application.id);
+  const computers = useSelector((state) => state.comp.comp)
   // let pc = useSelector((state) => state.madePC.madePC.slice(-1));
 
-  const handleBuy = (e) => {
+  const handleBuy = (e, computersId) => {
+    dispatch(addToBasket({ computersId, id1 }))
     // dispatch(addMadeRequest({basket: pc[0]._id}));
   };
 
@@ -78,7 +82,7 @@ const ConfiguratorPage = () => {
               </div>
             </div>
             <div className={styles.configurator_btn}>
-              <button onClick={(e) => handleBuy(e)}>Купить</button>
+              <button onClick={(e) => handleBuy(e, computers._id)}>Купить</button>
             </div>
           </div>
         </div>
