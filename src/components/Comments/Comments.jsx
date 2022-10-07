@@ -5,6 +5,7 @@ import { fetchComments, addComments } from "../../features/commentSlice";
 
 const Comments = () => {
   const [comm, setComm] = useState("");
+  const [blur, setBlur] = useState(false)
   const id = useSelector((state) => state.application.id);
   const token = useSelector((state) => state.application.token);
   const comment = useSelector((state) => state.commentSlice.comments);
@@ -22,7 +23,6 @@ const Comments = () => {
     dispatch(addComments({ comm, id }));
     setComm("");
   };
-
   return (
     <div className={styles.Block}>
       <div className={styles.Block2}>
@@ -31,10 +31,13 @@ const Comments = () => {
             value={comm}
             placeholder="Написать комментарий..."
             onChange={handleChange}
+            onFocus={()=>setBlur(true)}
+            onBlur={()=>setBlur(false)}
           />
           <button onClick={handleAddComment} disabled={!comm || !token}>
             Добавить
           </button>
+        {(!token && blur) && <div style={{color: "red", position: "absolute", left: "38%", bottom: "80px"}}>Вы не авторизованы и не можете добавить комментарий</div>}
         </div>
         <div className={styles.BlockComment}>
           {comment
