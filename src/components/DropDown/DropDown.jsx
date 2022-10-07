@@ -1,23 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styles from "./dropDown.module.scss";
 import st from "../../public/st.png";
 import cn from "classnames";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { updatemadePC, savePrice } from "../../features/madePCSlice";
-import { fetchUsers } from "../../features/applicationSlice";
 
 const DropDown = ({ arr, index }) => {
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(fetchUsers());
-  }, [dispatch]);
-
   const [open, setOpen] = useState(false);
   const [def, setDefault] = useState("Не выбрано");
-  const local = localStorage.getItem("id");
-  const user = useSelector((state) =>
-    state.application.users.find((item) => item._id === local)
-  );
+
   const handleOpen = (e) => {
     setOpen(!open);
   };
