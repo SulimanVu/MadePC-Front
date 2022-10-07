@@ -39,14 +39,13 @@ export const updatemadePC = createAsyncThunk(
   ) => {
     try {
       const res = await fetch(
-        "http://localhost:3010/madeComp/633ec68e3d172f61cdc5441e",
+        `http://localhost:3010/mPC`,
         {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            user: user._id,
             price: 0,
             ram,
             videocard,
@@ -71,7 +70,7 @@ export const updatemadePC = createAsyncThunk(
 export const addmadePC = createAsyncThunk(
   "add/madePC",
   async (
-    { price, ram, videocard, hardcard, ssd, processor, corpus, cooler, math },
+    { name, price, ram, videocard, hardcard, ssd, processor, corpus, cooler, math },
     thunkAPI
   ) => {
     try {
@@ -81,6 +80,7 @@ export const addmadePC = createAsyncThunk(
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
+          name,
           price,
           ram,
           videocard,
@@ -110,13 +110,6 @@ const madePC = createSlice({
     savePrice: (state, action) => {
       state.savePrice += action.payload;
     },
-    // savePC: (state, action) => {
-    //   state.pc.filter((item) => {
-    //     if (item.comp !== action.payload.comp) {
-    //      return action.payload
-    //     }
-    //   });
-    // },
   },
   extraReducers: (builder) => {
     builder
@@ -160,4 +153,3 @@ export default madePC.reducer;
 
 export const { price } = madePC.actions;
 export const { savePrice } = madePC.actions;
-export const { savePC } = madePC.actions;

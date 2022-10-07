@@ -26,23 +26,23 @@ const DropDown = ({ arr, index }) => {
     setOpen(!open);
     dispatch(savePrice(comp.price));
     if (index === 0) {
-      dispatch(updatemadePC({ math: comp._id, user: user }));
+      dispatch(updatemadePC({ math: comp._id }));
     } else if (index === 1) {
-      dispatch(updatemadePC({ cooler: comp._id, user: user }));
+      dispatch(updatemadePC({ cooler: comp._id }));
     } else if (index === 2) {
-      dispatch(updatemadePC({ corpus: comp._id, user: user }));
+      dispatch(updatemadePC({ corpus: comp._id }));
     } else if (index === 3) {
-      dispatch(updatemadePC({ hdd: comp._id, user: user }));
+      dispatch(updatemadePC({ hdd: comp._id }));
     } else if (index === 4) {
-      dispatch(updatemadePC({ powerunits: comp._id, user: user }));
+      dispatch(updatemadePC({ powerunits: comp._id }));
     } else if (index === 5) {
-      dispatch(updatemadePC({ processor: comp._id, user: user }));
+      dispatch(updatemadePC({ processor: comp._id }));
     } else if (index === 6) {
-      dispatch(updatemadePC({ ram: comp._id, user: user }));
+      dispatch(updatemadePC({ ram: comp._id }));
     } else if (index === 7) {
-      dispatch(updatemadePC({ ssd: comp._id, user: user }));
+      dispatch(updatemadePC({ ssd: comp._id }));
     } else if (index === 8) {
-      dispatch(updatemadePC({ videocard: comp._id, user: user }));
+      dispatch(updatemadePC({ videocard: comp._id }));
     }
   };
 
