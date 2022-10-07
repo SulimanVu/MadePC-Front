@@ -6,7 +6,8 @@ import ram from "./images/ram.svg";
 import rub from "./images/rub.svg";
 import mask from "./images/configurator-mask.svg";
 import ArrayDrop from "../../components/ArrayDrop/ArrayDrop";
-import {  useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { addMadeRequest } from "../../features/requestMadeSlice";
 
 const ConfiguratorPage = () => {
   const components = [
@@ -35,7 +36,13 @@ const ConfiguratorPage = () => {
       image: proc,
     },
   ];
+  const dispatch = useDispatch();
   const summa = useSelector((state) => state.madePC.savePrice);
+  // let pc = useSelector((state) => state.madePC.madePC.slice(-1));
+
+  const handleBuy = (e) => {
+    // dispatch(addMadeRequest({basket: pc[0]._id}));
+  };
 
   return (
     <div>
@@ -71,7 +78,7 @@ const ConfiguratorPage = () => {
               </div>
             </div>
             <div className={styles.configurator_btn}>
-              <button>Купить</button>
+              <button onClick={(e) => handleBuy(e)}>Купить</button>
             </div>
           </div>
         </div>

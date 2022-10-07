@@ -22,8 +22,9 @@ const Admin = () => {
   }, [dispatch]);
 
   return (
-    <div>
+    <div className={styles.main}>
       <h1>Заявки на выполнение</h1>
+      <h2>Компьютеры со Склада</h2>
       {requests.map((item, index) => {
         return (
           <div className={styles.cards} key={index}>
@@ -31,7 +32,7 @@ const Admin = () => {
           </div>
         );
       })}
-      <h2>Мои Сборки</h2>
+      <h2>Компьютеры к Сборке</h2>
       {requestsMade.map((item, index) => {
         return (
           <div className={styles.cards} key={index}>

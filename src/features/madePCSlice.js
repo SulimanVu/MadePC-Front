@@ -24,12 +24,11 @@ export const updatemadePC = createAsyncThunk(
   "update/madePC",
   async (
     {
-      user,
       ram,
       videocard,
       hardcard,
       ssd,
-      processor,  
+      processor,
       corpus,
       cooler,
       math,
@@ -38,27 +37,24 @@ export const updatemadePC = createAsyncThunk(
     thunkAPI
   ) => {
     try {
-      const res = await fetch(
-        `http://localhost:3010/mPC`,
-        {
-          method: "PATCH",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            price: 0,
-            ram,
-            videocard,
-            hardcard,
-            ssd,
-            processor,
-            corpus,
-            cooler,
-            math,
-            powerunits,
-          }),
-        }
-      );
+      const res = await fetch(`http://localhost:3010/mPC`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          price: 0,
+          ram,
+          videocard,
+          hardcard,
+          ssd,
+          processor,
+          corpus,
+          cooler,
+          math,
+          powerunits,
+        }),
+      });
       const data = await res.json();
       return data;
     } catch (error) {
@@ -70,7 +66,18 @@ export const updatemadePC = createAsyncThunk(
 export const addmadePC = createAsyncThunk(
   "add/madePC",
   async (
-    { name, price, ram, videocard, hardcard, ssd, processor, corpus, cooler, math },
+    {
+      name,
+      price,
+      ram,
+      videocard,
+      hardcard,
+      ssd,
+      processor,
+      corpus,
+      cooler,
+      math,
+    },
     thunkAPI
   ) => {
     try {
