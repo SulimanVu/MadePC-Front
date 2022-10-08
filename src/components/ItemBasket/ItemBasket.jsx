@@ -5,6 +5,7 @@ import rub from '../CardComp/images/rub.svg';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteFromBasket, fetchUsers, countPlus, countMinus } from '../../features/applicationSlice';
 import { fetchComp } from '../../features/compSlice';
+import { useSpring, animated } from 'react-spring';
 
 const ItemBasket = () => {
     const dispatch = useDispatch();
@@ -24,6 +25,9 @@ const ItemBasket = () => {
     })
 
     const res = data?.basket
+    const res2 = data?.basket.map((elem) => {
+        return elem.total
+    })
 
     useEffect(() => {
         dispatch(fetchUsers())
@@ -47,6 +51,16 @@ const ItemBasket = () => {
         }
     }
 
+    const Number = ({ n }) => {
+        const { number } = useSpring({
+            from: { number: 0 },
+            number: n,
+            delay: 200,
+            config: { mass: 1, tension: 20, friction: 10 },
+        });
+        return <animated.div>{number.to((n) => n.toFixed(0))}</animated.div>;
+    }
+
     return (
         <>
             {res?.map((item) => {
@@ -58,7 +72,7 @@ const ItemBasket = () => {
                         </div>
                         <div className={styles.container}>
                             <div className={styles.imgPrice}>
-                                <p>{item.price}</p>
+                                <p><Number n={item.price} /></p>
                                 <img className={styles.imgRub} src={rub} alt='img' />
                             </div>
                             <div className={styles.plusMinus}>

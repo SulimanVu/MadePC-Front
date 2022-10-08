@@ -8,6 +8,7 @@ import Order from '../../components/Order/Order';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchUsers } from '../../features/applicationSlice';
 import { fetchComp } from '../../features/compSlice';
+import { useSpring, animated } from 'react-spring';
 
 const Basket = () => {
     const dispatch = useDispatch();
@@ -15,6 +16,16 @@ const Basket = () => {
     const user = useSelector((state) => state.application.users.find((item) => item._id === id))
 
     const result = user?.basket.reduce((a, b) => a += b.price, 0)
+
+    const Number = ({ n }) => {
+        const { number } = useSpring({
+            from: { number: 0 },
+            number: n,
+            delay: 200,
+            config: { mass: 1, tension: 20, friction: 10 },
+        });
+        return <animated.div>{number.to((n) => n.toFixed(0))}</animated.div>;
+    }
 
     return (
         <div className={styles.mainBasket}>
@@ -33,7 +44,7 @@ const Basket = () => {
                     </div>
                     <div className={styles.total}>
                         <h2 className={styles.total1}>Общая стоимость</h2>
-                        <p>{result}</p>
+                        <p><Number n={result} /></p>
                         <img className={styles.imgRub} src={rub} alt='img' />
                     </div>
                 </div>
