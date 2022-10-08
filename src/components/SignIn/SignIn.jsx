@@ -7,7 +7,7 @@ import { useDispatch } from "react-redux";
 import "./Sign.scss";
 
 import { loginThunk } from "../../features/applicationSlice";
-import { addmadePC } from "../../features/madePCSlice";
+import { addmadePC, getOnePC } from "../../features/madePCSlice";
 
 const SignIn = () => {
   const [reglogin, setRegLogin] = useState("");
@@ -19,6 +19,7 @@ const SignIn = () => {
   const handleClickRegistr = () => {
     dispatch(authThunk({ reglogin, regPassword }));
     dispatch(addmadePC({name: reglogin}))
+    setTimeout(()=>dispatch(getOnePC()),2000)
   };
 
   const handleClick = (e) => {

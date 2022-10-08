@@ -1,18 +1,23 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import styles from "./request.module.scss";
 import st from "../../public/st.png";
 import rub from "../CardComp/images/rub.svg";
 import cn from "classnames";
 import { motion } from "framer-motion";
+import { deleteRequest } from "../../features/requestSlice";
 
 const Request = ({ item, index }) => {
+  const dispatch = useDispatch()
   const [open, setOpen] = useState(false);
   const ArrComp = useSelector((state) => state.comp.comp);
 
   const handleOpen = () => {
     setOpen(!open);
   };
+  const handleDelete = () =>{
+    dispatch(deleteRequest(item._id))
+  }
   return (
     <div key={index}>
       <div className={styles.main}>
@@ -31,7 +36,7 @@ const Request = ({ item, index }) => {
         <div className={styles.price}>
           {item.comp[0].price} <img src={rub} alt="" />
         </div>
-        <button>Принять заказ</button>
+        <button onClick={()=>handleDelete()}>Принять заказ</button>
         <div
           className={
             !open ? styles.spred : cn(styles.spred, styles.spred_active)

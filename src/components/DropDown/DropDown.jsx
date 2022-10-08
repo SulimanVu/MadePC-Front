@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import styles from "./dropDown.module.scss";
 import st from "../../public/st.png";
 import cn from "classnames";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { updatemadePC, savePrice } from "../../features/madePCSlice";
 
 const DropDown = ({ arr, index }) => {
   const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
   const [def, setDefault] = useState("Не выбрано");
-
+  
   const handleOpen = (e) => {
     setOpen(!open);
   };

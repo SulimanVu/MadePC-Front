@@ -45,6 +45,26 @@ export const addMadeRequest = createAsyncThunk(
   }
 );
 
+export const deleteMadeRequest = createAsyncThunk(
+  "delete/request",
+  async (id, thunkAPI) => {
+    try {
+      const res = await fetch(`http://localhost:3010/requestMade/${id}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({}),
+      });
+
+      const data = await res.json();
+      return data;
+    } catch (e) {
+      thunkAPI.rejectWithValue(e);
+    }
+  }
+);
+
 const requestMadeSlice = createSlice({
   name: "requestMade",
   initialState,
@@ -64,6 +84,12 @@ const requestMadeSlice = createSlice({
       })
       .addCase(addMadeRequest.pending, (state, action) => {
         state.loading = true;
+      })
+
+      .addCase(deleteMadeRequest.fulfilled, (state, action) => {
+        state.madeRequest = state.madeRequest.filter((item) => {
+          return item._id !== action.payload._id;
+        });
       });
   },
 });
