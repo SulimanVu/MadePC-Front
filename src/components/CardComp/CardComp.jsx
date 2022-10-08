@@ -12,6 +12,7 @@ import fan from "./images/fan.svg";
 import "react-circular-progressbar/dist/styles.css";
 import { useDispatch, useSelector } from "react-redux";
 import { addToBasket } from "../../features/applicationSlice";
+import PropTypes from 'prop-types';
 
 const CardComp = ({ computers, setModal }) => {
     const dispatch = useDispatch();
@@ -92,5 +93,21 @@ const CardComp = ({ computers, setModal }) => {
         </>
     );
 };
+
+CardComp.propTypes = {
+    computers: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        image: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired,
+        _id: PropTypes.string.isRequired,
+        videocard: PropTypes.object.isRequired,
+        processor: PropTypes.object.isRequired,
+        ram: PropTypes.object.isRequired,
+        corpus: PropTypes.object.isRequired,
+        ssd: PropTypes.object.isRequired,
+        cooler: PropTypes.object.isRequired
+    }).isRequired,
+    setModal: PropTypes.func.isRequired
+}
 
 export default CardComp;

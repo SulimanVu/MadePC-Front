@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from '../ModalBuy/modalbuy.module.scss';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const ModalBuy = ({ setModal }) => {
     return (
@@ -21,5 +22,9 @@ const ModalBuy = ({ setModal }) => {
         </div>
     );
 };
+
+ModalBuy.prototypes = {
+    setModal: PropTypes.func.isRequired
+}
 
 export default ModalBuy;
