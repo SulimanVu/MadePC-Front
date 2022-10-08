@@ -77,6 +77,8 @@ export const addToBasket = createAsyncThunk(
         },
         body: JSON.stringify({ basket: computersId })
       })
+
+      const data = await res.json();
       return { id1, computersId };
     } catch (e) {
       thunkAPI.rejectWithValue(e)
