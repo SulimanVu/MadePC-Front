@@ -52,11 +52,8 @@ const ConfiguratorPage = () => {
   const computers = useSelector((state) => state.madePC.madePC);
   const mPC = useSelector((state) => state.madePC.id);
 
-  // let pc = useSelector((state) => state.madePC.madePC.slice(-1));
-  // console.log(computers.slice(-1)[0]._id);
-
   const handleBuy = (e) => {
-    // dispatch(addToBasket({ computersId: computers.slice(-1)[0]._id, id1 }));
+    dispatch(addToBasket({ computersId: mPC, id1 }));
     if (token) {
       dispatch(addMadeRequest({ basket: mPC }));
     } else {

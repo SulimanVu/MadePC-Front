@@ -84,7 +84,7 @@ export const addToBasket = createAsyncThunk(
       thunkAPI.rejectWithValue(e)
     }
   }
-)
+);
 
 export const deleteFromBasket = createAsyncThunk(
   'delete/basket',
