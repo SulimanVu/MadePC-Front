@@ -11,7 +11,6 @@ import { fetchRAM } from "../../features/RAMSlice";
 import { getSSD } from "../../features/ssdSlice";
 import { fetchvideoCards } from "../../features/videoCardSlice";
 import styles from "./arrayDrop.module.scss";
-import { fetchmadePC } from "../../features/madePCSlice";
 
 const ArrayDrop = () => {
   const dispatch = useDispatch();
@@ -26,7 +25,6 @@ const ArrayDrop = () => {
     dispatch(fetchRAM());
     dispatch(getSSD());
     dispatch(fetchvideoCards());
-    dispatch(fetchmadePC());
   }, [dispatch]);
 
   const board = useSelector((state) => state.motherBoard.board);

@@ -5,6 +5,7 @@ const initialState = {
   savePrice: 0,
   pc: [],
   loader: false,
+  id: null
 };
 
 export const fetchmadePC = createAsyncThunk(
@@ -16,6 +17,18 @@ export const fetchmadePC = createAsyncThunk(
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error);
+    }
+  }
+);
+
+export const getOnePC = createAsyncThunk(
+  "get/onePC",
+  async(_,thunkAPI) =>{
+    try{
+      const res = await fetch("http://localhost:3010/oneMPC")
+      return res.json()
+    }catch (error){
+      return thunkAPI.rejectWithValue(error)
     }
   }
 );
@@ -152,7 +165,11 @@ const madePC = createSlice({
       })
       .addCase(addmadePC.rejected, (state, action) => {
         state.loader = false;
-      });
+      })
+
+      .addCase(getOnePC.fulfilled, (state, action)=>{
+        state.id = action.payload._id
+      })
   },
 });
 

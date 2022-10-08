@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./configuratorPage.module.scss";
 import proc from "./images/proc.svg";
 import fan from "./images/fan.svg";
@@ -9,6 +9,9 @@ import ArrayDrop from "../../components/ArrayDrop/ArrayDrop";
 import { useDispatch, useSelector } from "react-redux";
 import { addMadeRequest } from "../../features/requestMadeSlice";
 import { addToBasket } from "../../features/applicationSlice";
+import { fetchmadePC } from "../../features/madePCSlice";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ConfiguratorPage = () => {
   const components = [
@@ -37,17 +40,29 @@ const ConfiguratorPage = () => {
       image: proc,
     },
   ];
+  const notify = () =>
+    toast("Вы не зарегистрировангы и не можете оставиь заявку", {
+      type: "error",
+    });
+
   const dispatch = useDispatch();
+  const token = useSelector((state) => state.application.token);
   const summa = useSelector((state) => state.madePC.savePrice);
   const id1 = useSelector((state) => state.application.id);
-  const computers = useSelector((state) => state.comp.comp)
-  // let pc = useSelector((state) => state.madePC.madePC.slice(-1));
+  const computers = useSelector((state) => state.madePC.madePC);
+  const mPC = useSelector((state) => state.madePC.id);
 
-  const handleBuy = (e, computersId) => {
-    dispatch(addToBasket({ computersId, id1 }))
-    // dispatch(addMadeRequest({basket: pc[0]._id}));
+  const handleBuy = (e) => {
+    dispatch(addToBasket({ computersId: mPC, id1 }));
+    if (token) {
+      dispatch(addMadeRequest({ basket: mPC }));
+    } else {
+      notify();
+    }
   };
-  
+  useEffect(() => {
+    dispatch(fetchmadePC());
+  }, [dispatch]);
 
   return (
     <div>
@@ -83,11 +98,12 @@ const ConfiguratorPage = () => {
               </div>
             </div>
             <div className={styles.configurator_btn}>
-              <button onClick={(e) => handleBuy(e, computers._id)}>Купить</button>
+              <button onClick={(e) => handleBuy(e)}>Добавить в корзину</button>
             </div>
           </div>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };
