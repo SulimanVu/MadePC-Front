@@ -8,15 +8,35 @@ import star from './images/star.svg';
 import chair from './images/nedorpc.jpg';
 import dom from './images/domic2.png'
 import ModalBuy from '../../components/ModalBuy/ModalBuy';
+import { MagnifyingGlass } from 'react-loader-spinner';
 
 const LowPriceComps = () => {
     const [modal, setModal] = useState(false)
     const comps = useSelector((state) => state.comp.comp);
     const dispatch = useDispatch();
+    const loading = useSelector((state) => state.comp.loader)
 
     useEffect(() => {
         dispatch(fetchComp())
     }, [dispatch])
+
+    if (loading) {
+        return (
+            <div className={styles.load}>
+                <MagnifyingGlass
+                    visible={true}
+                    height="150"
+                    width="150"
+                    ariaLabel="MagnifyingGlass-loading"
+                    wrapperStyle={{}}
+                    wrapperClass="MagnifyingGlass-wrapper"
+                    glassColor='#c0efff'
+                    color='#e15b64'
+                />
+                <p>Идет загрузка...</p>
+            </div>
+        )
+    }
 
     return (
         <>

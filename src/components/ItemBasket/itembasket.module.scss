@@ -80,3 +80,17 @@
         margin-left: 5px;
     }
 }
+
+.load {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 450px;
+    width: 250px;
+
+    p {
+        color: #8490A4;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+}
