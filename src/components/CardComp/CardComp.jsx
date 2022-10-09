@@ -13,14 +13,26 @@ import "react-circular-progressbar/dist/styles.css";
 import { useDispatch, useSelector } from "react-redux";
 import { addToBasket } from "../../features/applicationSlice";
 import PropTypes from 'prop-types';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const CardComp = ({ computers, setModal }) => {
     const dispatch = useDispatch();
     const id1 = useSelector((state) => state.application.id)
+    const token = useSelector((state) => state.application.token)
+
+    const notify = () => toast("Вы не авторизованы!", {
+        type: 'error'
+    });
 
     const handleAdd = (computersId) => {
-        dispatch(addToBasket({ computersId, id1 }))
-        setModal(true)
+        if (!token) {
+            setModal(false)
+            notify()
+        } else {
+            dispatch(addToBasket({ computersId, id1 }))
+            setModal(true)
+        }
     }
 
     return (
@@ -89,6 +101,7 @@ const CardComp = ({ computers, setModal }) => {
                         </div>
                     </div>
                 </div>
+                <ToastContainer />
             </div>
         </>
     );
