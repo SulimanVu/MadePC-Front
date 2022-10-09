@@ -18,6 +18,7 @@ import Powerfull from "./components/Powerfull/Powerfull"
 import Admin from "./pages/AdminPage/Admin";
 import { useSelector } from "react-redux";
 import CompPage from "./pages/CompPage/CompPage";
+import ContactPage from "./pages/ContactsPage/ContactPage";
 
 const App = () => {
   const token = useSelector((state) => state.application.token);
@@ -44,6 +45,7 @@ const App = () => {
               <Route path="/:id" element={<CompPage />} />
               <Route path="/dr" element={<ArrayDrop />} />
               <Route path="/admin" element={<Admin />} />
+              <Route path="/contacts" element={<ContactPage />} />
             </Route>
             <Route path="/signin" element={<SignIn/>} />
           </Routes>
