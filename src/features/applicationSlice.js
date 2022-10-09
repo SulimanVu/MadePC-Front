@@ -8,18 +8,18 @@ const initialState = {
 };
 
 export const fetchUsers = createAsyncThunk(
-  'fetch/users',
+  "fetch/users",
   async (_, thunkAPI) => {
     try {
-      const res = await fetch('http://localhost:3010/users');
+      const res = await fetch("http://localhost:3010/users");
       const data = await res.json();
 
       return data;
     } catch (e) {
-      thunkAPI.rejectWithValue(e)
+      thunkAPI.rejectWithValue(e);
     }
   }
-)
+);
 
 export const authThunk = createAsyncThunk(
   "fetch/auth",
@@ -67,85 +67,89 @@ export const loginThunk = createAsyncThunk(
 );
 
 export const addToBasket = createAsyncThunk(
-  'add/basket',
-  async ({ id1, computersId }, thunkAPI) => {
+  "add/basket",
+  async ({ id1, computersId, computersMadeId }, thunkAPI) => {
+    console.log(computersMadeId);
     try {
       const res = await fetch(`http://localhost:3010/addToBasket/${id1}`, {
-        method: 'PATCH',
+        method: "PATCH",
         headers: {
-          'Content-Type': "application/json"
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify({ basket: computersId })
-      })
+        body: JSON.stringify({
+          basket: computersId,
+          basketMade: computersMadeId,
+        }),
+      });
 
       const data = await res.json();
       return { id1, computersId };
     } catch (e) {
-      thunkAPI.rejectWithValue(e)
+      thunkAPI.rejectWithValue(e);
     }
   }
 );
 
 export const deleteFromBasket = createAsyncThunk(
-  'delete/basket',
+  "delete/basket",
   async ({ id, result1 }, thunkAPI) => {
     console.log(result1);
     try {
       const res = await fetch(`http://localhost:3010/deleteFromBasket/${id}`, {
-        method: 'PATCH',
+        method: "PATCH",
         headers: {
-          'Content-Type': "application/json"
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify({ basket: result1 })
-      })
+        body: JSON.stringify({ basket: result1 }),
+      });
 
       const data = await res.json();
       return { id, result1 };
     } catch (e) {
-      thunkAPI.rejectWithValue(e)
+      thunkAPI.rejectWithValue(e);
     }
   }
-)
+);
 
 export const countPlus = createAsyncThunk(
-  'count/plus',
+  "count/plus",
   async ({ itemId, id, price }, thunkAPI) => {
     try {
       const res = await fetch(`http://localhost:3010/countPlus/${itemId}`, {
         method: "PATCH",
         headers: {
-          'Content-Type': "application/json"
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify({ price })
-      })
+        body: JSON.stringify({ price }),
+      });
 
-      const data = await res.json()
+      const data = await res.json();
       return { itemId, id, price };
     } catch (e) {
-      thunkAPI.rejectWithValue(e)
+      thunkAPI.rejectWithValue(e);
     }
   }
-)
+);
 
 export const countMinus = createAsyncThunk(
-  'count/minus',
+  "count/minus",
   async ({ itemId, id }, thunkAPI) => {
     try {
       const res = await fetch(`http://localhost:3010/countMinus/${itemId}`, {
         method: "PATCH",
         headers: {
-          'Content-Type': "application/json"
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify({})
-      })
+        body: JSON.stringify({}),
+      });
 
-      const data = await res.json()
+      const data = await res.json();
       return { itemId, id };
     } catch (e) {
-      thunkAPI.rejectWithValue(e)
+      thunkAPI.rejectWithValue(e);
     }
   }
-)
+);
 
 const applicationSlice = createSlice({
   name: "application",
@@ -173,17 +177,18 @@ const applicationSlice = createSlice({
         state.id = action.payload.login1;
       })
       .addCase(fetchUsers.fulfilled, (state, action) => {
-        state.users = action.payload
-        state.load = false
+        state.users = action.payload;
+        state.load = false;
       })
       .addCase(addToBasket.fulfilled, (state, action) => {
         state.users = state.users.map((item) => {
           if (item._id === action.payload.id1) {
-            item.basket.push(action.payload.computersId)
+            item.basket.push(action.payload.computersId);
+            item.basketMade.push(action.payload.computersMadeId);
           }
-          return item
-        })
-        state.load = false
+          return item;
+        });
+        state.load = false;
       })
       .addCase(deleteFromBasket.fulfilled, (state, action) => {
         state.users = state.users.map((item) => {
@@ -191,41 +196,41 @@ const applicationSlice = createSlice({
             return {
               ...item,
               basket: item.basket.filter((item) => {
-                return item._id !== action.payload.result1
-              })
-            }
+                return item._id !== action.payload.result1;
+              }),
+            };
           }
-          return item
-        })
+          return item;
+        });
       })
       .addCase(countPlus.fulfilled, (state, action) => {
         state.users.map((item) => {
           if (item._id === action.payload.id) {
             return item.basket.map((i) => {
               if (i._id === action.payload.itemId) {
-                i.count += 1
-                i.price = i.price + i.total
+                i.count += 1;
+                i.price = i.price + i.total;
               }
-              return i
-            })
+              return i;
+            });
           }
           return item;
-        })
+        });
       })
       .addCase(countMinus.fulfilled, (state, action) => {
         state.users.map((item) => {
           if (item._id === action.payload.id) {
             return item.basket.map((i) => {
               if (i._id === action.payload.itemId) {
-                i.count -= 1
-                i.price = i.price - i.total
+                i.count -= 1;
+                i.price = i.price - i.total;
               }
-              return i
-            })
+              return i;
+            });
           }
           return item;
-        })
-      })
+        });
+      });
   },
 });
 

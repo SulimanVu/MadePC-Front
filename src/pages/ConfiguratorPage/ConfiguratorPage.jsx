@@ -54,8 +54,8 @@ const ConfiguratorPage = () => {
 
   const handleBuy = (e) => {
     if (token) {
-      dispatch(addMadeRequest({ basket: result?._id }));
-      dispatch(addToBasket({ computersId: result?._id, id1 }));
+      dispatch(addMadeRequest({ basket: result._id }));
+      dispatch(addToBasket({ computersMadeId: result._id, id1 }));
     } else {
       notify();
     }
