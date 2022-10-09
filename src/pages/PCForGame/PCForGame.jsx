@@ -7,6 +7,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { fetchGames } from '../../features/gameSlice';
+import { fetchComp } from '../../features/compSlice';
 const PCForGame = () => {
 
 const dispatch = useDispatch()
@@ -19,10 +20,11 @@ const handleClick = () => {
 
 useEffect(()=> {
     dispatch(fetchGames())
+    dispatch(fetchComp())
 }, [dispatch])
 
 
-const game = useSelector(state => state.game.games )
+const game = useSelector(state => state.game.games)
 
     return (
 

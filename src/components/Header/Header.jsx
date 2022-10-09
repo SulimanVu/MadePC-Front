@@ -108,16 +108,20 @@ const Header = () => {
                     гарантия
                   </Link>
                 </li>
+                x
               </ul>
             </li>
 
             <li className={styles.item}>Контакты</li>
             {token
               ?
+             <>
               <li className={styles.item} onClick={handleExit}><Link className={styles.signIn}>Выход</Link></li>
+              <li className={styles.item}><Link to="/admin" className={styles.signIn}>Админ</Link></li>
+              </>
               :
               <li className={styles.item}><Link to="/signin" className={styles.signIn}>Регистрация/Авторизация</Link></li>}
-            <li className={styles.item}><Link to="/admin" className={styles.signIn}>Админ</Link></li>
+            
           </ul>
 
 
