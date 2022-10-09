@@ -50,7 +50,7 @@ const ConfiguratorPage = () => {
   const summa = useSelector((state) => state.madePC.savePrice);
   const id1 = useSelector((state) => state.application.id);
   const allPC = useSelector((state) => state.madePC.comp);
-
+    console.log(allPC);
   const handleBuy = (e) => {
     if (token) {
       dispatch(addMadeRequest({ basket: allPC }));
@@ -59,9 +59,11 @@ const ConfiguratorPage = () => {
       notify();
     }
   };
+
   useEffect(() => {
     dispatch(fetchmadePC());
   }, [dispatch]);
+
   return (
     <div>
       <div className={styles.configurator_block}>

@@ -37,7 +37,7 @@ const Request = ({ item, index }) => {
           </li>
         </ul>
         <div className={styles.price}>
-          {item.comp[0].price} <img src={rub} alt="" />
+          {item.comp[0]?.price} <img src={rub} alt="" />
         </div>
         <button onClick={() => handleDelete()}>Принять заказ</button>
         <div

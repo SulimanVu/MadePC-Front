@@ -23,6 +23,25 @@ export const fetchmadePC = createAsyncThunk(
   }
 );
 
+export const updateOne = createAsyncThunk(
+  "updateOne/MadePC",
+  async (id, thunkAPI) => {
+    try {
+      const res = fetch(`http://localhost:3010/madeComp/${id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(),
+      });
+      const data = res.json();
+      return data;
+    } catch (error) {
+      thunkAPI.rejectWithValue(error);
+    }
+  }
+);
+
 export const getOnePC = createAsyncThunk("get/onePC", async (_, thunkAPI) => {
   try {
     const res = await fetch("http://localhost:3010/oneMPC");
