@@ -11,7 +11,6 @@ export const fetchMadeRequests = createAsyncThunk(
     try {
       const res = await fetch("http://localhost:3010/requestsMade");
       const data = res.json();
-
       return data;
     } catch (e) {
       thunkAPI.rejectWithValue(e);
@@ -73,6 +72,7 @@ const requestMadeSlice = createSlice({
     builder
       .addCase(fetchMadeRequests.fulfilled, (state, action) => {
         state.madeRequest = action.payload;
+        console.log(action.payload);
         state.loading = false;
       })
       .addCase(fetchMadeRequests.pending, (state, action) => {

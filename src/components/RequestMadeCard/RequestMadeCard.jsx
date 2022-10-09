@@ -8,16 +8,16 @@ import { motion } from "framer-motion";
 import { deleteMadeRequest } from "../../features/requestMadeSlice";
 
 const Request = ({ item, index }) => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
   const madePC = useSelector((state) => state.madePC.madePC);
-  
+
   const handleOpen = () => {
     setOpen(!open);
   };
-  const handleDelete = () =>{
-    dispatch(deleteMadeRequest(item._id))
-  }
+  const handleDelete = () => {
+    dispatch(deleteMadeRequest(item._id));
+  };
   return (
     <div key={index}>
       <div className={styles.main}>
@@ -36,7 +36,7 @@ const Request = ({ item, index }) => {
         <div className={styles.price}>
           {item.comp[0].price} <img src={rub} alt="" />
         </div>
-        <button onClick={()=>handleDelete()}>Принять заказ</button>
+        <button onClick={() => handleDelete()}>Принять заказ</button>
         <div
           className={
             !open ? styles.spred : cn(styles.spred, styles.spred_active)
@@ -55,68 +55,105 @@ const Request = ({ item, index }) => {
           className={styles.comp}
         >
           {madePC.map((comp, index) => {
-            console.log(item, comp);
             if (comp._id === item.comp[0]._id) {
               return (
                 <ul className={styles.components} key={index}>
                   <li>
+                    Материнская плата: &nbsp;
+                    <span>
+                      {comp.math?.name}&nbsp;&nbsp;&nbsp;
+                      <span className={styles.comp_price}>
+                        {comp.math?.price}
+                      </span>
+                      {comp.math === undefined ? (
+                        "Комплектующее не было добавлено"
+                      ) : (
+                        <sub>р</sub>
+                      )}
+                    </span>
+                  </li>
+                  <li>
                     ОЗУ: &nbsp;
                     <span>
-                      {comp.ram.title}&nbsp;&nbsp;&nbsp;
+                      {comp.ram?.title}&nbsp;&nbsp;&nbsp;
                       <span className={styles.comp_price}>
-                        {comp.ram.price}
+                        {comp.ram?.price}
                       </span>
-                      <sub>р</sub>
+                      {comp.ram === undefined ? (
+                        "Комплектующее не было добавлено"
+                      ) : (
+                        <sub>р</sub>
+                      )}
                     </span>
                   </li>
                   <li>
                     Видеокарта: &nbsp;
                     <span>
-                      {comp.videocard.name}&nbsp;&nbsp;&nbsp;
+                      {comp.videocard?.name}&nbsp;&nbsp;&nbsp;
                       <span className={styles.comp_price}>
-                        {comp.videocard.price}
+                        {comp.videocard?.price}
                       </span>
-                      <sub>р</sub>
+                      {comp.videocard === undefined ? (
+                        "Комплектующее не было добавлено"
+                      ) : (
+                        <sub>р</sub>
+                      )}
                     </span>
                   </li>
                   <li>
                     SSD: &nbsp;
                     <span>
-                      {comp.ssd.name}&nbsp;&nbsp;&nbsp;
+                      {comp.ssd?.name}&nbsp;&nbsp;&nbsp;
                       <span className={styles.comp_price}>
-                        {comp.ssd.price}
+                        {comp.ssd?.price}
                       </span>
-                      <sub>р</sub>
+                      {comp.ssd === undefined ? (
+                        "Комплектующее не было добавлено"
+                      ) : (
+                        <sub>р</sub>
+                      )}
                     </span>
                   </li>
                   <li>
                     Процессор: &nbsp;
                     <span>
-                      {comp.processor.name}&nbsp;&nbsp;&nbsp;
+                      {comp.processor?.name}&nbsp;&nbsp;&nbsp;
                       <span className={styles.comp_price}>
-                        {comp.processor.price}
+                        {comp.processor?.price}
                       </span>
-                      <sub>р</sub>
+                      {comp.processor === undefined ? (
+                        "Комплектующее не было добавлено"
+                      ) : (
+                        <sub>р</sub>
+                      )}
                     </span>
                   </li>
                   <li>
                     Корпус: &nbsp;
                     <span>
-                      {comp.corpus.name}&nbsp;&nbsp;&nbsp;
+                      {comp.corpus?.name}&nbsp;&nbsp;&nbsp;
                       <span className={styles.comp_price}>
-                        {comp.corpus.price}
+                        {comp.corpus?.price}
                       </span>
-                      <sub>р</sub>
+                      {comp.corpus === undefined ? (
+                        "Комплектующее не было добавлено"
+                      ) : (
+                        <sub>р</sub>
+                      )}
                     </span>
                   </li>
                   <li>
                     Куллер: &nbsp;
                     <span>
-                      {comp.cooler.name}&nbsp;&nbsp;&nbsp;
+                      {comp.cooler?.name}&nbsp;&nbsp;&nbsp;
                       <span className={styles.comp_price}>
-                        {comp.cooler.price}
+                        {comp.cooler?.price}
                       </span>
-                      <sub>р</sub>
+                      {comp.cooler === undefined ? (
+                        "Комплектующее не было добавлено"
+                      ) : (
+                        <sub>р</sub>
+                      )}
                     </span>
                   </li>
                 </ul>

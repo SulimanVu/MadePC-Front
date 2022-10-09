@@ -20,7 +20,7 @@ const Admin = () => {
     dispatch(fetchComp());
     dispatch(fetchmadePC());
   }, [dispatch]);
-
+console.log(requestsMade);
   return (
     <div className={styles.main}>
       <h1>Заявки на выполнение</h1>
