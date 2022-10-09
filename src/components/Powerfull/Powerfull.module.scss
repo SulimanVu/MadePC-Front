@@ -1,0 +1,143 @@
+@import "../../index.scss";
+
+.Powerfull {
+  width: 100%;
+}
+
+.haed {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  background-image: url("https://edelws.ru/upload/uf/d26/d269fb8958bc0681ccce0c6827a044bc.png");
+  margin-bottom: 20px;
+}
+
+.title {
+  width: 35%;
+  margin: auto;
+}
+
+.haed h1 {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 45px;
+}
+
+.haed span {
+  color: $gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+
+///// bodys/////////
+
+.bodys {
+  width: 75%;
+  margin: auto;
+}
+
+/////// infos /////
+
+.infos {
+  width: 100%;
+  height: 220px;
+  background-color: #1c232e;
+  display: flex;
+}
+
+.infos2 {
+  width: 80%;
+  height: 100%;
+}
+
+.imgInf {
+  width: 20%;
+  height: 100%;
+}
+
+.imgInf img {
+  width: 100%;
+  height: 100%;
+}
+
+.titleInfs {
+  width: 100%;
+  height: 20%;
+  padding-top: 3%;
+  padding-left: 5%;
+}
+
+.titleInfs span {
+  color: white;
+  font-size: 23px;
+}
+
+.textInf {
+  width: 100%;
+  height: 80%;
+  margin-top: 3.5%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.block {
+  width: 22%;
+  height: 100%;
+}
+
+.block p {
+  color: greenyellow;
+  font-size: 20px;
+}
+
+.block span {
+  color: #c3cee1;
+}
+
+////////  compMaps /////////
+
+.compMaps {
+    width: 100%;
+    margin-top: 5%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    padding: 0 1%;
+}
+
+////////// End /////////////
+
+.end {
+  width: 100%;
+  margin-top: 70px;
+}
+
+.blockEnd {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+.first {
+  width: 58%;
+}
+
+.first span{
+    color: #c3cee1;
+}
+
+.photo {
+  width: 40%;
+}
+
+.photo img{
+  width: 100%;
+}
