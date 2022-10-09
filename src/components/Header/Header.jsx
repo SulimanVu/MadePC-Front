@@ -111,7 +111,7 @@ const Header = () => {
               </ul>
             </li>
 
-            <li className={styles.item}>Контакты</li>
+            <li className={styles.item}> <Link to="/contacts">Контакты</Link></li>
             {token
               ?
               <li className={styles.item} onClick={handleExit}><Link className={styles.signIn}>Выход</Link></li>
