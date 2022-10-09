@@ -15,6 +15,7 @@ const Basket = () => {
   const result = user?.basket.reduce((a, b) => (a += b.price), 0);
 
   const Number = ({ n }) => {
+    
     const { number } = useSpring({
       from: { number: 0 },
       number: n,

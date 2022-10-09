@@ -10,14 +10,9 @@ import { MagnifyingGlass } from 'react-loader-spinner'
 const ItemBasket = () => {
     const dispatch = useDispatch();
     const user = useSelector((state) => state.application.users)
-    const comps = useSelector((state) => state.comp.comp)
     const id = useSelector((state) => state.application.id)
     const loading = useSelector((state) => state.comp.loader)
     const [disabled, setDisabled] = useState(false)
-
-    const result = comps.map((element) => {
-        return element._id
-    })
 
     const data = user.find((element) => {
         if (element._id === id) {

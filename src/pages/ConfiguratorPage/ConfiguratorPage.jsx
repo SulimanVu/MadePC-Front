@@ -49,13 +49,13 @@ const ConfiguratorPage = () => {
   const token = useSelector((state) => state.application.token);
   const summa = useSelector((state) => state.madePC.savePrice);
   const id1 = useSelector((state) => state.application.id);
-  const computers = useSelector((state) => state.madePC.madePC);
-  const mPC = useSelector((state) => state.madePC.id);
+  const allPC = useSelector((state) => state.madePC.madePC);
+  const result = allPC[allPC.length - 1];
 
   const handleBuy = (e) => {
-    dispatch(addToBasket({ computersId: mPC, id1 }));
     if (token) {
-      dispatch(addMadeRequest({ basket: mPC }));
+      dispatch(addMadeRequest({ basket: result?._id }));
+      dispatch(addToBasket({ computersId: result?._id, id1 }));
     } else {
       notify();
     }
@@ -68,7 +68,7 @@ const ConfiguratorPage = () => {
     <div>
       <div className={styles.configurator_block}>
         <div className={styles.configurator_left}>
-          {components.map((item, index) => {
+          {components?.map((item, index) => {
             return (
               <div key={index} className={styles.configurator_components_left}>
                 <div>
