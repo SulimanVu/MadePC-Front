@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { authThunk } from "../../features/applicationSlice";
 
 import { useState } from "react";
