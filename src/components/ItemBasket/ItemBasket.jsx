@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import styles from '../ItemBasket/itembasket.module.scss';
-import proc from './images/proc2.png';
 import rub from '../CardComp/images/rub.svg';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteFromBasket, fetchUsers, countPlus, countMinus } from '../../features/applicationSlice';
 import { fetchComp } from '../../features/compSlice';
 import { useSpring, animated } from 'react-spring';
+import { MagnifyingGlass } from 'react-loader-spinner'
 
 const ItemBasket = () => {
     const dispatch = useDispatch();
     const user = useSelector((state) => state.application.users)
     const comps = useSelector((state) => state.comp.comp)
     const id = useSelector((state) => state.application.id)
+    const loading = useSelector((state) => state.comp.loader)
     const [disabled, setDisabled] = useState(false)
 
     const result = comps.map((element) => {
@@ -24,10 +25,7 @@ const ItemBasket = () => {
         }
     })
 
-    const res = data?.basket
-    const res2 = data?.basket.map((elem) => {
-        return elem.total
-    })
+    const res = data?.basket;
 
     useEffect(() => {
         dispatch(fetchUsers())
@@ -59,6 +57,24 @@ const ItemBasket = () => {
             config: { mass: 1, tension: 20, friction: 10 },
         });
         return <animated.div>{number.to((n) => n.toFixed(0))}</animated.div>;
+    }
+
+    if (loading) {
+        return (
+            <div className={styles.load}>
+                <MagnifyingGlass
+                    visible={true}
+                    height="150"
+                    width="150"
+                    ariaLabel="MagnifyingGlass-loading"
+                    wrapperStyle={{}}
+                    wrapperClass="MagnifyingGlass-wrapper"
+                    glassColor='#c0efff'
+                    color='#e15b64'
+                />
+                <p>Идет загрузка...</p>
+            </div>
+        )
     }
 
     return (
