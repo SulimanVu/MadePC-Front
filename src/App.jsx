@@ -6,6 +6,7 @@ import MainPage from "./pages/MainPage/MainPage";
 import About from "./pages/AboutPage/AboutPage";
 import { Navigate, Route, Routes } from "react-router-dom";
 import PCForGame from "./pages/PCForGame/PCForGame";
+import GamePC from "./pages/GamePC/GamePC"
 import LowPriceComps from "./pages/LowPrieceComps/LowPriceComps";
 import AboutUs from "./components/AboutUs/AboutUs";
 import Faq from "./components/Faq/Faq";
@@ -37,6 +38,7 @@ const App = () => {
                 <Route path="comments" element={<Comments />} />
               </Route>
               <Route path="/game" element={<PCForGame />} />
+              <Route path="/game/:id" element={<GamePC />} />
               <Route path="/lowprice" element={<LowPriceComps />} />
               <Route path="/lowprice/:id" element={<CompPage />} />
               <Route path="/:id" element={<CompPage />} />
@@ -67,6 +69,7 @@ const App = () => {
               <Route path="comments" element={<Comments />} />
             </Route>
             <Route path="/game" element={<PCForGame />} />
+            <Route path="/game/:id" element={<GamePC />} />
             <Route path="/lowprice" element={<LowPriceComps />} />
             <Route path="/lowprice/:id" element={<CompPage />} />
             <Route path="/dr" element={<ArrayDrop />} />
