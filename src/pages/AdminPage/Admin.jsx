@@ -18,14 +18,14 @@ const Admin = () => {
     dispatch(fetchRequests());
     dispatch(fetchMadeRequests())
     dispatch(fetchComp());
-    dispatch(fetchmadePC());
+    dispatch(fetchmadePC())
   }, [dispatch]);
-console.log(requestsMade);
+
   return (
     <div className={styles.main}>
       <h1>Заявки на выполнение</h1>
       <h2>Компьютеры со Склада</h2>
-      {requests.map((item, index) => {
+      {requests?.map((item, index) => {
         return (
           <div className={styles.cards} key={index}>
             <Request item={item} index={index} />
@@ -33,7 +33,7 @@ console.log(requestsMade);
         );
       })}
       <h2>Компьютеры к Сборке</h2>
-      {requestsMade.map((item, index) => {
+      {requestsMade?.map((item, index) => {
         return (
           <div className={styles.cards} key={index}>
             <RequestMadeCard item={item} index={index} />

@@ -24,7 +24,7 @@ const ItemBasket = () => {
 
     useEffect(() => {
         dispatch(fetchUsers())
-        dispatch(fetchComp())
+        // dispatch(fetchComp())
     }, [dispatch])
 
     const handleDelete = (result1) => {

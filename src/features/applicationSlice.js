@@ -68,8 +68,7 @@ export const loginThunk = createAsyncThunk(
 
 export const addToBasket = createAsyncThunk(
   "add/basket",
-  async ({ id1, computersId, computersMadeId }, thunkAPI) => {
-    console.log(computersMadeId);
+  async ({ id1, computersId }, thunkAPI) => {
     try {
       const res = await fetch(`http://localhost:3010/addToBasket/${id1}`, {
         method: "PATCH",
@@ -78,12 +77,33 @@ export const addToBasket = createAsyncThunk(
         },
         body: JSON.stringify({
           basket: computersId,
-          basketMade: computersMadeId,
         }),
       });
 
       const data = await res.json();
       return { id1, computersId };
+    } catch (e) {
+      thunkAPI.rejectWithValue(e);
+    }
+  }
+);
+
+export const addToMadeBasket = createAsyncThunk(
+  "add/Madebasket",
+  async ({ id1, computersMadeId }, thunkAPI) => {
+    try {
+      const res = await fetch(`http://localhost:3010/addToMadeBasket/${id1}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          basketMade: computersMadeId,
+        }),
+      });
+
+      const data = await res.json();
+      return { id1, computersMadeId };
     } catch (e) {
       thunkAPI.rejectWithValue(e);
     }
@@ -184,12 +204,21 @@ const applicationSlice = createSlice({
         state.users = state.users.map((item) => {
           if (item._id === action.payload.id1) {
             item.basket.push(action.payload.computersId);
-            item.basketMade.push(action.payload.computersMadeId);
           }
           return item;
         });
         state.load = false;
       })
+      .addCase(addToMadeBasket.fulfilled, (state, action) => {
+        state.users = state.users.map((item) => {
+          if (item._id === action.payload.id1) {
+            item.basket.push(action.payload.computersMadeId);
+          }
+          return item;
+        });
+        state.load = false;
+      })
+
       .addCase(deleteFromBasket.fulfilled, (state, action) => {
         state.users = state.users.map((item) => {
           if (item._id === action.payload.id) {

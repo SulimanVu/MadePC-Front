@@ -5,7 +5,8 @@ const initialState = {
   savePrice: 0,
   pc: [],
   loader: false,
-  id: null
+  id: null,
+  comp: localStorage.getItem("comp"),
 };
 
 export const fetchmadePC = createAsyncThunk(
@@ -14,6 +15,7 @@ export const fetchmadePC = createAsyncThunk(
     try {
       const res = await fetch("http://localhost:3010/madeComps");
       const data = await res.json();
+      localStorage.setItem("comp", data[data.length - 1]._id);
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error);
@@ -21,17 +23,14 @@ export const fetchmadePC = createAsyncThunk(
   }
 );
 
-export const getOnePC = createAsyncThunk(
-  "get/onePC",
-  async(_,thunkAPI) =>{
-    try{
-      const res = await fetch("http://localhost:3010/oneMPC")
-      return res.json()
-    }catch (error){
-      return thunkAPI.rejectWithValue(error)
-    }
+export const getOnePC = createAsyncThunk("get/onePC", async (_, thunkAPI) => {
+  try {
+    const res = await fetch("http://localhost:3010/oneMPC");
+    return res.json();
+  } catch (error) {
+    return thunkAPI.rejectWithValue(error);
   }
-);
+});
 
 export const updatemadePC = createAsyncThunk(
   "update/madePC",
@@ -167,9 +166,9 @@ const madePC = createSlice({
         state.loader = false;
       })
 
-      .addCase(getOnePC.fulfilled, (state, action)=>{
-        state.id = action.payload._id
-      })
+      .addCase(getOnePC.fulfilled, (state, action) => {
+        state.id = action.payload._id;
+      });
   },
 });
 

@@ -14,6 +14,7 @@ const BestSeller = () => {
       return index < 4;
     })
   );
+  
   useEffect(() => {
     dispatch(fetchComp());
   }, [dispatch]);
@@ -25,8 +26,8 @@ const BestSeller = () => {
       </h2>
       <br />
       <div className={styles.cards}>
-        {cards.map((item) => {
-          return <CardComp computers={item} setModal={setModal} />;
+        {cards.map((item, index) => {
+          return <CardComp computers={item} setModal={setModal} index={index} />;
         })}
       </div>
     </div>

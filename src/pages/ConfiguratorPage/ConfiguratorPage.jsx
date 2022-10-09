@@ -8,7 +8,7 @@ import mask from "./images/configurator-mask.svg";
 import ArrayDrop from "../../components/ArrayDrop/ArrayDrop";
 import { useDispatch, useSelector } from "react-redux";
 import { addMadeRequest } from "../../features/requestMadeSlice";
-import { addToBasket } from "../../features/applicationSlice";
+import { addToMadeBasket } from "../../features/applicationSlice";
 import { fetchmadePC } from "../../features/madePCSlice";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -49,13 +49,12 @@ const ConfiguratorPage = () => {
   const token = useSelector((state) => state.application.token);
   const summa = useSelector((state) => state.madePC.savePrice);
   const id1 = useSelector((state) => state.application.id);
-  const allPC = useSelector((state) => state.madePC.madePC);
-  const result = allPC[allPC.length - 1];
+  const allPC = useSelector((state) => state.madePC.comp);
 
   const handleBuy = (e) => {
     if (token) {
-      dispatch(addMadeRequest({ basket: result._id }));
-      dispatch(addToBasket({ computersMadeId: result._id, id1 }));
+      dispatch(addMadeRequest({ basket: allPC }));
+      dispatch(addToMadeBasket({ computersMadeId: allPC, id1: id1 }));
     } else {
       notify();
     }
@@ -63,7 +62,6 @@ const ConfiguratorPage = () => {
   useEffect(() => {
     dispatch(fetchmadePC());
   }, [dispatch]);
-
   return (
     <div>
       <div className={styles.configurator_block}>

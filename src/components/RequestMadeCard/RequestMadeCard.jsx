@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "../RequestCard/request.module.scss";
 import st from "../../public/st.png";
@@ -6,18 +6,21 @@ import rub from "../CardComp/images/rub.svg";
 import cn from "classnames";
 import { motion } from "framer-motion";
 import { deleteMadeRequest } from "../../features/requestMadeSlice";
+import { fetchmadePC } from "../../features/madePCSlice";
 
 const Request = ({ item, index }) => {
   const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
   const madePC = useSelector((state) => state.madePC.madePC);
-
   const handleOpen = () => {
     setOpen(!open);
   };
   const handleDelete = () => {
     dispatch(deleteMadeRequest(item._id));
   };
+  // useEffect(() => {
+  //   dispatch(fetchmadePC());
+  // });
   return (
     <div key={index}>
       <div className={styles.main}>
@@ -54,10 +57,12 @@ const Request = ({ item, index }) => {
           animate={{ opacity: 1, y: 0 }}
           className={styles.comp}
         >
-          {madePC.map((comp, index) => {
+          {madePC.map((comp, ind) => {
+            console.log(comp);
+            console.log(item.comp);
             if (comp._id === item.comp[0]._id) {
               return (
-                <ul className={styles.components} key={index}>
+                <ul className={styles.components} key={ind}>
                   <li>
                     Материнская плата: &nbsp;
                     <span>
