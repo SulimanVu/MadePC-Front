@@ -16,7 +16,7 @@ import PropTypes from 'prop-types';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const CardComp = ({ computers, setModal }) => {
+const CardComp = ({ computers, setModal, index }) => {
     const dispatch = useDispatch();
     const id1 = useSelector((state) => state.application.id)
     const token = useSelector((state) => state.application.token)
@@ -37,7 +37,7 @@ const CardComp = ({ computers, setModal }) => {
 
     return (
         <>
-            <div className={styles.mainOfMain}>
+            <div className={styles.mainOfMain} key={index}>
                 <div>
                     <div className={styles.imageMain}>
                         <img className={styles.imageCart} src={`http://localhost:3010/images/${computers.image}`} alt='image' />

@@ -15,9 +15,9 @@ const CompPage = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const id1 = useSelector((state) => state.application.id)
-  useEffect(() => {
-    dispatch(fetchComp());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(fetchComp());
+  // }, [dispatch]);
 
   const handleAdd = (computersId) => {
     dispatch(addToBasket({ computersId, id1 }))
