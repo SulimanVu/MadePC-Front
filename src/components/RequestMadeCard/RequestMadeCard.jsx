@@ -57,10 +57,12 @@ const Request = ({ item, index }) => {
           animate={{ opacity: 1, y: 0 }}
           className={styles.comp}
         >
-          {madePC.map((comp, index) => {
+          {madePC.map((comp, ind) => {
+            console.log(comp);
+            console.log(item.comp);
             if (comp._id === item.comp[0]._id) {
               return (
-                <ul className={styles.components} key={index}>
+                <ul className={styles.components} key={ind}>
                   <li>
                     Материнская плата: &nbsp;
                     <span>
