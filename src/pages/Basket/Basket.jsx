@@ -1,17 +1,14 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styles from '../Basket/basket.module.scss';
 import dom from '../LowPrieceComps/images/domic2.png';
 import { Link } from 'react-router-dom';
 import ItemBasket from '../../components/ItemBasket/ItemBasket';
 import rub from '../../components/CardComp/images/rub.svg';
 import Order from '../../components/Order/Order';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchUsers } from '../../features/applicationSlice';
-import { fetchComp } from '../../features/compSlice';
+import { useSelector } from 'react-redux';
 import { useSpring, animated } from 'react-spring';
 
 const Basket = () => {
-    const dispatch = useDispatch();
     const id = useSelector((state) => state.application.id)
     const user = useSelector((state) => state.application.users.find((item) => item._id === id))
 
