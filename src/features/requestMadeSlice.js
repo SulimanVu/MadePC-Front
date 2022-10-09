@@ -45,7 +45,7 @@ export const addMadeRequest = createAsyncThunk(
 );
 
 export const deleteMadeRequest = createAsyncThunk(
-  "delete/request",
+  "delete/Maderequest",
   async (id, thunkAPI) => {
     try {
       const res = await fetch(`http://localhost:3010/requestMade/${id}`, {
@@ -72,7 +72,6 @@ const requestMadeSlice = createSlice({
     builder
       .addCase(fetchMadeRequests.fulfilled, (state, action) => {
         state.madeRequest = action.payload;
-        console.log(action.payload);
         state.loading = false;
       })
       .addCase(fetchMadeRequests.pending, (state, action) => {

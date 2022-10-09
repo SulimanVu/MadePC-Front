@@ -16,14 +16,12 @@ const Order = () => {
 
     const currentUser = users?.find((item) => item._id === id)
 
-    const basket = currentUser?.basket.map((elem) => {
+    const bask = currentUser?.basket.map((elem,index) => {
         return elem._id
     })
-
-    // console.log(basket);
+    const basket = bask?.toString()
 
     const dispatch = useDispatch();
-
     const notify = () => toast("Заказ офрмлен!", {
         type: 'success'
     });
