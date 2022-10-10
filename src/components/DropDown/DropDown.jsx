@@ -3,7 +3,7 @@ import styles from "./dropDown.module.scss";
 import st from "../../public/st.png";
 import cn from "classnames";
 import { useDispatch, useSelector } from "react-redux";
-import { updatemadePC, savePrice } from "../../features/madePCSlice";
+import { updatemadePC, savePrice,saveCorpusImg,saveBoard,saveCooler,saveProc,saveRam,saveHdd,saveVideoCard,savessd,savepower } from "../../features/madePCSlice";
 
 const DropDown = ({ arr, index }) => {
   const dispatch = useDispatch();
@@ -19,22 +19,31 @@ const DropDown = ({ arr, index }) => {
     dispatch(savePrice(comp.price));
     if (index === 0) {
       dispatch(updatemadePC({ math: comp._id }));
+      dispatch(saveBoard(comp.name))
     } else if (index === 1) {
       dispatch(updatemadePC({ cooler: comp._id }));
+      dispatch(saveCooler(comp.name))
     } else if (index === 2) {
       dispatch(updatemadePC({ corpus: comp._id }));
+      dispatch(saveCorpusImg(comp.image))
     } else if (index === 3) {
       dispatch(updatemadePC({ hdd: comp._id }));
+      dispatch(saveHdd(comp.name))
     } else if (index === 4) {
       dispatch(updatemadePC({ powerunits: comp._id }));
+      dispatch(savepower(comp.name))
     } else if (index === 5) {
       dispatch(updatemadePC({ processor: comp._id }));
+      dispatch(saveProc(comp.name))
     } else if (index === 6) {
       dispatch(updatemadePC({ ram: comp._id }));
+      dispatch(saveRam(comp.name))
     } else if (index === 7) {
       dispatch(updatemadePC({ ssd: comp._id }));
+      dispatch(savessd(comp.name))
     } else if (index === 8) {
       dispatch(updatemadePC({ videocard: comp._id }));
+      dispatch(saveVideoCard(comp.name))
     }
   };
 
