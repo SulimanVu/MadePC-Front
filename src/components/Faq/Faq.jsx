@@ -24,7 +24,6 @@ const Faq = ({ item, index }) => {
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           className={styles.Secret}
-          // style={{ display: secret ? "block" : "none" }}
         >
           {item.otvet}
         </motion.div> : null}
