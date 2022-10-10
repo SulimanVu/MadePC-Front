@@ -64,7 +64,7 @@ const Order = () => {
             </div>
             <div className={styles.input1}>
                 <span>Телефон</span>
-                <input value={number} onChange={handleNumber} />
+                <input value={number} onChange={handleNumber} type='number' />
             </div>
             <div className={styles.input1}>
                 <span>E-mail</span>
