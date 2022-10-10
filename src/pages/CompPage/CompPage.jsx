@@ -10,17 +10,28 @@ import { useParams } from "react-router-dom";
 import rub from "./images/rub.svg";
 import Equipment from "../../components/Equipment/Equipment";
 import { addToBasket } from "../../features/applicationSlice";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const CompPage = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const id1 = useSelector((state) => state.application.id)
-  // useEffect(() => {
-  //   dispatch(fetchComp());
-  // }, [dispatch]);
+  const token = useSelector((state) => state.application.token)
+  useEffect(() => {
+    dispatch(fetchComp());
+  }, [dispatch]);
+
+  const notify = () => toast("Вы не авторизованы!", {
+    type: 'error'
+  });
 
   const handleAdd = (computersId) => {
-    dispatch(addToBasket({ computersId, id1 }))
+    if (!token) {
+      notify()
+    } else {
+      dispatch(addToBasket({ computersId, id1 }))
+    }
   }
 
   const comp = useSelector((state) => state.comp.comp);
@@ -80,6 +91,7 @@ const CompPage = () => {
           );
         }
       })}
+      <ToastContainer />
     </div>
   );
 };
