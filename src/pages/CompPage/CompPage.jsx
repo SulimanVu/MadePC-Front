@@ -1,26 +1,37 @@
 import React from "react";
 import styles from "./comppage.module.scss";
 import { Link } from "react-router-dom";
-import dom from "./images/domic2.png";
+// import dom from "./images/domic2.png";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { fetchComp } from "../../features/compSlice";
 import { useParams } from "react-router-dom";
-import rub from "./images/rub.svg";
+// import rub from "./images/rub.svg";
 import Equipment from "../../components/Equipment/Equipment";
 import { addToBasket } from "../../features/applicationSlice";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const CompPage = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const id1 = useSelector((state) => state.application.id)
-  // useEffect(() => {
-  //   dispatch(fetchComp());
-  // }, [dispatch]);
+  const token = useSelector((state) => state.application.token)
+  useEffect(() => {
+    dispatch(fetchComp());
+  }, [dispatch]);
+
+  const notify = () => toast("Вы не авторизованы!", {
+    type: 'error'
+  });
 
   const handleAdd = (computersId) => {
-    dispatch(addToBasket({ computersId, id1 }))
+    if (!token) {
+      notify()
+    } else {
+      dispatch(addToBasket({ computersId, id1 }))
+    }
   }
 
   const comp = useSelector((state) => state.comp.comp);
@@ -29,7 +40,7 @@ const CompPage = () => {
     <div className={styles.main}>
       <div className={styles.comppage_header}>
         <Link to="/" className={styles.decor}>
-          <img className={styles.imageDom} src={dom} alt="img" />
+          {/* <img className={styles.imageDom} src={dom} alt="img" /> */}
         </Link>
         <p>
           <span>•</span> Компьютеры EDELWEISS <span>•</span>
@@ -62,7 +73,7 @@ const CompPage = () => {
                       </div>
                       <div>
                         {" "}
-                        <span>{item.price}</span> <img src={rub} alt="" />
+                        {/* <span>{item.price}</span> <img src={rub} alt="" /> */}
                       </div>
                     </div>
                   </div>
@@ -80,6 +91,7 @@ const CompPage = () => {
           );
         }
       })}
+      <ToastContainer />
     </div>
   );
 };

@@ -16,10 +16,10 @@ const Order = () => {
 
     const currentUser = users?.find((item) => item._id === id)
 
-    const bask = currentUser?.basket.map((elem,index) => {
+    const bask = currentUser?.basket.map((elem, index) => {
         return elem._id
     })
-    const basket = bask?.toString()
+    const basket = bask
 
     const dispatch = useDispatch();
     const notify = () => toast("Заказ офрмлен!", {
@@ -64,7 +64,7 @@ const Order = () => {
             </div>
             <div className={styles.input1}>
                 <span>Телефон</span>
-                <input value={number} onChange={handleNumber} />
+                <input value={number} onChange={handleNumber} type='number' />
             </div>
             <div className={styles.input1}>
                 <span>E-mail</span>

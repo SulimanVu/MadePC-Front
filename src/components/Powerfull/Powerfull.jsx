@@ -8,9 +8,9 @@ const Powerfull = () => {
   const comps = useSelector((state) => state.comp.comp);
   const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   dispatch(fetchComp());
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(fetchComp());
+  }, [dispatch]);
 
   return (
     <div className={styles.Powerfull}>

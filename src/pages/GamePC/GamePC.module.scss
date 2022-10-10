@@ -4,6 +4,7 @@
     justify-content: space-between;
     padding: 5.5rem 0 5rem;
     text-align: left;
+    
 }
 
 .breadcrumps {
@@ -80,4 +81,57 @@
     left: 0;
     width: 100%;
     height: auto;
+  }
+
+  .ditalic_inner {
+    position: relative;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 90.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .ditalic_title {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .ditalic_start {
+    padding-top: 3.375rem;
+    position: relative;
+  }
+
+  .ditalic_h1 {
+    font-family: "PT Sans";
+    font-weight: normal;
+    font-size: 4rem;
+    line-height: 1.12;
+    margin-bottom: 1rem;
+  }
+
+  .detalic_text {
+    font-family: "PT Sans";
+    font-size: 1.5rem;
+    line-height: 1.33;
+    color: #8490a4;
+    max-width: 33.4375rem;
+    margin: 0 0 4rem;
+  }
+
+  .detalic_slider {
+    max-width: 50.625rem;
+    text-align: center;
+    position: relative;
+    padding: 2.3125rem 0;
+  }
+
+  .detalic_slider_img {
+    margin-top: 50px;
+    margin-right: 30px;
+    max-width: 32.75rem;
   }
