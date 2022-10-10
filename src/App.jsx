@@ -9,7 +9,7 @@ import PCForGame from "./pages/PCForGame/PCForGame";
 import GamePC from "./pages/GamePC/GamePC"
 import LowPriceComps from "./pages/LowPrieceComps/LowPriceComps";
 import AboutUs from "./components/AboutUs/AboutUs";
-import Faq from "./components/Faq/Faq";
+import FaqMap from "./components/Faq/FaqMap";
 import Comments from "./components/Comments/Comments";
 import ConfiguratorPage from "./pages/ConfiguratorPage/ConfiguratorPage";
 import ArrayDrop from "./components/ArrayDrop/ArrayDrop";
@@ -35,7 +35,7 @@ const App = () => {
               <Route path="/configurator" element={<ConfiguratorPage />} />
               <Route path="/about" element={<About />}>
                 <Route path="company" element={<AboutUs />} />
-                <Route path="faq" element={<Faq />} />
+                <Route path="faq" element={<FaqMap />} />
                 <Route path="comments" element={<Comments />} />
               </Route>
               <Route path="/game" element={<PCForGame />} />
@@ -67,7 +67,7 @@ const App = () => {
             <Route path="/configurator" element={<ConfiguratorPage />} />
             <Route path="/about" element={<About />}>
               <Route path="company" element={<AboutUs />} />
-              <Route path="faq" element={<Faq />} />
+              <Route path="faq" element={<FaqMap />} />
               <Route path="comments" element={<Comments />} />
             </Route>
             <Route path="/game" element={<PCForGame />} />
