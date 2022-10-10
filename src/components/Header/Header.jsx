@@ -2,13 +2,13 @@ import React from "react";
 import styles from "./header.module.scss";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import Nav from "../Nav/Nav";
-import cn from "classnames";
 import { useSelector } from "react-redux";
 
 const Header = () => {
   const pathName = useLocation();
   const path = pathName.pathname;
   const token = useSelector((state) => state.application.token);
+  const id = useSelector((state) => state.application.id)
 
   const handleExit = () => {
     window.location.reload()
@@ -75,7 +75,6 @@ const Header = () => {
                 </li>
               </ul>
             </li>
-
             <li className={styles.item}>Клиентам ⁞
               <ul className={styles.nested_list2}>
                 <li className={styles.nested_item2}>
@@ -111,29 +110,31 @@ const Header = () => {
                 x
               </ul>
             </li>
-
             <li className={styles.item}> <Link to="/contacts">Контакты</Link></li>
             {token
               ?
-             <>
-              <li className={styles.item} onClick={handleExit}><Link className={styles.signIn}>Выход</Link></li>
-              <li className={styles.item}><Link to="/admin" className={styles.signIn}>Админ</Link></li>
+              <>
+                <li className={styles.item} onClick={handleExit}><Link className={styles.signIn}>Выход</Link></li>
               </>
               :
-              <li className={styles.item}><Link to="/signin" className={styles.signIn}>Регистрация/Авторизация</Link></li>}
-            
+              <li className={styles.item}><Link to="/signin" className={styles.signIn}>Регистрация/Авторизация</Link></li>
+            }
+            {id === "6343d9d80c67a948fc99cecf"
+              ?
+              <li className={styles.item}>
+                <Link to="/admin" className={styles.signIn}>Админ</Link>
+              </li>
+              :
+              <li></li>
+            }
           </ul>
-
-
         </div>
-
       </div>
       <div>
         <Nav />
       </div>
       <Outlet />
     </div>
-
   );
 };
 

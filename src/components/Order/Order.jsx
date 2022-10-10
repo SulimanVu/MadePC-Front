@@ -16,10 +16,10 @@ const Order = () => {
 
     const currentUser = users?.find((item) => item._id === id)
 
-    const bask = currentUser?.basket.map((elem,index) => {
+    const bask = currentUser?.basket.map((elem, index) => {
         return elem._id
     })
-    const basket = bask?.toString()
+    const basket = bask
 
     const dispatch = useDispatch();
     const notify = () => toast("Заказ офрмлен!", {
