@@ -68,8 +68,7 @@ export const loginThunk = createAsyncThunk(
 
 export const addToBasket = createAsyncThunk(
   "add/basket",
-  async ({ id1, computersId, computersMadeId }, thunkAPI) => {
-    console.log(computersMadeId);
+  async ({ id1, computersId }, thunkAPI) => {
     try {
       const res = await fetch(`http://localhost:3010/addToBasket/${id1}`, {
         method: "PATCH",
@@ -77,8 +76,7 @@ export const addToBasket = createAsyncThunk(
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          basket: computersId,
-          basketMade: computersMadeId,
+          basket: computersId
         }),
       });
 
@@ -184,7 +182,6 @@ const applicationSlice = createSlice({
         state.users = state.users.map((item) => {
           if (item._id === action.payload.id1) {
             item.basket.push(action.payload.computersId);
-            item.basketMade.push(action.payload.computersMadeId);
           }
           return item;
         });
