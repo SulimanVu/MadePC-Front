@@ -37,7 +37,7 @@ export const fetchmadePC = createAsyncThunk(
 
 export const updateOne = createAsyncThunk(
   "updateOne/MadePC",
-  async (id, thunkAPI) => {
+  async ({id}, thunkAPI) => {
     try {
       const res = fetch(`http://localhost:3010/madeComp/${id}`, {
         method: "PATCH",
