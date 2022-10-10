@@ -10,6 +10,16 @@ body{
 	color: #c4c3ca;
 	overflow-x: hidden;
 }
+.btn{
+  cursor: pointer;
+}
+
+.error{
+  color: red;
+  font-weight: 800;
+  margin-top: 20px;
+  font-size: 24px;
+}
 
 .section{
     background-color: #101928

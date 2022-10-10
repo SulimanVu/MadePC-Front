@@ -47,7 +47,7 @@ const App = () => {
               <Route path="/admin" element={<Admin />} />
               <Route path="/contacts" element={<ContactPage />} />
             </Route>
-            <Route path="/signin" element={<SignIn/>} />
+            <Route path="/signin" element={<Navigate to="/"/>} />
           </Routes>
         </div>
         <Footer />
