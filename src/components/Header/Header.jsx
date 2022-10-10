@@ -2,13 +2,13 @@ import React from "react";
 import styles from "./header.module.scss";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import Nav from "../Nav/Nav";
-import cn from "classnames";
 import { useSelector } from "react-redux";
 
 const Header = () => {
   const pathName = useLocation();
   const path = pathName.pathname;
   const token = useSelector((state) => state.application.token);
+  const id = useSelector((state) => state.application.id)
 
   const handleExit = () => {
     window.location.reload();
@@ -94,7 +94,6 @@ const Header = () => {
                 </li>
               </ul>
             </li>
-
             <li className={styles.item}>
               Клиентам ⁞
               <ul className={styles.nested_list2}>
@@ -163,6 +162,7 @@ const Header = () => {
               </li>
             )}
           </ul>
+          
         </div>
       </div>
       <div>

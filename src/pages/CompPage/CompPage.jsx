@@ -1,13 +1,13 @@
 import React from "react";
 import styles from "./comppage.module.scss";
 import { Link } from "react-router-dom";
-import dom from "./images/domic2.png";
+// import dom from "./images/domic2.png";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { fetchComp } from "../../features/compSlice";
 import { useParams } from "react-router-dom";
-import rub from "./images/rub.svg";
+// import rub from "./images/rub.svg";
 import Equipment from "../../components/Equipment/Equipment";
 import { addToBasket } from "../../features/applicationSlice";
 import { ToastContainer, toast } from 'react-toastify';
@@ -40,7 +40,7 @@ const CompPage = () => {
     <div className={styles.main}>
       <div className={styles.comppage_header}>
         <Link to="/" className={styles.decor}>
-          <img className={styles.imageDom} src={dom} alt="img" />
+          {/* <img className={styles.imageDom} src={dom} alt="img" /> */}
         </Link>
         <p>
           <span>•</span> Компьютеры EDELWEISS <span>•</span>
@@ -73,7 +73,7 @@ const CompPage = () => {
                       </div>
                       <div>
                         {" "}
-                        <span>{item.price}</span> <img src={rub} alt="" />
+                        {/* <span>{item.price}</span> <img src={rub} alt="" /> */}
                       </div>
                     </div>
                   </div>
