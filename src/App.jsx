@@ -21,8 +21,8 @@ import CompPage from "./pages/CompPage/CompPage";
 import ContactPage from "./pages/ContactsPage/ContactPage";
 
 const App = () => {
+  
   const token = useSelector((state) => state.application.token);
-
   if (token) {
     return (
       <>

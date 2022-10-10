@@ -58,8 +58,6 @@ const Request = ({ item, index }) => {
           className={styles.comp}
         >
           {madePC.map((comp, ind) => {
-            console.log(comp);
-            console.log(item.comp);
             if (comp._id === item.comp[0]._id) {
               return (
                 <ul className={styles.components} key={ind}>
