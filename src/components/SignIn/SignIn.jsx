@@ -19,10 +19,10 @@ const SignIn = () => {
   const handleClickRegistr = () => {
     dispatch(authThunk({ reglogin, regPassword }));
     dispatch(addmadePC({name: reglogin}))
-    setTimeout(()=>dispatch(getOnePC()),2000)
   };
 
   const handleClick = (e) => {
+    dispatch(getOnePC())
     dispatch(loginThunk({ login, password }));
   };
   
