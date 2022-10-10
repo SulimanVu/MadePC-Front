@@ -155,6 +155,7 @@ const madePC = createSlice({
       .addCase(fetchmadePC.fulfilled, (state, action) => {
         state.madePC = action.payload;
         state.loader = false;
+        state.comp = action.payload[action.payload.length -1]._id
       })
       .addCase(fetchmadePC.pending, (state, action) => {
         state.loader = true;

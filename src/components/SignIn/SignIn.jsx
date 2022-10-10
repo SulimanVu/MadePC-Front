@@ -10,6 +10,7 @@ import { loginThunk } from "../../features/applicationSlice";
 import { addmadePC, fetchmadePC, getOnePC } from "../../features/madePCSlice";
 
 const SignIn = () => {
+  const error = useSelector((state) => state.application.error);
   const [reglogin, setRegLogin] = useState("");
   const [regPassword, setRegPassword] = useState("");
   const [login, setLogin] = useState("");
@@ -18,18 +19,16 @@ const SignIn = () => {
   const dispatch = useDispatch();
   const handleClickRegistr = () => {
     dispatch(authThunk({ reglogin, regPassword }));
-    dispatch(addmadePC({name: reglogin}))
+    dispatch(addmadePC({ name: reglogin }));
   };
 
   const handleClick = (e) => {
-    dispatch(getOnePC())
+    dispatch(getOnePC());
     dispatch(loginThunk({ login, password }));
   };
-  
+
   return (
     <div>
-     
-
       <div class="section">
         <div class="container">
           <div class="row full-height justify-content-center">
