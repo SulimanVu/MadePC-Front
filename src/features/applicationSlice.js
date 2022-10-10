@@ -131,6 +131,27 @@ export const deleteFromBasket = createAsyncThunk(
   }
 );
 
+export const deleteFromMadeBasket = createAsyncThunk(
+  "delete/madebasket",
+  async ({ id1, itemId }, thunkAPI) => {
+    console.log(itemId, 'kant');
+    try {
+      const res = await fetch(`http://localhost:3010/deleteFromMadeBasket/${id1}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ basketMade: itemId }),
+      });
+
+      const data = await res.json();
+      return { id1, itemId };
+    } catch (e) {
+      thunkAPI.rejectWithValue(e);
+    }
+  }
+);
+
 export const countPlus = createAsyncThunk(
   "count/plus",
   async ({ itemId, id, price }, thunkAPI) => {
@@ -226,6 +247,19 @@ const applicationSlice = createSlice({
               ...item,
               basket: item.basket.filter((item) => {
                 return item._id !== action.payload.result1;
+              }),
+            };
+          }
+          return item;
+        });
+      })
+      .addCase(deleteFromMadeBasket.fulfilled, (state, action) => {
+        state.users = state.users.map((item) => {
+          if (item._id === action.payload.id1) {
+            return {
+              ...item,
+              basketMade: item.basketMade.filter((item) => {
+                return item._id !== action.payload.itemId;
               }),
             };
           }
