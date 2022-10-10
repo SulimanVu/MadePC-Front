@@ -2,14 +2,14 @@ import React from "react";
 import styles from "./header.module.scss";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import Nav from "../Nav/Nav";
-import cn from "classnames"
+import cn from "classnames";
 import { useSelector } from "react-redux";
 
 const Header = () => {
   const pathName = useLocation();
   const path = pathName.pathname;
   const token = useSelector((state) => state.application.token);
-  const id = useSelector((state) => state.application.id)
+  const id = useSelector((state) => state.application.id);
 
   const handleExit = () => {
     window.location.reload();
@@ -149,11 +149,13 @@ const Header = () => {
                 <li className={styles.item} onClick={handleExit}>
                   <Link className={styles.signIn}>Выход</Link>
                 </li>
-                <li className={styles.item}>
-                  <Link to="/admin" className={styles.signIn}>
-                    Админ
-                  </Link>
-                </li>
+                {id === "6343d9d80c67a948fc99cecf" && (
+                  <li className={styles.item}>
+                    <Link to="/admin" className={styles.signIn}>
+                      Админ
+                    </Link>
+                  </li>
+                )}
               </>
             ) : (
               <li className={styles.item}>
@@ -163,7 +165,6 @@ const Header = () => {
               </li>
             )}
           </ul>
-          
         </div>
       </div>
       <div>

@@ -26,8 +26,6 @@ const Nav = () => {
 
   const user = useSelector((state) => state.application.users.find((item) => item._id === id))
   
-  console.log(user)
-
 
   return (
     
