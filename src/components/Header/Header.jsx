@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./header.module.scss";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import Nav from "../Nav/Nav";
+import cn from "classnames"
 import { useSelector } from "react-redux";
 
 const Header = () => {
