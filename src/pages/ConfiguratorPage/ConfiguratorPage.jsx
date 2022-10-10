@@ -12,32 +12,50 @@ import { addToMadeBasket } from "../../features/applicationSlice";
 import { fetchmadePC } from "../../features/madePCSlice";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useState } from "react";
 
 const ConfiguratorPage = () => {
+  const corpusImg = useSelector((state)=> state.madePC.corpusImg)
+  const proc1 = useSelector((state)=> state.madePC.proc)
+  const cooler = useSelector((state)=> state.madePC.cooler)
+  const ram1 = useSelector((state)=> state.madePC.ram)
+  const power = useSelector((state)=> state.madePC.power)
+  const ssd = useSelector((state)=> state.madePC.ssd)
+  const hdd = useSelector((state)=> state.madePC.hdd)
+  const videocard = useSelector((state)=> state.madePC.videocard)
+  const mainBoard = useSelector((state)=> state.madePC.mainBoard)
   const components = [
     {
-      title: "Процессор",
+      title: `${proc1}`,
       image: proc,
     },
     {
-      title: "Охлаждение",
+      title: `${cooler}`,
       image: fan,
     },
     {
-      title: "Материнская плата",
+      title: `${mainBoard}`,
       image: proc,
     },
     {
-      title: "Оперативная память",
+      title: `${ram1}`,
       image: ram,
     },
     {
-      title: "Процессор",
-      image: proc,
+      title: `${power}`,
+      image: ram,
     },
     {
-      title: "Видеокарта",
-      image: proc,
+      title: `${ssd}`,
+      image: ram,
+    },
+    {
+      title: `${hdd}`,
+      image: ram,
+    },
+    {
+      title: `${videocard}`,
+      image: ram,
     },
   ];
   const notify = () =>
@@ -50,7 +68,7 @@ const ConfiguratorPage = () => {
   const summa = useSelector((state) => state.madePC.savePrice);
   const id1 = useSelector((state) => state.application.id);
   const allPC = useSelector((state) => state.madePC.comp);
-    console.log(allPC);
+  
   const handleBuy = (e) => {
     if (token) {
       dispatch(addMadeRequest({ basket: allPC }));
@@ -87,14 +105,14 @@ const ConfiguratorPage = () => {
             <input type="text" placeholder="Поиск конфигурации по номеру" />
           </div>
           <div className={styles.configurator_comp}>
-            <img src={mask} alt="#" />
+            <img src={ corpusImg ? `http://localhost:3010/images/${corpusImg}` : mask} alt="#" />
 
             <div className={styles.configurator_price}>
               <div>
                 <span>{summa}</span>
               </div>
               <div>
-                <img src={rub} alt="#" />
+                <img src={rub } alt="#" />
               </div>
             </div>
             <div className={styles.configurator_btn}>

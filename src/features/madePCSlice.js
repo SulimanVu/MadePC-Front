@@ -3,10 +3,22 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 const initialState = {
   madePC: [],
   savePrice: 0,
+  corpus:null,
   pc: [],
   loader: false,
   id: null,
   comp: localStorage.getItem("comp"),
+  corpusImg:null,
+  cooler:"Охлаждение",
+  mainBoard:"Материнская плата",
+  ram:"Оперативная память",
+  proc:"Процесор",
+  hdd: "Жесткий диск",
+  corpus:"Корпус",
+  power:"Блок Питания",
+  ssd:"SSD",
+  videocard:"Видеокарта"
+  
 };
 
 export const fetchmadePC = createAsyncThunk(
@@ -18,7 +30,7 @@ export const fetchmadePC = createAsyncThunk(
       localStorage.setItem("comp", data[data.length - 1]._id);
       return data;
     } catch (error) {
-      return thunkAPI.rejectWithValue(error);
+      return thunkAPI.rejectWithValue(error.toString());
     }
   }
 );
@@ -148,6 +160,33 @@ const madePC = createSlice({
     savePrice: (state, action) => {
       state.savePrice += action.payload;
     },
+    saveCorpusImg: (state,action)=>{
+      state.corpusImg = action.payload
+    },
+    saveRam: (state,action)=>{
+      state.ram = action.payload
+    },
+    saveBoard: (state,action)=>{
+      state.mainBoard = action.payload
+    },
+    saveCooler: (state,action)=>{
+      state.cooler = action.payload
+    },
+    saveProc: (state,action)=>{
+      state.proc = action.payload
+    },
+    saveHdd: (state,action)=>{
+      state.hdd = action.payload
+    },
+    savepower: (state,action)=>{
+      state.power = action.payload
+    },
+    savessd: (state,action)=>{
+      state.ssd = action.payload
+    },
+    saveVideoCard: (state,action)=>{
+      state.videocard = action.payload
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -194,5 +233,5 @@ const madePC = createSlice({
 
 export default madePC.reducer;
 
-export const { price } = madePC.actions;
+export const { price,saveCorpusImg,saveBoard,saveCooler,saveProc,saveRam,saveHdd,saveVideoCard,savessd,savepower } = madePC.actions;
 export const { savePrice } = madePC.actions;

@@ -5,12 +5,15 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import "./Sign.scss";
-
+import { ToastContainer, toast } from 'react-toastify';
 import { loginThunk } from "../../features/applicationSlice";
 import { addmadePC, fetchmadePC, getOnePC } from "../../features/madePCSlice";
+import { color } from "@mui/system";
 
 const SignIn = () => {
   const error = useSelector((state) => state.application.error);
+  console.log(error)
+  const load = useSelector((state)=> state.application.load)
   const [reglogin, setRegLogin] = useState("");
   const [regPassword, setRegPassword] = useState("");
   const [login, setLogin] = useState("");
@@ -21,11 +24,21 @@ const SignIn = () => {
     dispatch(authThunk({ reglogin, regPassword }));
     dispatch(addmadePC({ name: reglogin }));
   };
+  const notify = () => toast(`${error}`, {
+    type: 'error'
+});
+const success = () => toast("Успешно", {
+  type: 'success'
+});
 
   const handleClick = (e) => {
     dispatch(getOnePC());
     dispatch(loginThunk({ login, password }));
+   
   };
+ 
+  
+   
 
   return (
     <div>
@@ -86,6 +99,7 @@ const SignIn = () => {
                               Forgot your password?
                             </a>
                           </p>
+                          <p className="error">{error}</p>
                         </div>
                       </div>
                     </div>
@@ -121,9 +135,10 @@ const SignIn = () => {
                             />
                             <i class="input-icon uil uil-lock-alt"></i>
                           </div>
-                          <div className="btn">
-                            <a
+                          <div className="btn"
                               onClick={() => handleClickRegistr()}
+                              >
+                            <a
                               class="btn mt-4"
                             >
                               submit
@@ -139,6 +154,7 @@ const SignIn = () => {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };
