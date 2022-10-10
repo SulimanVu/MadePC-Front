@@ -20,7 +20,6 @@ const handleClick = () => {
 
 useEffect(()=> {
     dispatch(fetchGames())
-    dispatch(fetchComp())
 }, [dispatch])
 
 

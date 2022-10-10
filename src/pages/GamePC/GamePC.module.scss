@@ -135,3 +135,186 @@
     margin-right: 30px;
     max-width: 32.75rem;
   }
+
+  .detalic_controll {
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 98;
+  }
+
+  .detalic_btn {
+    height: 3.5rem;
+    line-height: 3.5rem;
+    text-transform: uppercase;
+    font-family: "PT Sans";
+    font-size: 1rem;
+    font-weight: 600;
+    color: #0b132b;
+    background-color: #a7e200;
+    border-radius: 4px;
+    border: none;
+    padding: 0 60px;
+    &:hover {
+      background-color: #ccff4c;
+    }
+  }
+
+  .detalic_controll_price_box {
+    display: block;
+    margin-bottom: 2rem;
+    margin-left: 1.5rem;
+   
+  }
+
+  .detalic_control_price {
+    display: flex;
+    align-items: flex-start;
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 1;
+    letter-spacing: .03em;
+    color: #a7e200;
+  }
+
+  .detalic_control_price span {
+    color: #a7e200;
+    font-weight: bold;
+  }
+
+  .detalic_control_price_img {
+    margin-left: 0.5rem;
+    width: 1.8125rem;
+    height: 1.8125rem;
+  }
+
+  .detalic_control_price_credit span {
+    color: #8490a4;
+    font-weight: bold;
+    font-size: 13px;
+  }
+
+  .detalic_controll_btn_box {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: -1rem;
+  }
+
+  .btn_configur {
+    margin-right: 20px;
+    padding: 10px 25px;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    background-color: #2c3849;
+    color: #a7e200;
+    &:hover {
+      background-color: #494949
+    }
+  }
+
+  .detalic_equipment {
+    margin-bottom: 5rem ;
+    padding-left: 4rem;
+  }
+
+  .detalic_equipment_btn1 {
+    width: 450px;
+    padding: 1.5rem 2rem;
+    font-size: 1.5rem;
+    font-family: sans-serif;
+    line-height: 1.33;
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    border-top: 2px solid #a7e200;
+   
+  }
+
+  .detalic_equipment_btn2 {
+    width: 450px;
+    padding: 1.5rem 2rem;
+    font-size: 1.5rem;
+    font-family: sans-serif;
+    line-height: 1.33;
+    background-color: #2c3849;
+    color: #fff;
+    border: none;
+   &:hover {
+    border-top: 2px solid #a7e200;
+   }
+  }
+
+
+  .detalic_list {
+    margin-top: 100px;
+    width: 61.2%;
+  }
+
+  .detalic_item {
+    display: flex;
+    height: 70px;
+    align-items: center;
+    margin-top: 10px;
+    border-bottom: 1px dashed #56617c;
+  }
+
+  .detalic_item span {
+    width: 250px;
+    font-weight: 500;
+    font-size: 19px;
+    color: #8490a4;
+  }
+
+  .detalic_item img {
+    margin-bottom: 10px;
+  }
+
+  .detalic_item p {
+    margin-left: 50px;
+    font-family: sans-serif;
+    font-size: 20px;
+    color: #c3cee1;
+    margin-bottom: 10px;
+    &:hover {
+      color: #a7e200;
+    }
+  }
+
+
+  .detalic_list_min {
+    margin-top: 100px;
+    width: 61.2%;
+  }
+
+  .detalic_item_min {
+    display: flex;
+    height: 70px;
+    align-items: center;
+    margin-top: 10px;
+    border-bottom: 1px dashed #56617c;
+  }
+
+  .detalic_item_min span {
+    width: 250px;
+    font-weight: 500;
+    font-size: 19px;
+    color: #8490a4;
+  }
+
+  .detalic_item_min img {
+    margin-bottom: 10px;
+  }
+
+  .detalic_item_min p {
+    margin-left: 50px;
+    font-family: sans-serif;
+    font-size: 20px;
+    color: #c3cee1;
+    margin-bottom: 10px;
+    &:hover {
+      color: #a7e200;
+    }
+  }
