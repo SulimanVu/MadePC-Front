@@ -1,5 +1,5 @@
 .header_container {
-  a{
+  a {
     text-decoration: none;
     color: white;
   }
@@ -81,7 +81,7 @@
 }
 
 .item:not(:last-child) {
-    margin-right: 20px;
+  margin-right: 20px;
 }
 
 .item:hover .nested_list {
@@ -140,4 +140,8 @@
   &:hover {
     color: #a7e200;
   }
+}
+
+.link_active {
+  color: #a7e200 !important;
 }

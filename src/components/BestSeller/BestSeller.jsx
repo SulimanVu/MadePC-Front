@@ -14,7 +14,7 @@ const BestSeller = () => {
       return index < 4;
     })
   );
-  
+
   useEffect(() => {
     dispatch(fetchComp());
   }, [dispatch]);
@@ -22,12 +22,17 @@ const BestSeller = () => {
     <div>
       {modal ? <ModalBuy setModal={setModal} /> : null}
       <h2 className={styles.text}>
-        Хит продаж <Link to='/lowprice'><button>смотреть все</button></Link>
+        Хит продаж{" "}
+        <Link to="/lowprice">
+          <button>смотреть все</button>
+        </Link>
       </h2>
       <br />
       <div className={styles.cards}>
         {cards.map((item, index) => {
-          return <CardComp computers={item} setModal={setModal} index={index} />;
+          return (
+            <CardComp computers={item} setModal={setModal} index={index} />
+          );
         })}
       </div>
     </div>
