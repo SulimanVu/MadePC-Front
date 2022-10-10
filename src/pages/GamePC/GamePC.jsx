@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { fetchGames } from '../../features/gameSlice';
 import styles from "./GamePC.module.scss"
 import { Link } from 'react-router-dom';
+import CardComp from '../../components/CardComp/CardComp';
 
 
 const GamePC = () => {
@@ -18,7 +19,10 @@ const GamePC = () => {
     }, [dispatch])
 
     const gamePC = useSelector(state => state.game.games?.filter(item => item._id === id))
-    console.log("kfkkkfdk", gamePC);
+    const comp = gamePC.map(el => el.comp)
+    const price = comp.flatMap(item => item.map(item=>item.price))
+    const w = Math.min(...price)
+    console.log("kfkkkfdk", w);
     
    
     return (
@@ -39,6 +43,19 @@ const GamePC = () => {
                <img src={gamePC.map(el=> el.imageBackground)} alt="" className={styles.title_page_img}/>
                </picture>
             </div>
+            <div className={styles.ditalic_inner}>
+                <div className={styles.ditalic_title}>
+                    <div className={styles.ditalic_start}>
+                        <h1 className={styles.ditalic_h1}>Компьютеры для <br />  {gamePC.map(el => el.name)}</h1>
+                        <p className={styles.detalic_text}>Игра требовательна к характеристикам ПК Проект является кроссплатформенным, а это значит, что выйдет она как на игровых консолях, так и на ПК. Но для того что бы насладится максимально высоким показателем FPS и самой красивой картинкой, железо должно быть соответствующее.</p>
+                    </div>
+
+                    <div className={styles.ditalic_slider}>
+                    <img src={gamePC.map(el=> el.gamePCImg)} alt="" className={styles.detalic_slider_img}/>
+                    </div>
+                </div>
+            </div>
+           
         </div>
     );
 };
