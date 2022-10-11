@@ -4,11 +4,12 @@ import styles from "../Faq/faq.module.scss";
 
 const Faq = ({ item, index }) => {
   const [secret, setSecret] = useState(false);
+  
 
   const handleClick = () => {
     setSecret(!secret);
   };
-  console.log(item);
+
   return (
     <div className={styles.bodys} key={index}>
       <div className={styles.Text} onClick={handleClick}>
