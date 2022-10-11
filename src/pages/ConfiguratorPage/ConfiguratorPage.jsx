@@ -8,13 +8,16 @@ import mask from "./images/configurator-mask.svg";
 import ArrayDrop from "../../components/ArrayDrop/ArrayDrop";
 import { useDispatch, useSelector } from "react-redux";
 import { addMadeRequest } from "../../features/requestMadeSlice";
-import { addToMadeBasket } from "../../features/applicationSlice";
+import { addToBasket, addToMadeBasket } from "../../features/applicationSlice";
 import { fetchmadePC, updateOne } from "../../features/madePCSlice";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
+import ModalMade from "../../components/ModalMade/ModalMade";
 
 const ConfiguratorPage = () => {
+  const [modal, setModal] = useState(false);
+
   const corpusImg = useSelector((state)=> state.madePC.corpusImg)
   const proc1 = useSelector((state)=> state.madePC.proc)
   const cooler = useSelector((state)=> state.madePC.cooler)
@@ -76,12 +79,12 @@ const ConfiguratorPage = () => {
 
   const handleBuy = (e) => {
     dispatch(updateOne({id: allPC}))
-    if (token) {
-      dispatch(addMadeRequest({ basket: allPC }));
-      dispatch(addToMadeBasket({ computersMadeId: allPC, id1: id1 }));
-      success()
-    } else {
+    if (!token) {
+      setModal(false);
       notify();
+    } else {
+      dispatch(addToMadeBasket({ computersMadeId: allPC, id1 }));
+      setModal(true);
     }
   };
 
@@ -92,6 +95,7 @@ const ConfiguratorPage = () => {
 
   return (
     <div>
+      {modal ? <ModalMade setModal={setModal} /> : null}
       <div className={styles.configurator_block}>
         <div className={styles.configurator_left}>
           {components?.map((item, index) => {

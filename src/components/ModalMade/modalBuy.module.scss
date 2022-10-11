@@ -1,0 +1,102 @@
+.buyContActive {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 6, 6, 0.375);
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.modalIn {
+    width: 400px;
+    background-color: #1c232e;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.basket {
+    background-color: #a7e200;
+    color: #0b132b;
+    border-radius: 5px;
+    padding: 12px;
+    margin-left: 0px;
+    font-size: 14px;
+    cursor: pointer;
+    width: 150px;
+    margin-right: 7px;
+    border: none;
+
+    &:hover {
+        background-color: #7aa20d;
+    }
+}
+
+.h3 {
+    color: #FFFFFF;
+    font-size: 25px;
+}
+
+.h4 {
+    color: #c3cee1;
+    font-size: 15px;
+    margin-top: 7px;
+}
+
+.close {
+    background-color: #2c3849;
+    color: #a7e200;
+    border-radius: 5px;
+    padding: 12px;
+    font-size: 14px;
+    cursor: pointer;
+    width: 150px;
+    border: none;
+
+    &:hover {
+        background-color: #344051;
+    }
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.x {
+    display: flex;
+    justify-content: space-between;
+}
+
+.closeButton {
+    margin-bottom: 30px;
+    border: none;
+    background-color: unset;
+    color: #8490a4;
+    cursor: pointer;
+
+    &:hover {
+        color: #5a6473;
+    }
+}
+
+.decor {
+    text-decoration: none;
+}
+.block_input{
+    display: flex;
+    flex-direction: column;
+    input{
+        width: 90%;
+        margin: 5px auto;
+        padding: 10px 5px;
+        border-radius: 5px;
+    }
+}
