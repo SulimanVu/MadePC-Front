@@ -18,6 +18,7 @@ const LowPriceComps = () => {
 
     useEffect(() => {
         dispatch(fetchComp())
+        window.scrollTo(0,0)
     }, [dispatch])
 
     if (loading) {

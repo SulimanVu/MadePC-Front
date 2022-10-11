@@ -18,6 +18,7 @@ const Admin = () => {
   const loadingMade = useSelector((state) => state.requestMade.madeRequest);
 
   useEffect(() => {
+    window.scrollTo(0,0)
     dispatch(fetchRequests());
     dispatch(fetchMadeRequests());
     dispatch(fetchComp());
