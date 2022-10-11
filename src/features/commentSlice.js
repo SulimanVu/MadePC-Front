@@ -40,13 +40,14 @@ const commentSlice = createSlice({
     builder
       .addCase(fetchComments.fulfilled, (state, action) => {
         state.comments = action.payload;
+        state.loadComment = false;
+      })
+      .addCase(fetchComments.pending, (state, action) => {
+        state.loadComment = true;
       })
       .addCase(addComments.fulfilled, (state, action) => {
         state.comments.push(action.payload);
         state.loadComment = false;
-      })
-      .addCase(addComments.pending, (state, action) => {
-        state.loadComment = true;
       });
   },
 });
