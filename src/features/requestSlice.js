@@ -34,7 +34,7 @@ export const addRequest = createAsyncThunk(
           number: number,
           email: email,
           comment: comment,
-          comp: basket,
+          comp: basket
         }),
       });
 

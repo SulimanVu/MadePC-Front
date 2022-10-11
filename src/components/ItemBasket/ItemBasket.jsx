@@ -9,7 +9,6 @@ import {
     countMinus,
     deleteFromMadeBasket,
 } from "../../features/applicationSlice";
-import { fetchComp } from "../../features/compSlice";
 import { useSpring, animated } from "react-spring";
 import { MagnifyingGlass } from "react-loader-spinner";
 
@@ -32,7 +31,6 @@ const ItemBasket = () => {
     const corpus = made?.corpus?.map((elem) => {
         return elem.name
     })
-    console.log(corpus, '89');
 
     useEffect(() => {
         dispatch(fetchUsers());
@@ -44,7 +42,6 @@ const ItemBasket = () => {
     };
 
     const handleDelete1 = (itemId) => {
-        console.log(itemId, 'mov');
         dispatch(deleteFromMadeBasket({ itemId, id1 }))
     }
 
@@ -149,20 +146,6 @@ const ItemBasket = () => {
                                     <Number n={item.price} />
                                 </p>
                                 <img className={styles.imgRub} src={rub} alt="img" />
-                            </div>
-                            <div className={styles.plusMinus}>
-                                <button
-                                    onClick={() => handleMinus(item.count, item._id)}
-                                    disabled={disabled}
-                                >
-                                    -
-                                </button>
-                                <p>{item.count}</p>
-                                <button
-                                    onClick={() => handlePlus(item.count, item._id, item.price)}
-                                >
-                                    +
-                                </button>
                             </div>
                             <button
                                 className={styles.delete}
