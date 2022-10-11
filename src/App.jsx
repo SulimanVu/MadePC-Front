@@ -76,6 +76,7 @@ const App = () => {
             <Route path="/lowprice/:id" element={<CompPage />} />
             <Route path="/dr" element={<ArrayDrop />} />
             <Route path="/admin" element={<Admin />} />
+            <Route path="/contacts" element={<ContactPage />} />
           </Route>
           <Route path="/signin" element={<SignIn />} />
         </Routes>
