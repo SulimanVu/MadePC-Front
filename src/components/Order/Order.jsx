@@ -18,8 +18,9 @@ const Order = () => {
 
     const bask = currentUser?.basket.map((elem, index) => {
         return elem._id
-    })
-    const basket = bask
+    });
+
+    const basket = bask;
 
     const dispatch = useDispatch();
     const notify = () => toast("Заказ офрмлен!", {
