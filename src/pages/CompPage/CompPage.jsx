@@ -7,34 +7,53 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { fetchComp } from "../../features/compSlice";
 import { useParams } from "react-router-dom";
-// import rub from "./images/rub.svg";
+import { MagnifyingGlass } from "react-loader-spinner";
 import Equipment from "../../components/Equipment/Equipment";
 import { addToBasket } from "../../features/applicationSlice";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const CompPage = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
-  const id1 = useSelector((state) => state.application.id)
-  const token = useSelector((state) => state.application.token)
+  const id1 = useSelector((state) => state.application.id);
+  const token = useSelector((state) => state.application.token);
+  const load = useSelector((state) => state.comp.loader);
   useEffect(() => {
     dispatch(fetchComp());
+    window.scrollTo(0,0)
   }, [dispatch]);
 
-  const notify = () => toast("Вы не авторизованы!", {
-    type: 'error'
-  });
+  const notify = () =>
+    toast("Вы не авторизованы!", {
+      type: "error",
+    });
 
   const handleAdd = (computersId) => {
     if (!token) {
-      notify()
+      notify();
     } else {
-      dispatch(addToBasket({ computersId, id1 }))
+      dispatch(addToBasket({ computersId, id1 }));
     }
-  }
+  };
 
   const comp = useSelector((state) => state.comp.comp);
+  if (load) {
+    return (
+      <div className={styles.load}>
+        <MagnifyingGlass
+        visible={true}
+        height="150"
+        width="150"
+        ariaLabel="MagnifyingGlass-loading"
+        wrapperStyle={{}}
+        wrapperClass="MagnifyingGlass-wrapper"
+        glassColor="#c0efff"
+        color="#e15b64"
+      />
+      </div>
+    );
+  }
 
   return (
     <div className={styles.main}>
@@ -69,7 +88,9 @@ const CompPage = () => {
                     </div>
                     <div className={styles.btn}>
                       <div>
-                        <button onClick={() => handleAdd(item._id)}>Купить</button>
+                        <button onClick={() => handleAdd(item._id)}>
+                          Купить
+                        </button>
                       </div>
                       <div>
                         {" "}
