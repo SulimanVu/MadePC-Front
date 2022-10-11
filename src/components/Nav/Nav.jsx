@@ -7,6 +7,8 @@ import IconButton from "@mui/material/IconButton";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchUsers } from "../../features/applicationSlice";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   "& .MuiBadge-badge": {
@@ -17,18 +19,27 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
   },
 }));
 
+
+
+
+
 const Nav = () => {
   const dispatch = useDispatch()
-  useEffect(()=>{
+  useEffect(() => {
     dispatch(fetchUsers())
-  },[dispatch])
-  const id = useSelector((state)=> state.application.id)
+  }, [dispatch])
+  const id = useSelector((state) => state.application.id)
 
   const user = useSelector((state) => state.application.users.find((item) => item._id === id))
-  
+  const token = useSelector((state) => state.application.token)
+
+  const notify = () =>
+    toast("Вы не авторизованы!", {
+      type: "error",
+    });
 
   return (
-    
+    <>
       <div className={styles.nav}>
         <ul className={styles.nav_list}>
           <li>
@@ -48,18 +59,22 @@ const Nav = () => {
           </li>
         </ul>
         <div className={styles.nav_input}>
-        <div><box-icon name='search' color = "#a7e200"></box-icon></div>
-        <div>
-          <IconButton aria-label="cart">
-            <StyledBadge badgeContent={user?.basket.length} color="secondary">
-              <Link className={styles.basket} to="/basket"><ShoppingCartIcon /></Link>
-            </StyledBadge>
-          </IconButton>
+          <div><box-icon name='search' color="#a7e200"></box-icon></div>
+          <div>
+            <IconButton aria-label="cart">
+              <StyledBadge badgeContent={user?.basket.length} color="secondary">
+                {token ?
+                  <Link className={styles.basket} to="/basket"><ShoppingCartIcon /></Link>
+                  :
+                  <ShoppingCartIcon style={{ cursor: 'default' }}/>
+                }
+              </StyledBadge>
+            </IconButton>
+          </div>
         </div>
       </div>
-      </div>
-     
-    
+      <ToastContainer limit={0} />
+    </>
   );
 };
 
