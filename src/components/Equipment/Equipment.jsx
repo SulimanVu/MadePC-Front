@@ -17,8 +17,8 @@ import Corpus from "../VideoCardCard/Corpus"
 
 
 const Equipment = ({item}) => {
+
   const [choise,setChoise] = useState("")
-  
   return (
     <div className={styles.equipment_block}>
       <div className={styles.title}>
