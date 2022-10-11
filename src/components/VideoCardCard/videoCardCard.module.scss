@@ -1,22 +1,28 @@
-.videoCardCard{
-    padding: 10px 50px;
+.videoCardCard {
+  padding: 10px 50px;
 }
 
-.image{
-    width: 75%;
-    display: flex;
-    margin: auto;
-    
-    img{
-        width: 100%;
-        height: 100%;
-    }
-}
+.image {
+  width: 75%;
+  display: flex;
+  margin: auto;
 
-.content_item{
-    margin-top: 30px;
-    font-size: 17px;
-    width: 70%;
-    display: flex;
-    justify-content: space-between;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+.content_block {
+  display: flex;
+  flex-direction: column;
+}
+.content_item {
+  margin: 30px auto 0;
+  font-size: 17px;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+.color {
+  color: #a7e200;
 }
