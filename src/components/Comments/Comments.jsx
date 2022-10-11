@@ -10,7 +10,7 @@ const Comments = () => {
   const id = useSelector((state) => state.application.id);
   const token = useSelector((state) => state.application.token);
   const comment = useSelector((state) => state.commentSlice.comments);
-  const load = useSelector((state) => state.commentSlice.comments);
+  const load = useSelector((state) => state.commentSlice.loadComment);
   const dispatch = useDispatch();
 
   useEffect(() => {
