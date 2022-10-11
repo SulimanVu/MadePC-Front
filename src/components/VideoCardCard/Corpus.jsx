@@ -6,7 +6,7 @@ const Corpus = ({item}) => {
               <div>
             <div className={styles.videoCardCard}>
                 <div className={styles.image}>
-                    <img src={item.image} alt="" />
+                    <img src={`http://localhost:3010/images/${item.image}`} alt="" />
                 </div>
                 <div className={styles.content_item}>
                     <div>Ширина</div>

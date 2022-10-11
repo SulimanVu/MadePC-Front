@@ -63,6 +63,11 @@ const ConfiguratorPage = () => {
       type: "error",
     });
 
+    const success = () =>
+    toast("Сборка добавлена в корзину", {
+      type: "success",
+    });
+
   const dispatch = useDispatch();
   const token = useSelector((state) => state.application.token);
   const summa = useSelector((state) => state.madePC.savePrice);
@@ -74,6 +79,7 @@ const ConfiguratorPage = () => {
     if (token) {
       dispatch(addMadeRequest({ basket: allPC }));
       dispatch(addToMadeBasket({ computersMadeId: allPC, id1: id1 }));
+      success()
     } else {
       notify();
     }
