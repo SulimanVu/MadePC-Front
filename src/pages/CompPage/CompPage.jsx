@@ -20,6 +20,7 @@ const CompPage = () => {
   const token = useSelector((state) => state.application.token)
   useEffect(() => {
     dispatch(fetchComp());
+    window.scrollTo(0,0)
   }, [dispatch]);
 
   const notify = () => toast("Вы не авторизованы!", {

@@ -20,6 +20,7 @@ const GamePC = () => {
     useEffect(() => {
         dispatch(fetchGames())
         dispatch(fetchComp())
+        window.scrollTo(0,0)
     }, [dispatch])
 
     const handleBuy = () => {

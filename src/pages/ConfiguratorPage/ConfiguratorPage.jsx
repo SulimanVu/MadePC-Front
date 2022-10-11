@@ -87,6 +87,7 @@ const ConfiguratorPage = () => {
 
   useEffect(() => {
     dispatch(fetchmadePC());
+    window.scrollTo(0,0)
   }, [dispatch]);
 
   return (

@@ -1,21 +1,22 @@
-import React from 'react';
-import styles from '../Basket/basket.module.scss';
-import dom from '../LowPrieceComps/images/domic2.png';
-import { Link } from 'react-router-dom';
-import ItemBasket from '../../components/ItemBasket/ItemBasket';
-import rub from '../../components/CardComp/images/rub.svg';
-import Order from '../../components/Order/Order';
-import { useSelector } from 'react-redux';
-import { useSpring, animated } from 'react-spring';
+import React, { useEffect } from "react";
+import styles from "../Basket/basket.module.scss";
+import dom from "../LowPrieceComps/images/domic2.png";
+import { Link } from "react-router-dom";
+import ItemBasket from "../../components/ItemBasket/ItemBasket";
+import rub from "../../components/CardComp/images/rub.svg";
+import Order from "../../components/Order/Order";
+import { useSelector } from "react-redux";
+import { useSpring, animated } from "react-spring";
 
 const Basket = () => {
-    const id = useSelector((state) => state.application.id)
-    const user = useSelector((state) => state.application.users.find((item) => item._id === id))
+  const id = useSelector((state) => state.application.id);
+  const user = useSelector((state) =>
+    state.application.users.find((item) => item._id === id)
+  );
 
   const result = user?.basket.reduce((a, b) => (a += b.price), 0);
 
   const Number = ({ n }) => {
-    
     const { number } = useSpring({
       from: { number: 0 },
       number: n,
@@ -24,7 +25,9 @@ const Basket = () => {
     });
     return <animated.div>{number.to((n) => n.toFixed(0))}</animated.div>;
   };
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className={styles.mainBasket}>
       <div className={styles.nav}>
