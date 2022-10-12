@@ -1,4 +1,4 @@
-# Сайт рецептов
+# Сайт по продаже ПК
 
 <p>Это групповой проект, выполненный студентами школы программирования <a href="https://intocode.ru/" target="_blank">Intocode</a>.</p>
 
@@ -60,6 +60,12 @@ npm run dev
 ---
 
 <h3>
+  <a href="https://github.com/SulimanVu">
+    <img alt="Abuev" src="https://img.shields.io/badge/-Suliman_Sadakhanov-black?style=for-the-badge&logo=github&logoColor=white" />
+  </a>
+</h3>
+
+<h3>
   <a href="https://github.com/surkhoooooo">
     <img alt="Abuev" src="https://img.shields.io/badge/-Surcho_Abuev-black?style=for-the-badge&logo=github&logoColor=white" />
   </a>
@@ -97,21 +103,21 @@ npm run dev
 
 ---
 
- Создал реакт-приложение</br>
- Из проекта удалил лишние файлы и создал нужные для начала работы папки и компоненты <br>
- Установил следующие библиотеки в зависимости:
+Создал реакт-приложение</br>
+Из проекта удалил лишние файлы и создал нужные для начала работы папки и компоненты <br>
+Установил следующие библиотеки в зависимости:
 
- - react-redux
- - redux
- - redux-logger
- - react-router-dom
- - redux-toolkit
- - prettier
- - framer-motion
- - classnames
- - sass
- - react-loader-spinner
- - prop-types
+- react-redux
+- redux
+- redux-logger
+- react-router-dom
+- redux-toolkit
+- prettier
+- framer-motion
+- classnames
+- sass
+- react-loader-spinner
+- prop-types
 
 ---
 
