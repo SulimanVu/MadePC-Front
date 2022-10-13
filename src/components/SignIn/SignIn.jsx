@@ -12,7 +12,7 @@ import { color } from "@mui/system";
 
 const SignIn = () => {
   const error = useSelector((state) => state.application.error);
-  console.log(error)
+  
   const load = useSelector((state)=> state.application.load)
   const [reglogin, setRegLogin] = useState("");
   const [regPassword, setRegPassword] = useState("");
