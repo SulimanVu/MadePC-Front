@@ -18,11 +18,15 @@
 - Страница одного ПК, с возможность просмотра всех деталей с подробным описанием
 - Возможность сборки ПК под себя
 
-![gif](https://github.com/Kharsaeva/project-recipes/blob/Aisha/IMG_1338.gif)
+### Ниже представлен наш проект
 
-- Есть возможность собирать всой компьютер
+![Made PC - Google Chrome 2022-10-13 10-52-42_Trim_Trim](https://user-images.githubusercontent.com/105623098/195577203-de172a5f-085c-427d-85f6-6ca562480d3b.gif)
 
-![gif](https://github.com/Kharsaeva/project-recipes/blob/Aisha/IMG_1337.gif)
+- Есть возможность собирать свой компьютер
+
+![Made PC - Google Chrome 2022-10-13 10-52-42_Trim (2)](https://user-images.githubusercontent.com/105623098/195575652-7cd034c5-76a7-4a60-830b-7e2050a5c885.gif)
+
+
 
 ## Запуск проекта
 
@@ -52,17 +56,6 @@ npm run dev
   <img alt="Nodejs" src="https://img.shields.io/badge/-Nodejs-43853d?style=for-the-badge&logo=Node.js&logoColor=white" />
   <img alt="JavaScript" src="https://img.shields.io/badge/-JavaScript-yellow?style=for-the-badge&logo=JavaScript&logoColor=white" />
 </p>
-
-<br/>
-
-### Ниже представлен наш проект
-
-![Made PC - Google Chrome 2022-10-13 10-52-42_Trim_Trim](https://user-images.githubusercontent.com/105623098/195577203-de172a5f-085c-427d-85f6-6ca562480d3b.gif)
-
-
-![Made PC - Google Chrome 2022-10-13 10-52-42_Trim (2)](https://user-images.githubusercontent.com/105623098/195575652-7cd034c5-76a7-4a60-830b-7e2050a5c885.gif)
-
-- Есть возможность собирать свой компьютер
 
 ## Команда проекта
 
