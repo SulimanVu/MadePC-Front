@@ -44,8 +44,7 @@ npm run dev
   <img alt="React" src="https://img.shields.io/badge/-React-45b8d8?style=for-the-badge&logo=react&logoColor=white" />
   <img alt="Github" src="https://img.shields.io/badge/-Github-black?style=for-the-badge&logo=github&logoColor=white" />
   <img alt="Redux" src="https://img.shields.io/badge/-Redux-430098?style=for-the-badge&logo=redux&logoColor=white" />
-  <img alt="Redux-Thunk" src="https://img.shields.io/badge/-Redux_Toolkit-white?style=for-the-badge&logo=Redux&logoColor=430098" />
-  <img alt="Redux-Logger" src="https://img.shields.io/badge/-Redux_Logger-430098?style=for-the-badge&logo=Redux&logoColor=white" />
+  <img alt="Redux-Toolkit" src="https://img.shields.io/badge/-Redux_Toolkit-white?style=for-the-badge&logo=Redux&logoColor=430098" />
   <img alt="JSON-Server" src="https://img.shields.io/badge/-JSON_Server-white?style=for-the-badge&logo=JSON&logoColor=black" />
   <img alt="React-Router" src="https://img.shields.io/badge/-React_Router-black?style=for-the-badge&logo=react-router&logoColor=orange" />
   <img alt="Prettier" src="https://img.shields.io/badge/-Prettier-grey?style=for-the-badge&logo=Prettier&logoColor=orange" />
@@ -53,6 +52,17 @@ npm run dev
   <img alt="Nodejs" src="https://img.shields.io/badge/-Nodejs-43853d?style=for-the-badge&logo=Node.js&logoColor=white" />
   <img alt="JavaScript" src="https://img.shields.io/badge/-JavaScript-yellow?style=for-the-badge&logo=JavaScript&logoColor=white" />
 </p>
+
+<br/>
+
+### Ниже представлен наш проект
+
+![Made PC - Google Chrome 2022-10-13 10-52-42_Trim_Trim](https://user-images.githubusercontent.com/105623098/195577203-de172a5f-085c-427d-85f6-6ca562480d3b.gif)
+
+
+![Made PC - Google Chrome 2022-10-13 10-52-42_Trim (2)](https://user-images.githubusercontent.com/105623098/195575652-7cd034c5-76a7-4a60-830b-7e2050a5c885.gif)
+
+- Есть возможность собирать свой компьютер
 
 ## Команда проекта
 
@@ -127,5 +137,6 @@ npm run dev
 - sass - использовался scss для написания стилей
 - framer-motion - для анимаций
 - react-loader-spinner - для прелоадеров
+- toastify - для уведомлений
 
 ---
