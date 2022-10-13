@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-
+import { serverUrl } from '/serverUrl.js';
 const initialState = {
   question: [],
   loadQuestion: false,
@@ -9,7 +9,7 @@ export const fetchQuestion = createAsyncThunk(
   "question/fetch",
   async (_, thunkAPI) => {
     try {
-      const res = await fetch("http://localhost:3010/question");
+      const res = await fetch(`${serverUrl}/question`);
       const data = await res.json();
 
       return data;

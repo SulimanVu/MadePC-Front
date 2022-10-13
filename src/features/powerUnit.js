@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-
+import { serverUrl } from '/serverUrl.js';
 const initialState = {
   powerUnits: [],
   load: false,
@@ -9,7 +9,7 @@ export const fetchpowerUnits = createAsyncThunk(
   "fetch/powerUnits",
   async (_, thunkAPI) => {
     try {
-      const res = await fetch("http://localhost:3010/powerunit");
+      const res = await fetch(`${serverUrl}/powerunit`);
       const data = await res.json();
       return data;
     } catch (error) {

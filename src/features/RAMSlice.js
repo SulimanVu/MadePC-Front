@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-
+import { serverUrl } from '/serverUrl.js';
 const initialState = {
   ram: [],
   loading: false,
@@ -10,7 +10,7 @@ export const fetchRAM = createAsyncThunk(
   "RAM/fetchRAM",
   async (_, thunkAPI) => {
     try {
-      const res = await fetch("http://localhost:3010/RAM");
+      const res = await fetch(`${serverUrl}/RAM`);
       const data = await res.json();
       return data;
     } catch (e) {

@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-
+import { serverUrl } from '/serverUrl.js';
 const initialState = {
   comp: [],
   loader: false,
@@ -7,7 +7,7 @@ const initialState = {
 
 export const fetchComp = createAsyncThunk("fetch/comp", async (_, thunkAPI) => {
   try {
-    const res = await fetch("http://localhost:3010/comps");
+    const res = await fetch(`${serverUrl}/comps`);
     const data = await res.json();
     return data;
   } catch (error) {
@@ -35,7 +35,7 @@ export const updateComp = createAsyncThunk(
     thunkAPI
   ) => {
     try {
-      const res = await fetch(`http://localhost:3010/comp/${id}`, {
+      const res = await fetch(`${serverUrl}/comp/${id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -81,7 +81,7 @@ export const addComp = createAsyncThunk(
     thunkAPI
   ) => {
     try {
-      const res = await fetch("http://localhost:3010/comp", {
+      const res = await fetch(`${serverUrl}/comp`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -112,7 +112,7 @@ export const addComp = createAsyncThunk(
 //   'count/plus',
 //   async ({ itemId, count }, thunkAPI) => {
 //     try {
-//       const res = await fetch(`http://localhost:3010/countPlus/${itemId}`, {
+//       const res = await fetch(`/countPlus/${itemId}`, {
 //         method: "PATCH",
 //         headers: {
 //           'Content-Type': "application/json"

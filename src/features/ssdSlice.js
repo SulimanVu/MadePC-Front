@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-
+import { serverUrl } from '/serverUrl.js';
 const initialState = {
   ssd: [],
   loader: false,
@@ -7,7 +7,7 @@ const initialState = {
 
 export const getSSD = createAsyncThunk("SSD/get", async (data, thunkAPI) => {
   try {
-    const res = await fetch("http://localhost:3010/SSD");
+    const res = await fetch(`${serverUrl}/SSD`);
     const SSD = await res.json();
     return SSD;
   } catch (e) {

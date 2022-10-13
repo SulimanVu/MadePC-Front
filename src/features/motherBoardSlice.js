@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-
+import { serverUrl } from '/serverUrl.js';
 const initialState = {
   board: [],
   loader: false,
@@ -9,7 +9,7 @@ export const fetchBoard = createAsyncThunk(
   "fetch/board",
   async (_, thunkAPI) => {
     try {
-      const res = await fetch("http://localhost:3010/math");
+      const res = await fetch(`${serverUrl}/math`);
       const data = await res.json();
       return data;
     } catch (error) {

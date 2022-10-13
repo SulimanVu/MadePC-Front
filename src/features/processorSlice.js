@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-
+import { serverUrl } from '/serverUrl.js';
 const initialState = {
   processor: [],
   loadProcessor: false,
@@ -9,7 +9,7 @@ export const fetchProcessors = createAsyncThunk(
   "processor/fetch",
   async (_, thunkAPI) => {
     try {
-      const res = await fetch("http://localhost:3010/processors");
+      const res = await fetch(`${serverUrl}/processors`);
       const data = await res.json();
 
       return data;
