@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-
+import { serverUrl } from '../serverUrl.js';
 const initialState = {
   corpus: [],
   loader: false,
@@ -7,7 +7,7 @@ const initialState = {
 
 export const getCorpus = createAsyncThunk("corpus/get", async (_, thunkAPI) => {
   try {
-    const res = await fetch("http://localhost:3010/corpus");
+    const res = await fetch(`${serverUrl}/corpus`);
     const corpus = await res.json();
     return corpus;
   } catch (e) {

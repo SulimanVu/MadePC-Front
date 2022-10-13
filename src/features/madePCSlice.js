@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-
+import { serverUrl } from '../serverUrl.js';
 const initialState = {
   madePC: [],
   savePrice: 0,
@@ -25,7 +25,7 @@ export const fetchmadePC = createAsyncThunk(
   "fetch/madeComps",
   async (_, thunkAPI) => {
     try {
-      const res = await fetch("http://localhost:3010/madeComps");
+      const res = await fetch(`${serverUrl}/madeComps`);
       const data = await res.json();
       localStorage.setItem("comp", data[data.length - 1]._id);
       return data;
@@ -39,7 +39,7 @@ export const updateOne = createAsyncThunk(
   "updateOne/MadePC",
   async ({id}, thunkAPI) => {
     try {
-      const res = fetch(`http://localhost:3010/madeComp/${id}`, {
+      const res = fetch(`${serverUrl}/madeComp/${id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -56,7 +56,7 @@ export const updateOne = createAsyncThunk(
 
 export const getOnePC = createAsyncThunk("get/onePC", async (_, thunkAPI) => {
   try {
-    const res = await fetch("http://localhost:3010/oneMPC");
+    const res = await fetch(`${serverUrl}/oneMPC`);
     return res.json();
   } catch (error) {
     return thunkAPI.rejectWithValue(error);
@@ -80,7 +80,7 @@ export const updatemadePC = createAsyncThunk(
     thunkAPI
   ) => {
     try {
-      const res = await fetch(`http://localhost:3010/mPC`, {
+      const res = await fetch(`${serverUrl}/mPC`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -124,7 +124,7 @@ export const addmadePC = createAsyncThunk(
     thunkAPI
   ) => {
     try {
-      const res = await fetch("http://localhost:3010/madeComp", {
+      const res = await fetch(`${serverUrl}/madeComp`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

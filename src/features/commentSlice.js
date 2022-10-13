@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-
+import { serverUrl } from '../serverUrl.js';
 const initialState = {
   comments: [],
   loadComment: false,
@@ -9,7 +9,7 @@ export const fetchComments = createAsyncThunk(
   "comments/fetch",
   async (_, thunkAPI) => {
     try {
-      const res = await fetch("http://localhost:3010/comment");
+      const res = await fetch(`${serverUrl}/comment`);
       const comment = await res.json();
       return comment;
     } catch (e) {
@@ -21,7 +21,7 @@ export const fetchComments = createAsyncThunk(
 export const addComments = createAsyncThunk(
   "comments/post",
   async ({ comm, id }, thunkAPI) => {
-    const res = await fetch("http://localhost:3010/comment", {
+    const res = await fetch(`${serverUrl}/comment`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

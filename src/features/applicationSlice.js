@@ -1,4 +1,6 @@
+
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { serverUrl } from '../serverUrl.js';
 const initialState = {
   users: [],
   error: null,
@@ -11,7 +13,7 @@ export const fetchUsers = createAsyncThunk(
   "fetch/users",
   async (_, thunkAPI) => {
     try {
-      const res = await fetch("http://localhost:3010/users");
+      const res = await fetch(`${serverUrl}/users`);
       const data = await res.json();
 
       return data;
@@ -25,7 +27,7 @@ export const authThunk = createAsyncThunk(
   "fetch/auth",
   async ({ reglogin, regPassword }, thunkAPI) => {
     try {
-      const res = await fetch("http://localhost:3010/user", {
+      const res = await fetch(`${serverUrl}/user`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -45,7 +47,7 @@ export const loginThunk = createAsyncThunk(
   "fetch/login",
   async ({ login, password }, thunkAPI) => {
     try {
-      const res = await fetch("http://localhost:3010/login", {
+      const res = await fetch(`${serverUrl}/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -70,7 +72,7 @@ export const addToBasket = createAsyncThunk(
   "add/basket",
   async ({ id1, computersId }, thunkAPI) => {
     try {
-      const res = await fetch(`http://localhost:3010/addToBasket/${id1}`, {
+      const res = await fetch(`${serverUrl}/addToBasket/${id1}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -92,7 +94,7 @@ export const addToMadeBasket = createAsyncThunk(
   "add/Madebasket",
   async ({ id1, computersMadeId }, thunkAPI) => {
     try {
-      const res = await fetch(`http://localhost:3010/addToMadeBasket/${id1}`, {
+      const res = await fetch(`/addToMadeBasket/${id1}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -113,9 +115,9 @@ export const addToMadeBasket = createAsyncThunk(
 export const deleteFromBasket = createAsyncThunk(
   "delete/basket",
   async ({ id, result1 }, thunkAPI) => {
-  
+    console.log(result1);
     try {
-      const res = await fetch(`http://localhost:3010/deleteFromBasket/${id}`, {
+      const res = await fetch(`${serverUrl}/deleteFromBasket/${id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -134,9 +136,9 @@ export const deleteFromBasket = createAsyncThunk(
 export const deleteFromMadeBasket = createAsyncThunk(
   "delete/madebasket",
   async ({ id1, itemId }, thunkAPI) => {
-    
+    console.log(itemId, 'kant');
     try {
-      const res = await fetch(`http://localhost:3010/deleteFromMadeBasket/${id1}`, {
+      const res = await fetch(`${serverUrl}/deleteFromMadeBasket/${id1}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -156,7 +158,7 @@ export const countPlus = createAsyncThunk(
   "count/plus",
   async ({ itemId, id, price }, thunkAPI) => {
     try {
-      const res = await fetch(`http://localhost:3010/countPlus/${itemId}`, {
+      const res = await fetch(`${serverUrl}/countPlus/${itemId}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -176,7 +178,7 @@ export const countMinus = createAsyncThunk(
   "count/minus",
   async ({ itemId, id }, thunkAPI) => {
     try {
-      const res = await fetch(`http://localhost:3010/countMinus/${itemId}`, {
+      const res = await fetch(`${serverUrl}/countMinus/${itemId}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -296,5 +298,6 @@ const applicationSlice = createSlice({
       });
   },
 });
+
 
 export default applicationSlice.reducer;

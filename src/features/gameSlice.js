@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-
+import { serverUrl } from '../serverUrl.js';
 
 const initialState = {
     games: []
@@ -8,7 +8,7 @@ const initialState = {
 
 export const fetchGames = createAsyncThunk("game/fetchGames", async(_, thynkAPI) => {
    try{
-    const res = await fetch("http://localhost:3010/game");
+    const res = await fetch(`${serverUrl}/game`);
     const data = await res.json();
     return data;
    } catch(error) {

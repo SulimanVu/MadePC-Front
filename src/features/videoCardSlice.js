@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-
+import { serverUrl } from '../serverUrl.js';
 const initialState = {
   videoCards: [],
   load: false,
@@ -9,7 +9,7 @@ export const fetchvideoCards = createAsyncThunk(
   "fetch/videocards",
   async (_, thunkAPI) => {
     try {
-      const res = await fetch("http://localhost:3010/videocards");
+      const res = await fetch(`${serverUrl}/videocards`);
       const data = await res.json();
       return data;
     } catch (error) {

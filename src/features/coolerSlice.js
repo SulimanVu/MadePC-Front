@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-
+import { serverUrl } from '../serverUrl.js';
 const initialState = {
   cooler: [],
   loadCoolers: false,
@@ -9,7 +9,7 @@ export const fetchCooler = createAsyncThunk(
   "fetch/coolers",
   async (_, thunkAPI) => {
     try {
-      const res = await fetch("http://localhost:3010/coolers");
+      const res = await fetch(`${serverUrl}/coolers`);
       const data = await res.json();
       return data;
     } catch (e) {

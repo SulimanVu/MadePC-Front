@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-
+import { serverUrl } from '../serverUrl.js';
 const initialState = {
   hdd: [],
   loading: false,
@@ -8,7 +8,7 @@ const initialState = {
 
 export const fetchHDD = createAsyncThunk("HDD/fetch", async (_, thunkAPI) => {
   try {
-    const res = await fetch("http://localhost:3010/HDD");
+    const res = await fetch(`${serverUrl}/HDD`);
     const data = await res.json();
     return data;
   } catch (e) {
