@@ -30,7 +30,7 @@ const Nav = () => {
   }, [dispatch])
   const id = useSelector((state) => state.application.id)
 
-  const user = useSelector((state) => state.application.users.find((item) => item._id === id))
+  const user = useSelector((state) => state.application.users?.find((item) => item._id === id))
   const token = useSelector((state) => state.application.token)
 
   const notify = () =>
