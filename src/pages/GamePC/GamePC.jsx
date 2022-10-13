@@ -29,7 +29,7 @@ const GamePC = () => {
     const computers = useSelector((state) => state.comp.comp.map((elem) => {
         return elem._id
     }))
-    console.log(computers, '789987');
+    
     const price = comp.flatMap(item => item.map(item => item.price));
     const max = Math.max(...price);
     const min = Math.min(...price);

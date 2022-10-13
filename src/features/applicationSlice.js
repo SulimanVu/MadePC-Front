@@ -113,7 +113,7 @@ export const addToMadeBasket = createAsyncThunk(
 export const deleteFromBasket = createAsyncThunk(
   "delete/basket",
   async ({ id, result1 }, thunkAPI) => {
-    console.log(result1);
+  
     try {
       const res = await fetch(`http://localhost:3010/deleteFromBasket/${id}`, {
         method: "PATCH",
@@ -134,7 +134,7 @@ export const deleteFromBasket = createAsyncThunk(
 export const deleteFromMadeBasket = createAsyncThunk(
   "delete/madebasket",
   async ({ id1, itemId }, thunkAPI) => {
-    console.log(itemId, 'kant');
+    
     try {
       const res = await fetch(`http://localhost:3010/deleteFromMadeBasket/${id1}`, {
         method: "PATCH",

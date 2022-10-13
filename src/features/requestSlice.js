@@ -22,7 +22,7 @@ export const fetchRequests = createAsyncThunk(
 export const addRequest = createAsyncThunk(
   "add/request",
   async ({ name, number, email, comment, basket }, thunkAPI) => {
-    console.log(basket);
+    
     try {
       const res = await fetch("http://localhost:3010/request", {
         method: "POST",
