@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { serverUrl } from '/serverUrl.js';
+import { serverUrl } from '../serverUrl.js';
 const initialState = {
   madePC: [],
   savePrice: 0,

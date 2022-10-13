@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { serverUrl } from '/serverUrl.js';
+import { serverUrl } from '../serverUrl.js';
 const initialState = {
   comments: [],
   loadComment: false,

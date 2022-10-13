@@ -1,6 +1,6 @@
 
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { serverUrl } from '/serverUrl.js';
+import { serverUrl } from '../serverUrl.js';
 const initialState = {
   request: [],
   loading: false,

@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { serverUrl } from '/serverUrl.js';
+import { serverUrl } from '../serverUrl.js';
 const initialState = {
   videoCards: [],
   load: false,
