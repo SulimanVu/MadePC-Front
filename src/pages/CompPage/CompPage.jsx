@@ -12,6 +12,7 @@ import Equipment from "../../components/Equipment/Equipment";
 import { addToBasket } from "../../features/applicationSlice";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { serverUrl } from '../../serverUrl.js';
 
 const CompPage = () => {
   const { id } = useParams();
@@ -101,7 +102,7 @@ const CompPage = () => {
 
                   <div className={styles.comppage_img}>
                     <img
-                      src={`http://localhost:3010/images/${item.image}`}
+                      src={`${serverUrl}/images/${item.image}`}
                       alt=""
                     />
                   </div>

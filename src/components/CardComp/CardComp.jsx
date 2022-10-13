@@ -15,7 +15,7 @@ import { addToBasket } from "../../features/applicationSlice";
 import PropTypes from "prop-types";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import { serverUrl } from '../../serverUrl.js';
 const CardComp = ({ computers, setModal, index }) => {
   const dispatch = useDispatch();
   const id1 = useSelector((state) => state.application.id);
@@ -43,7 +43,7 @@ const CardComp = ({ computers, setModal, index }) => {
           <div className={styles.imageMain}>
             <img
               className={styles.imageCart}
-              src={`http://localhost:3010/images/${computers.image}`}
+              src={`${serverUrl}/images/${computers.image}`}
               alt="image"
             />
           </div>

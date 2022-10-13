@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./videoCardCard.module.scss";
+import { serverUrl } from '../../serverUrl.js';
 
 const Ssd = ({ item }) => {
   return (
@@ -7,7 +8,7 @@ const Ssd = ({ item }) => {
       <div>
         <div className={styles.videoCardCard}>
           <div className={styles.image}>
-            <img src={`http://localhost:3010/images/${item.image}`} alt="" />
+            <img src={`${serverUrl}/images/${item.image}`} alt="" />
           </div>
           <div className={styles.content_item}>
             <div>Объем</div>
