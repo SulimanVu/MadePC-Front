@@ -11,6 +11,7 @@ import {
 } from "../../features/applicationSlice";
 import { useSpring, animated } from "react-spring";
 import { MagnifyingGlass } from "react-loader-spinner";
+import { serverUrl } from '../../serverUrl.js';
 
 const ItemBasket = () => {
     const dispatch = useDispatch();
@@ -93,7 +94,7 @@ const ItemBasket = () => {
                         <div className={styles.Basket}>
                             <img
                                 className={styles.imgBasket}
-                                src={`http://localhost:3010/images/${item.image}`}
+                                src={`${serverUrl}/images/${item.image}`}
                                 alt="img"
                             />
                             <p>{item.name}</p>
@@ -135,7 +136,7 @@ const ItemBasket = () => {
                         <div className={styles.Basket}>
                             <img
                                 className={styles.imgBasket}
-                                src={`http://localhost:3010/images/${item.corpus.image}`}
+                                src={`${serverUrl}/images/${item.corpus.image}`}
                                 alt="img"
                             />
                             <p>Сборка #{Math.floor(Math.random() * 100) + 1}</p>

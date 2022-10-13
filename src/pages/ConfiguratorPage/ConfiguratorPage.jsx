@@ -14,6 +14,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
 import ModalMade from "../../components/ModalMade/ModalMade";
+import { serverUrl } from '../../serverUrl.js';
 
 const ConfiguratorPage = () => {
   const [modal, setModal] = useState(false);
@@ -117,7 +118,7 @@ const ConfiguratorPage = () => {
             <input type="text" placeholder="Поиск конфигурации по номеру" />
           </div>
           <div className={styles.configurator_comp}>
-            <img src={ corpusImg ? `http://localhost:3010/images/${corpusImg}` : mask} alt="#" />
+            <img src={ corpusImg ? `${serverUrl}/images/${corpusImg}` : mask} alt="#" />
 
             <div className={styles.configurator_price}>
               <div>

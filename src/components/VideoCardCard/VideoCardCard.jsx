@@ -1,12 +1,13 @@
 import React from "react";
 import styles from "./videoCardCard.module.scss";
+import { serverUrl } from '../../serverUrl.js';
 
 const VideoCardCard = ({ item }) => {
   return (
     <div>
       <div className={styles.videoCardCard}>
         <div className={styles.image}>
-          <img src={`http://localhost:3010/images/${item.image}`} alt="" />
+          <img src={`${serverUrl}/images/${item.image}`} alt="" />
         </div>
         <div className={styles.content_block}>
           <div className={styles.content_item}>
