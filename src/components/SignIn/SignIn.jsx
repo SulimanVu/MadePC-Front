@@ -5,15 +5,14 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import "./Sign.scss";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer, toast } from "react-toastify";
 import { loginThunk } from "../../features/applicationSlice";
 import { addmadePC, fetchmadePC, getOnePC } from "../../features/madePCSlice";
 import { color } from "@mui/system";
 
 const SignIn = () => {
   const error = useSelector((state) => state.application.error);
-  
-  const load = useSelector((state)=> state.application.load)
+
   const [reglogin, setRegLogin] = useState("");
   const [regPassword, setRegPassword] = useState("");
   const [login, setLogin] = useState("");
@@ -24,21 +23,11 @@ const SignIn = () => {
     dispatch(authThunk({ reglogin, regPassword }));
     dispatch(addmadePC({ name: reglogin }));
   };
-  const notify = () => toast(`${error}`, {
-    type: 'error'
-});
-const success = () => toast("Успешно", {
-  type: 'success'
-});
 
   const handleClick = (e) => {
     dispatch(getOnePC());
     dispatch(loginThunk({ login, password }));
-   
   };
- 
-  
-   
 
   return (
     <div>
@@ -64,7 +53,7 @@ const success = () => toast("Успешно", {
                       <div class="center-wrap">
                         <div class="text-center">
                           <div className="title">
-                            <h4 class="mb-4 pb-3">ВХОД</h4>
+                            <h4 class="mb-4 pb-3">Вход</h4>
                           </div>
                           <div class="form-group">
                             <input
@@ -91,8 +80,8 @@ const success = () => toast("Успешно", {
                             />
                             <i class="input-icon uil uil-lock-alt"></i>
                           </div>
-                          <a onClick={() => handleClick()} class="btn mt-4">
-                            submit
+                          <a onClick={handleClick} class="btn mt-4">
+                            Войти
                           </a>
                           <p class="mb-0 mt-4 text-center">
                             <a href="#0" class="link">
@@ -135,14 +124,11 @@ const success = () => toast("Успешно", {
                             />
                             <i class="input-icon uil uil-lock-alt"></i>
                           </div>
-                          <div className="btn"
-                              onClick={() => handleClickRegistr()}
-                              >
-                            <a
-                              class="btn mt-4"
-                            >
-                              submit
-                            </a>
+                          <div
+                            className="btn"
+                            onClick={() => handleClickRegistr()}
+                          >
+                            <a class="btn mt-4">Зарегистрироваться</a>
                           </div>
                         </div>
                       </div>
