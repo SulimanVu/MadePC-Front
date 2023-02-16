@@ -12,7 +12,7 @@ import Equipment from "../../components/Equipment/Equipment";
 import { addToBasket } from "../../features/applicationSlice";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { serverUrl } from '../../serverUrl.js';
+import { serverUrl } from "../../serverUrl.js";
 
 const CompPage = () => {
   const { id } = useParams();
@@ -22,7 +22,7 @@ const CompPage = () => {
   const load = useSelector((state) => state.comp.loader);
   useEffect(() => {
     dispatch(fetchComp());
-    window.scrollTo(0,0)
+    window.scrollTo(0, 0);
   }, [dispatch]);
 
   const notify = () =>
@@ -43,15 +43,15 @@ const CompPage = () => {
     return (
       <div className={styles.load}>
         <MagnifyingGlass
-        visible={true}
-        height="150"
-        width="150"
-        ariaLabel="MagnifyingGlass-loading"
-        wrapperStyle={{}}
-        wrapperClass="MagnifyingGlass-wrapper"
-        glassColor="#c0efff"
-        color="#e15b64"
-      />
+          visible={true}
+          height="150"
+          width="150"
+          ariaLabel="MagnifyingGlass-loading"
+          wrapperStyle={{}}
+          wrapperClass="MagnifyingGlass-wrapper"
+          glassColor="#c0efff"
+          color="#e15b64"
+        />
       </div>
     );
   }
@@ -63,7 +63,7 @@ const CompPage = () => {
           {/* <img className={styles.imageDom} src={dom} alt="img" /> */}
         </Link>
         <p>
-          <span>•</span> Компьютеры EDELWEISS <span>•</span>
+          <span>•</span> Компьютеры COMP 95 <span>•</span>
         </p>
         <p id={styles.p}> Недорогие игровые компьютеры</p>
       </div>
@@ -80,11 +80,10 @@ const CompPage = () => {
                     </div>
                     <div>
                       <span>
-                        EDELWEISS AXE -достойный бюджетный компьютер для игр.
-                        GTX 1650 с приставкой SUPER обеспечит высоким
-                        показателем FPS при запуске CS:GO, Dota 2, Fortnite,
-                        League of Legends и д.р. Хороший помощник школьника и
-                        студентам.
+                        COMP 95 AXE -достойный бюджетный компьютер для игр. GTX
+                        1650 с приставкой SUPER обеспечит высоким показателем
+                        FPS при запуске CS:GO, Dota 2, Fortnite, League of
+                        Legends и д.р. Хороший помощник школьника и студентам.
                       </span>
                     </div>
                     <div className={styles.btn}>
@@ -101,10 +100,7 @@ const CompPage = () => {
                   </div>
 
                   <div className={styles.comppage_img}>
-                    <img
-                      src={`${serverUrl}/images/${item.image}`}
-                      alt=""
-                    />
+                    <img src={`${serverUrl}/images/${item.image}`} alt="" />
                   </div>
                 </div>
               </div>

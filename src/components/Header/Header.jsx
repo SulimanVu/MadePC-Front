@@ -4,6 +4,7 @@ import { Link, Outlet, useLocation } from "react-router-dom";
 import Nav from "../Nav/Nav";
 import cn from "classnames";
 import { useSelector } from "react-redux";
+import img from "../../public/logo2.png"
 
 const Header = () => {
   const pathName = useLocation();
@@ -22,7 +23,8 @@ const Header = () => {
         <div className={styles.nav_block}>
           <Link to="/">
             <img
-              src="https://edelws.ru/local/templates/main/img/logo.svg"
+              className={styles.logo}
+              src={img}
               alt="logo"
             />
           </Link>

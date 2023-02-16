@@ -11,7 +11,7 @@ const AboutPage = () => {
     <div>
       <div className={styles.Header}>
         <div className={styles.Title}>
-          <h1>Философия гейминга от EDELWEISS</h1>
+          <h1>Философия гейминга от COMP 95</h1>
         </div>
         <div className={styles.Nave}>
           <Link

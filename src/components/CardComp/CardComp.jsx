@@ -15,7 +15,7 @@ import { addToBasket } from "../../features/applicationSlice";
 import PropTypes from "prop-types";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { serverUrl } from '../../serverUrl.js';
+import { serverUrl } from "../../serverUrl.js";
 const CardComp = ({ computers, setModal, index }) => {
   const dispatch = useDispatch();
   const id1 = useSelector((state) => state.application.id);
@@ -73,9 +73,9 @@ const CardComp = ({ computers, setModal, index }) => {
           <div className={styles.desc}>
             <p>
               {" "}
-              EDELWEISS CYBORG - бюджетный компьютер для игр. На нем с легкостью
-              и достаточно высоким показателем FPS можно запускать такие игры
-              как: CS:GO, Dota 2, Fortnite, League of Legends и д.р. Прекрасный
+              COMP 95 CYBORG - бюджетный компьютер для игр. На нем с легкостью и
+              достаточно высоким показателем FPS можно запускать такие игры как:
+              CS:GO, Dota 2, Fortnite, League of Legends и д.р. Прекрасный
               вариант для начинающих геймеров.
             </p>
           </div>
